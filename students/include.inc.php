@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-blue.min.css" /> 
+ <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-red.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Asap|Lobster|Open+Sans|Roboto" rel="stylesheet">
@@ -11,15 +11,21 @@
 
 
 <style>
-#frm{display:inline-block; margin-left:35%;}
-.ablock{width:60px;height:60px;background:white;text-align:center;font-size:20px;margin:10px;}
-.opts{background:white;padding:15px;}
+a{text-decoration:none;}
+.ts{color:grey;}
+.mdl-menu{max-height:200px;overflow:auto; }
+.mdl-layout__drawer{width:18%;height:100% !important;}
+#dj{color:#E91E63;position:relative;left:-110px; font-size:12px; }
+#frm{display:inline-block; margin-left:35%;padding:20px;}
+.ablock{width:100px;height:90px;background:white;text-align:center;font-size:20px;margin:10px;}
+.opts{background:white;padding:10px;}
 a:hover{text-decoration:none;color:default;}
-.ablock i{font-size:50px;}
-body{background:#eff3f6;font-family:'Roboto';color:black;}
+.ablock i{font-size:70px;}
+
+body{font-family:'Roboto';color:black;background:#EFF3F6;}
 .head{background: white;font-family:'Roboto';font-size:40;}
 #logo{margin:10px;}
-#caln{width:600px;height:400px;margin:auto;}
+#caln{width:800px;height:500px;margin:auto;}
 .contain{width:90%;margin: auto;background: white;}
 .page-content{width:90%;margin: auto;color:black;}
 .rbg{background:#cc2c2c;color: white;}
