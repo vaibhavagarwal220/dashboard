@@ -59,9 +59,9 @@ echo $_SESSION['unameadm'];
     <div class="page-content"><!-- Your content goes here -->
 <?php
 
-if( isset($_POST['cnamen'])&&isset($_POST['cidn'])&&isset($_POST['des']))
+if( isset($_POST['cnamen'])&&isset($_POST['cidn'])&&isset($_POST['des'])&&isset($_POST['code']))
 {
-   if(!empty($_POST['cnamen'])&& !empty($_POST['cidn'])&& !empty($_POST['des']))
+   if(!empty($_POST['cnamen'])&& !empty($_POST['cidn'])&& !empty($_POST['des'])&& !empty($_POST['code']))
    {
 
 
@@ -72,7 +72,7 @@ if( isset($_POST['cnamen'])&&isset($_POST['cidn'])&&isset($_POST['des']))
 
     //echo '1';
     
-    $q ="INSERT INTO  SEM_COURSES (NAME,COURSE_ID,DESCRIPTION) VALUES ('".$_POST['cnamen']."' ,".$_POST['cidn'].",'".$_POST['des']."' )";
+    $q ="INSERT INTO  SEM_COURSES (NAME,COURSE_ID,slot,code) VALUES ('".$_POST['cnamen']."' ,".$_POST['cidn'].",'".$_POST['des']."','".$_POST['code']."')";
 
     //echo $q ;
 
@@ -118,10 +118,15 @@ if( isset($_POST['cnamen'])&&isset($_POST['cidn'])&&isset($_POST['des']))
 
 
     <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample6" name="code" required>
+    <label class="mdl-textfield__label" for="sample6">Course Code</label>
+  </div><br>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="sample5" name="des" required>
-    <label class="mdl-textfield__label" for="sample5">Description</label>
+    <label class="mdl-textfield__label" for="sample5">Slot</label>
   </div>
     <br>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Submit</button>

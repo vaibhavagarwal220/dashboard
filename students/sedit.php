@@ -146,7 +146,7 @@ foreach($rows as $row)
     <a class="mdl-navigation__link" href=adddrop.php ><i class="material-icons mdl-color-text--blue-grey-400 material-icons">iso</i> Add/Drop Courses</a>
     <a class="mdl-navigation__link" href="sedit.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">line_weight</i> Edit Info</a>
     <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">date_range</i> Calendar</a>
-    <a class="mdl-navigation__link" href="timetable/index.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
+    <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">grade</i> Course Review</a>
     <a class="mdl-navigation__link"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">event_seat</i> Book Bus Tickets</a>
@@ -158,10 +158,9 @@ foreach($rows as $row)
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">
-<br><br>
-<div class=opts id=frm>
-<center>
-<br><br>    
+<br>
+<center class=opts id=frm>
+<br>    
      <?php
 
 //echo $_POST['name'];
@@ -240,9 +239,9 @@ foreach($rows as $row)
     <input class=\"mdl-textfield__input\" type=\"text\" id=\"sample7\" name=\"info\"    value=\"".$row['INFO']."\"  required>
     <label class=\"mdl-textfield__label\" for=\"sample7\">Info</label>
     </div>
-<br><br><br>
+<br><br>
     <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent\">Update</button>
-    </form><br><br>
+    </form><br>
     ";
       
       
@@ -251,8 +250,6 @@ foreach($rows as $row)
 }
 ?>
 </center>
-</div>
-<br><br>
     </div></main></div>
 </body>
 </html>

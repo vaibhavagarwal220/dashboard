@@ -16,28 +16,69 @@ function loggedin()
   }
 }
 
-//function onln($uname)
-//{
-  //$query="SELECT COUNT(*) from online where username='$uname'";
-  //$res=mysql_query($query);
-  //$rows=mysql_result($res,0,'COUNT(*)');
-  //if ($rows==0) return false;
- // else if($rows==1) return true;
-//}
+function getslot($cid)
+{
+$db = new MYSQLI('localhost','root','','Project') ; //or die('Error connecting to MySQL server.');
+
+if($db->connect_errno)
+{
+  echo $db->connect_error;
+  die ('Unable to connect to the database ');
+}
+$cour=$db->query("SELECT slot FROM sem_courses where COURSE_ID=".$cid."");
+
+if (!$cour->num_rows)
+{   
+echo "Error";
+  //echo 'Permission granted Enjoy due '  //print_r($per);}
+}
+else 
+{
+$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+
+foreach($rows as $row)
+{
+  return $row['slot'] ;
+ 
+}
+}
+
+}
+
+function getcode($cid)
+{
+  $db = new MYSQLI('localhost','root','','Project') ; //or die('Error connecting to MySQL server.');
+
+if($db->connect_errno)
+{
+  echo $db->connect_error;
+  die ('Unable to connect to the database ');
+}
+
+$cour=$db->query("SELECT code FROM sem_courses where COURSE_ID=".$cid."");
+
+if (!$cour->num_rows)
+{   
+echo "Error";
+  //echo 'Permission granted Enjoy due '  //print_r($per);}
+}
+else 
+{
+$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+
+foreach($rows as $row)
+{
+  return $row['code'] ;
+ 
+}
+}
+
+}
+
 
 function getname($roll)
 {
  
-/*if($query_res=$db->query("SELECT $field from students where ROLLNO='".@$_SESSION['uname']."' "))
-  {if($fieldres=$db->result($query_res,0,$field))
-    {
-    return $fieldres;
-    }
-  }
-} 
-*/
-
-
 $db = new MYSQLI('localhost','root','','Project') ; //or die('Error connecting to MySQL server.');
 
 if($db->connect_errno)

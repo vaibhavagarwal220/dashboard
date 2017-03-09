@@ -1,31 +1,13 @@
--- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Mar 05, 2017 at 06:38 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-
+SET time_zone = "+00:00";
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `project`
---
 CREATE DATABASE IF NOT EXISTS `project` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `project`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
 
 CREATE TABLE `admin` (
   `ID` int(11) NOT NULL,
@@ -34,18 +16,8 @@ CREATE TABLE `admin` (
   `DESIG` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `admin`
---
-
 INSERT INTO `admin` (`ID`, `NAME`, `PASSWORD`, `DESIG`) VALUES
 (1, 'admin', 'admin', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coursedata`
---
 
 CREATE TABLE `coursedata` (
   `id` int(11) NOT NULL,
@@ -60,19 +32,17 @@ CREATE TABLE `coursedata` (
   `Course Name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Dumping data for table `coursedata`
---
-
 INSERT INTO `coursedata` (`id`, `CID`, `STID`, `ATTENDANCE`, `QUIZ1`, `QUIZ2`, `QUIZ3`, `ANNCS`, `TOTAL_CLASSES`, `Course Name`) VALUES
-(5, 2, 1604, 30, 20, 12, 10, 'There is no class tomorrow. Enjoy Your holiday. Hope to see you soon', 40, 'Mech'),
-(10, 8, 1601, 0, 0, 0, 0, 'No Announcements', 40, 'Computer Organization');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `creview`
---
+(31, 8, 1601, 28, 15, 17, 45, 'No Announcements', 40, 'Biotechnology'),
+(33, 5, 1601, 27, 12, 14, 38, 'No Announcements', 40, 'Applied Chemistry'),
+(34, 2, 1601, 34, 14, 16, 42, 'No Announcements', 40, 'Signals and Systems'),
+(35, 5, 1602, 38, 19, 18, 47, 'No Announcements', 40, 'Applied Chemistry'),
+(36, 5, 1603, 25, 14, 18, 43, 'No Announcements', 40, 'Applied Chemistry'),
+(37, 8, 1604, 30, 16, 16, 48, 'No Announcements', 40, 'Biotechnology'),
+(38, 2, 1602, 31, 15, 17, 40, 'No Announcements', 40, 'Signals and Systems'),
+(39, 2, 1602, 39, 15, 14, 43, 'No Announcements', 40, 'Signals and Systems'),
+(40, 8, 1602, 37, 16, 18, 48, 'No Announcements', 40, 'Biotechnology'),
+(41, 12, 1601, 0, 0, 0, 0, 'No Announcements', 40, 'ADP');
 
 CREATE TABLE `creview` (
   `id` int(11) NOT NULL,
@@ -80,12 +50,6 @@ CREATE TABLE `creview` (
   `cid` int(11) NOT NULL,
   `rating` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `forum_post`
---
 
 CREATE TABLE `forum_post` (
   `post_id` int(11) NOT NULL,
@@ -97,20 +61,10 @@ CREATE TABLE `forum_post` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `forum_post`
---
-
 INSERT INTO `forum_post` (`post_id`, `post_title`, `post_author`, `post_body`, `course_id`, `forum_id`, `time`) VALUES
-(18, 'COMPUTER ORGANISATION', '1601', 'Choose time slots for your lab.', 2, 2, '2017-03-01 00:03:37'),
-(24, 'Continuum Mechanics', '1601', 'Surprise Quiz Tomorrow! Best of Luck!!', 4, 11, '2017-03-01 00:04:37'),
-(26, 'CO', '1601', 'Good Class\r\n', 2, 2, '2017-03-04 01:13:09');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `prof`
---
+(18, 'COMPUTER ORGANISATION', '1601', 'Choose time slots for your lab.', 2, 2, '2017-02-28 18:33:37'),
+(24, 'Continuum Mechanics', '1604', 'Surprise Quiz Tomorrow! Best of Luck!!', 4, 11, '2017-03-05 18:34:37'),
+(26, 'CO', '1601', 'Good Class\r\n', 2, 2, '2017-03-03 19:43:09');
 
 CREATE TABLE `prof` (
   `NAME` varchar(40) NOT NULL,
@@ -122,41 +76,23 @@ CREATE TABLE `prof` (
   `TEACHER_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `prof`
---
-
 INSERT INTO `prof` (`NAME`, `PASSWORD`, `SALARY`, `CONTACT`, `INFO`, `ADDRESS`, `TEACHER_ID`) VALUES
 ('Professor X', 'vaibhav', 1000000, '979889898', 'Professor', 'Xavier School for special Children', 2);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `sem_courses`
---
-
 CREATE TABLE `sem_courses` (
   `id` int(11) NOT NULL,
+  `code` varchar(10) NOT NULL DEFAULT 'ICXXX',
   `NAME` varchar(30) NOT NULL,
   `COURSE_ID` int(11) NOT NULL,
-  `DESCRIPTION` varchar(140) NOT NULL
+  `slot` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `sem_courses`
---
-
-INSERT INTO `sem_courses` (`id`, `NAME`, `COURSE_ID`, `DESCRIPTION`) VALUES
-(1, 'Linear Algebra', 4, ''),
-(2, 'Mechanics', 2, ''),
-(7, 'Continuum Mechanics', 5, 'Mechanics of real life objects,tensors'),
-(8, 'Computer Organization', 8, 'Computer : How do they Work');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `students`
---
+INSERT INTO `sem_courses` (`id`, `code`, `NAME`, `COURSE_ID`, `slot`) VALUES
+(1, 'IC250', 'P&DSP', 4, 'I3'),
+(2, 'IC260', 'Signals and Systems', 2, 'G3'),
+(7, 'IC130', 'Applied Chemistry', 5, 'F3'),
+(8, 'IC136', 'Biotechnology', 8, 'C3'),
+(11, 'CS101', 'ADP', 12, 'L3');
 
 CREATE TABLE `students` (
   `id` int(11) NOT NULL,
@@ -168,19 +104,11 @@ CREATE TABLE `students` (
   `INFO` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `students`
---
-
 INSERT INTO `students` (`id`, `ROLLNO`, `NAME`, `PASSWORD`, `CONTACT`, `ADDRESS`, `INFO`) VALUES
-(1, 1601, 'Vaibhav Agarwal', '0000', '36526921', 'B6 IIT Mandi Kammand south campus', 'B.Tech CSE'),
-(3, 1604, 'Riyansh Goyal', 'vaibhav12345', '979895655', 'B6 Hostel ', 'BTech CSE');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `table_forum`
---
+(1, 1601, 'Vaibhav Agarwal', '0000', '36526921', 'B6 IIT Mandi Kamand', 'B.Tech CSE'),
+(3, 1604, 'Riyansh Goyal', 'vaibhav12345', '979895655', 'B6 Hostel ', 'BTech CSE'),
+(4, 1602, 'Gaurav', '0000', '36526921', 'B6 IIT Mandi Kamand', 'B.Tech CE'),
+(5, 1603, 'Adnaan', '0000', '36526921', 'B6 IIT Mandi Kamand', 'B.Tech CSE');
 
 CREATE TABLE `table_forum` (
   `forum_id` int(11) NOT NULL,
@@ -189,19 +117,10 @@ CREATE TABLE `table_forum` (
   `forum_description` varchar(300) NOT NULL DEFAULT 'no description provided by initiator of forum'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `table_forum`
---
-
 INSERT INTO `table_forum` (`forum_id`, `course_id`, `forum_name`, `forum_description`) VALUES
 (2, 2, 'Sem 4', 'No Info'),
-(11, 4, 'Sem 2', 'No Info');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `trips`
---
+(11, 4, 'Sem 2', 'No Info'),
+(12, 8, '', '');
 
 CREATE TABLE `trips` (
   `id` int(11) NOT NULL,
@@ -210,59 +129,34 @@ CREATE TABLE `trips` (
   `doj` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `trips`
---
-
 INSERT INTO `trips` (`id`, `ROLLNO`, `dest`, `doj`) VALUES
 (1, 1601, 'Chandigarh', '2017-03-22'),
-(31, 1601, 'sdwf', '2017-03-18');
+(32, 1601, 'Chandigarh', '2017-03-14'),
+(33, 1601, 'Solan', '2017-03-09');
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `admin`
---
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `coursedata`
---
 ALTER TABLE `coursedata`
   ADD PRIMARY KEY (`id`),
   ADD KEY `CID` (`CID`),
-  ADD KEY `STID` (`STID`),
-  ADD KEY `Course Name` (`Course Name`);
+  ADD KEY `STID` (`STID`);
 
---
--- Indexes for table `creview`
---
 ALTER TABLE `creview`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fromstudents` (`ROLLNO`),
   ADD KEY `fromcourses` (`cid`);
 
---
--- Indexes for table `forum_post`
---
 ALTER TABLE `forum_post`
   ADD PRIMARY KEY (`post_id`),
   ADD KEY `course_id` (`course_id`),
   ADD KEY `forum_id` (`forum_id`);
 
---
--- Indexes for table `prof`
---
 ALTER TABLE `prof`
   ADD PRIMARY KEY (`TEACHER_ID`),
   ADD KEY `TEACHING_COURSEID` (`TEACHER_ID`);
 
---
--- Indexes for table `sem_courses`
---
 ALTER TABLE `sem_courses`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `unique` (`id`),
@@ -271,106 +165,52 @@ ALTER TABLE `sem_courses`
   ADD KEY `COURSE_ID_3` (`COURSE_ID`),
   ADD KEY `NAME` (`NAME`);
 
---
--- Indexes for table `students`
---
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `ROLLNO` (`ROLLNO`);
 
---
--- Indexes for table `table_forum`
---
 ALTER TABLE `table_forum`
   ADD PRIMARY KEY (`forum_id`),
   ADD KEY `course_id` (`course_id`);
 
---
--- Indexes for table `trips`
---
 ALTER TABLE `trips`
   ADD PRIMARY KEY (`id`),
   ADD KEY `from_students` (`ROLLNO`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `coursedata`
---
 ALTER TABLE `coursedata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
---
--- AUTO_INCREMENT for table `creview`
---
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 ALTER TABLE `creview`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `forum_post`
---
 ALTER TABLE `forum_post`
   MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
---
--- AUTO_INCREMENT for table `sem_courses`
---
 ALTER TABLE `sem_courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `students`
---
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `table_forum`
---
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 ALTER TABLE `table_forum`
-  MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT for table `trips`
---
+  MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 ALTER TABLE `trips`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
---
--- Constraints for dumped tables
---
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
---
--- Constraints for table `coursedata`
---
 ALTER TABLE `coursedata`
   ADD CONSTRAINT `allotted_course` FOREIGN KEY (`CID`) REFERENCES `sem_courses` (`COURSE_ID`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `to_student` FOREIGN KEY (`STID`) REFERENCES `students` (`ROLLNO`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
---
--- Constraints for table `creview`
---
 ALTER TABLE `creview`
   ADD CONSTRAINT `fromcourses` FOREIGN KEY (`cid`) REFERENCES `sem_courses` (`COURSE_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fromstudents` FOREIGN KEY (`ROLLNO`) REFERENCES `students` (`ROLLNO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
--- Constraints for table `forum_post`
---
 ALTER TABLE `forum_post`
   ADD CONSTRAINT `from post course` FOREIGN KEY (`course_id`) REFERENCES `sem_courses` (`COURSE_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `from post topics` FOREIGN KEY (`forum_id`) REFERENCES `table_forum` (`forum_id`);
 
---
--- Constraints for table `prof`
---
 ALTER TABLE `prof`
   ADD CONSTRAINT `teaches` FOREIGN KEY (`TEACHER_ID`) REFERENCES `sem_courses` (`COURSE_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
--- Constraints for table `table_forum`
---
 ALTER TABLE `table_forum`
   ADD CONSTRAINT `belongs to course ` FOREIGN KEY (`course_id`) REFERENCES `sem_courses` (`COURSE_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
--- Constraints for table `trips`
---
 ALTER TABLE `trips`
   ADD CONSTRAINT `from_students` FOREIGN KEY (`ROLLNO`) REFERENCES `students` (`ROLLNO`) ON DELETE CASCADE ON UPDATE CASCADE;
 

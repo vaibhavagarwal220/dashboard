@@ -4,6 +4,7 @@
 require 'connect.php' ;
 require 'core.php' ;
 //session_start();
+if(!loggedin()) header("Location:studentlogin.php");
  if(isset($_GET['q'])&&!empty($_GET['q']))
     {
       $cid=$_GET['q'];
@@ -230,10 +231,10 @@ $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
 foreach($rows as $row)
 {
   $cname=$row['Course Name'] ;
-  $cid=$row['CID'];
+  $cd=$row['CID'];
 
 
-  echo "     <a href=x.php?q=$cid class=\"mdl-navigation__link\">$cname
+  echo "<a href=x.php?q=$cd class=\"mdl-navigation__link\">$cname
 </a>";
 }
   ?>
@@ -254,7 +255,7 @@ foreach($rows as $row)
     <a class="mdl-navigation__link" href=adddrop.php ><i class="material-icons mdl-color-text--blue-grey-400 material-icons">iso</i> Add/Drop Courses</a>
         <a class="mdl-navigation__link" href="sedit.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">line_weight</i> Edit Info</a>
         <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">date_range</i> Calendar</a>
-    <a class="mdl-navigation__link" href="timetable/index.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
+    <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">grade</i> Course Review</a>
     <a class="mdl-navigation__link"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">event_seat</i> Book Bus Tickets</a>
@@ -273,25 +274,13 @@ foreach($rows as $row)
 <div class="mdl-cell mdl-cell--8-col">
 <br>
 <div id="chart_div"></div>
-        
+<br><br>
+<div id="chart_div3"></div>        
         </div>
 
 
 <div class="mdl-cell mdl-cell--4-col">
-
-
     <?php
-
-$per=$db->query("SELECT * FROM Students WHERE ROLLNO=".$_SESSION["uname"]." ") ;
- 
-if (!$per->num_rows)
-{   
-die('Username and Password is incorrect ');
-  //echo 'Permission granted Enjoy due '  //print_r($per);}
-}
-
-
-
 $cour=$db->query("SELECT * FROM CourseData WHERE STID=".$_SESSION["uname"]." && CID=$cid ");
 
 if (!$cour->num_rows)
@@ -302,15 +291,13 @@ echo 'No Course to show ';
 
 $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
   
-echo "<div class=opts><center><h4>Announcements</h4>";
+echo "<center class=opts><h4>Announcements</h4>";
 
-foreach($rows as $row)
-{
-    echo '<br>' ;
-    echo $row['ANNCS'] ;
-    }
-echo "</center>
- </div>";
+    foreach($rows as $row)
+    
+      echo $row['ANNCS'] ;
+    
+echo "</center>";
 ?>
 <br><br>
 <center>
@@ -321,12 +308,15 @@ echo "</center>
 <div class="opts">
 <center>
 <?php
+
 //$a=$_GET['cid'];
 $thelist="";  
-if ($handle = opendir('../Lectures/' .$cid. '/')) { //replace 111 by course ID variable
+if ($handle = opendir("../Lectures/".$cid."/")) { //replace 111 by course ID variable
     while (false !== ($file = readdir($handle))) {
       if ($file != "." && $file != "..") {
-  $thelist .= "<li>$file<a href=../Lectures/$cid/$file> <i class=\"material-icons\">get_app</i> </a> </li>";
+  $thelist .= "<a class=\"mdl-chip\" href=../Lectures/$cid/$file>
+    <span class=\"mdl-chip__text\">$file</span>
+    <button type=\"button\" class=\"mdl-chip__action\"><i class=\"material-icons\">get_app</i></button></a><br><br>";
       }
     }
     closedir($handle);
@@ -341,12 +331,6 @@ if ($handle = opendir('../Lectures/' .$cid. '/')) { //replace 111 by course ID v
  </div>
 
 
-<div class="mdl-cell mdl-cell--8-col">
-
-
-      <div id="chart_div3"></div>
-
-      </div>
 
 
      </div>

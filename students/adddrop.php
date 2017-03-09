@@ -145,7 +145,7 @@ foreach($rows as $row)
 
         <a class="mdl-navigation__link" href="sedit.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">line_weight</i> Edit Info</a>
         <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">date_range</i> Calendar</a>
-    <a class="mdl-navigation__link" href="timetable/index.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
+    <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">grade</i> Course Review</a>
     <a class="mdl-navigation__link"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">event_seat</i> Book Bus Tickets</a>
@@ -158,10 +158,7 @@ foreach($rows as $row)
   <main class="mdl-layout__content">
     <div class="page-content">
 <br><br><br>
-<center class=opts>
-<div id=spn></div>
- <h4> My Courses </h4>
-
+<center>
   <?php
   if(!loggedin()) header("Location:studentlogin.php");
 $cour=$db->query("SELECT * FROM sem_courses");
@@ -174,26 +171,63 @@ echo "No Course to show ";
 
 
 $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+?>
 
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--6dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Course Name</th>
+      <th class="mdl-data-table__cell--non-numeric">Course Code</th>
+      <th class="mdl-data-table__cell--non-numeric">Slot</th>
+      <th class="mdl-data-table__cell--non-numeric">Add/Drop</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+
+<?php
 
 foreach($rows as $row)
 {
   $cname=$row['NAME'] ;
   $cid=$row['COURSE_ID'];
+  $cde=$row['code'];
+  $slt=$row['slot'];
 //  echo $cid;
- if(hascrs($cid)) echo "$cname<br> 
-  <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect tst dra rbg\" id=".$cid.">
-DROP
-</button><br><br>";
+ if(hascrs($cid)) echo "
+<tr>
+      <td class=\"mdl-data-table__cell--non-numeric\">$cname</td>
+      <td class=\"mdl-data-table__cell--non-numeric\">$cde</td>
+      <td class=\"mdl-data-table__cell--non-numeric\">$slt</td>
+      <td class=\"mdl-data-table__cell--non-numeric\">
+      <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect tst dra rbg\" id=".$cid.">
+      DROP
+      </button>
+
+      </td>
+ </tr>";
 
 else
-  echo "$cname<br> 
-  <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect tst adr gbg\" id=".$cid.">
-  ADD
-</button><br><br>";
+echo "
+<tr>
+      <td class=\"mdl-data-table__cell--non-numeric\">$cname</td>
+      <td class=\"mdl-data-table__cell--non-numeric\">$cde</td>
+      <td class=\"mdl-data-table__cell--non-numeric\">$slt</td>
+      <td class=\"mdl-data-table__cell--non-numeric\">
+      <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect tst adr gbg\" id=".$cid.">
+      ADD
+      </button>
 
+      </td>
+ </tr>";
 }
-  ?>  </center>
+  ?>
+
+
+    
+  </tbody>
+</table>
+
 <br>
 
 
