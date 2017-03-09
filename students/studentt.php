@@ -167,8 +167,23 @@ foreach($rows as $row)
 
 <br><br><br>
 <div class="mdl-grid">
+
 <div class="mdl-cell mdl-cell--8-col">
 
+<div class="mdl-grid">
+
+<a class="ablock rbg mdl-cell mdl-cell--4-col" title="Calendar" href="cal.php"><i class="material-icons">date_range</i></a>
+<a class="ablock gbg mdl-cell mdl-cell--4-col" title=Timetable href="timetable/index.php"><i class="material-icons">list</i></a>
+<a class="ablock rbg mdl-cell mdl-cell--4-col" title="Course Review" href="review.php"><i class="material-icons">grade</i></a>
+<a class="ablock bbg mdl-cell mdl-cell--4-col" title=Contact><i class="material-icons">call</i></a>
+<a class="ablock pbg mdl-cell mdl-cell--4-col" title="Book Bus Tickets" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons">event_seat</i></a>
+<a href=depart.php class="ablock rbg mdl-cell mdl-cell--4-col" title="Student Departures"><i class="material-icons">flight_takeoff</i></a>     
+<a class="ablock gbg mdl-cell mdl-cell--4-col" href=planatrip.php title="Plan A Trip"><i class="material-icons">motorcycle</i></a>
+<a class="ablock gbg mdl-cell mdl-cell--4-col" href=adddrop.php title="Plan A Trip"><i class="material-icons">iso</i></a>
+</div>
+<br><br>
+
+<div class="mdl-grid">
 <?php
 
 $cour=$db->query("SELECT * FROM forum_post ORDER by time DESC");
@@ -196,19 +211,17 @@ foreach($rows as $row)
       $q="SELECT * FROM table_forum WHERE  forum_id=".$fid." "; 
             $name=$db->query($q);
     if(!$name->num_rows)
-      echo 'query works';
+     
             $sname=$name->fetch_all(MYSQLI_ASSOC);
-           
-    //echo '2';
     
       foreach($sname as $sn)
             {
-    echo " <div class=\"opts feed\">".getname($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$sn['forum_id']."> ".$sn['forum_name']."</a> <br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <b>$ttl</b><br><br> $bdy
+    echo " <div class=\"opts feed mdl-cell mdl-cell--6-col\">".getname($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$sn['forum_id']."> ".$sn['forum_name']."</a> <br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <b>$ttl</b><br><br> $bdy
   </div><br><br>";
        } 
 }
 ?>
-
+</div>
 </div>
 
 <div class="mdl-cell mdl-cell--4-col ">
@@ -240,18 +253,7 @@ foreach($rows as $row)
 }
   ?>  </center>
 <br>
-<div class="mdl-grid opts">
 
-<a class="ablock rbg mdl-cell mdl-cell--4-col" title="Calendar" href="cal.php"><i class="material-icons">date_range</i></a>
-<a class="ablock gbg mdl-cell mdl-cell--4-col" title=Timetable href="timetable/index.php"><i class="material-icons">list</i></a>
-<a class="ablock rbg mdl-cell mdl-cell--4-col" title="Course Review" href="review.php"><i class="material-icons">grade</i></a>
-<a class="ablock bbg mdl-cell mdl-cell--4-col" title=Contact><i class="material-icons">call</i></a>
-<a class="ablock pbg mdl-cell mdl-cell--4-col" title="Book Bus Tickets" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons">event_seat</i></a>
-<a href=depart.php class="ablock rbg mdl-cell mdl-cell--4-col" title="Student Departures"><i class="material-icons">flight_takeoff</i></a>     
-<a class="ablock gbg mdl-cell mdl-cell--4-col" href=planatrip.php title="Plan A Trip"><i class="material-icons">motorcycle</i></a>
-<a class="ablock gbg mdl-cell mdl-cell--4-col" href=adddrop.php title="Plan A Trip"><i class="material-icons">iso</i></a>
-
-</div>
 
 
 
