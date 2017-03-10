@@ -14,7 +14,7 @@
 a{text-decoration:none;}
 .ts{color:grey;}
 .mdl-menu{max-height:200px;overflow:auto; }
-.mdl-layout__drawer{width:18%;height:100% !important;}
+.mdl-layout__drawer{width:250px;height:100% !important;}
 #dj{color:#E91E63;position:relative;left:-110px; font-size:12px; }
 #frm{display:inline-block; margin-left:35%;padding:20px;}
 .ablock{width:110px;height:110px;background:white;text-align:center;font-size:20px;margin:10px;}
