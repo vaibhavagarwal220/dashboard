@@ -1,44 +1,33 @@
-   <?php
-
-
-  require 'connect.php' ;
-  require 'core.php' ;
-  
-  if(!loggedin())
+<!doctype html>
+<?php 
+require 'core.php';
+require 'connect.php';
+if(!loggedin())
   {
     header('Location:studentlogin.php');
   }
-
 ?>
-
-<!DOCTYPE html>
+  
 <html>
-<head>
-  <title>Review Course</title>
+  <head>
+  <title>Course Reviews</title>
 <?php include 'include.inc.php';?>
+  <style type="text/css">
+       #content {width:100%;margin:auto;}
 
-   
-    </head>
+         </style>
+       
 
- 
-  <body >
+
+  </head>
+  <body>
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
             mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title"><?php 
-
-$query_res=$db->query("SELECT NAME from sem_courses where COURSE_ID=$cid" );
-    $rows=$query_res->fetch_all(MYSQLI_ASSOC) ;
-
-    foreach($rows as $row)
-      {
-        $nm=$row['NAME'] ;
-        echo "$nm";
-      }
-      ?></span>
+      <span class="mdl-layout-title">Course Reviews</span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
@@ -91,7 +80,10 @@ foreach($rows as $row)
 
  
 </ul>
-       <a class="mdl-navigation__link" href="logout.php"><i class="material-icons">launch</i> Log Out</a> 
+
+       <a class="mdl-navigation__link" href="logout.php"><i class="material-icons">launch</i> Log Out</a>
+     <!-- Right aligned menu below button -->
+ 
        </nav>
     </div>  
      
@@ -99,12 +91,22 @@ foreach($rows as $row)
   </header>
   <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
     <span class="mdl-layout-title">
-      Review Course
-      </span>
+      <?php 
+
+    $query_res=$db->query("SELECT NAME from students where ROLLNO='".@$_SESSION['uname']."' ");
+    $rows=$query_res->fetch_all(MYSQLI_ASSOC) ;
+
+    foreach($rows as $row)
+      {
+        $nm=$row['NAME'] ;
+        echo $nm;
+      }
+
+    ?></span>
 
     </span>
-    <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20">
-    <a class="mdl-navigation__link" href="studentt.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
+    <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20" id=menuw>
+    <a class="mdl-navigation__link" href="index.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
     <a class="mdl-navigation__link" href="#" id=viewc> <i class="material-icons mdl-color-text--blue-grey-400 material-icons">class</i> Courses</a>
      <div id=showc> 
   <?php
@@ -145,12 +147,12 @@ foreach($rows as $row)
 </script>
 
 
-    <a class="mdl-navigation__link" href=adddrop.php ><i class="material-icons mdl-color-text--blue-grey-400 material-icons">iso</i> Add/Drop Courses</a>
-    <a class="mdl-navigation__link" href="sedit.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">line_weight</i> Edit Info</a>
-    <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">date_range</i> Calendar</a>
+  <a class="mdl-navigation__link" href=adddrop.php ><i class="material-icons mdl-color-text--blue-grey-400 material-icons">iso</i> Add/Drop Courses</a>
+     <a class="mdl-navigation__link" href="sedit.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">line_weight</i> Edit Info</a>
+     <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">date_range</i> Calendar</a>
     <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">grade</i> Course Review</a>
-    <a class="mdl-navigation__link"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
+    <a class="mdl-navigation__link" href="contacts.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">event_seat</i> Book Bus Tickets</a>
     <a class="mdl-navigation__link" href=depart.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">flight_takeoff</i> Student Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">motorcycle</i> Plan A Trip</a>
@@ -160,14 +162,13 @@ foreach($rows as $row)
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">
-<br><br><br>
 
 
 
-    </div>
-  </main>
+   <br><br>
+<div id=content>
 </div>
+  </div></main></div>
 
 </body>
 </html>
-
