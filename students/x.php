@@ -8,6 +8,7 @@ if(!loggedin()) header("Location:studentlogin.php");
  if(isset($_GET['q'])&&!empty($_GET['q']))
     {
       $cid=$_GET['q'];
+
       //echo $cid;
     }
 
@@ -17,8 +18,8 @@ if(!loggedin()) header("Location:studentlogin.php");
 
 <?php
 
-             $cour=$db->query("SELECT ATTENDANCE,TOTAL_CLASSES,QUIZ1,QUIZ2,QUIZ3,avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE STID=".$_SESSION["uname"]." && CID=".$cid." ");
-             $cour1=$db->query("SELECT avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE CID=".$cid." ");
+$cour=$db->query("SELECT ATTENDANCE,TOTAL_CLASSES,QUIZ1,QUIZ2,QUIZ3,avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE STID=".$_SESSION["uname"]." && CID=".$cid." ");
+$cour1=$db->query("SELECT avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE CID=".$cid." ");
             //echo $cid;
 if (!$cour->num_rows)
 {   
@@ -115,6 +116,10 @@ echo 'No Course to show ';
 
           }
         </script>
+        <style type="text/css">
+          #chart_div{width:100%;height:45%;zoom:0.9;}
+          #chart_div3{width:100%;height:45%;zoom:0.9;}
+        </style>
     </head>
 
 
@@ -125,8 +130,9 @@ echo 'No Course to show ';
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title"><?php 
-
+      <span class="mdl-layout-title"><?php
+      if(!hascrs($cid)) {echo "";} 
+else{
 $query_res=$db->query("SELECT NAME from sem_courses where COURSE_ID=$cid" );
     $rows=$query_res->fetch_all(MYSQLI_ASSOC) ;
 
@@ -135,7 +141,7 @@ $query_res=$db->query("SELECT NAME from sem_courses where COURSE_ID=$cid" );
         $nm=$row['NAME'] ;
         echo "$nm";
       }
-      ?></span>
+     } ?></span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
@@ -211,11 +217,11 @@ foreach($rows as $row)
 
     </span>
     <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20">
-    <a class="mdl-navigation__link" href="studentt.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
+    <a class="mdl-navigation__link" href="index.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
     <a class="mdl-navigation__link" href="#" id=viewc> <i class="material-icons mdl-color-text--blue-grey-400 material-icons">class</i> Courses</a>
      <div id=showc> 
   <?php
-  if(!loggedin()) header("Location:studentlogin.php");
+
 $cour=$db->query("SELECT * FROM CourseData WHERE STID=".$_SESSION['uname']."");
 
 if (!$cour->num_rows)
@@ -257,7 +263,7 @@ foreach($rows as $row)
         <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">date_range</i> Calendar</a>
     <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">grade</i> Course Review</a>
-    <a class="mdl-navigation__link"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
+    <a class="mdl-navigation__link" href="contacts.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">event_seat</i> Book Bus Tickets</a>
     <a class="mdl-navigation__link" href=depart.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">flight_takeoff</i> Student Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">motorcycle</i> Plan A Trip</a>
@@ -269,6 +275,7 @@ foreach($rows as $row)
     <div class="page-content">
 <br><br>
 
+<?php if(!hascrs($cid)) die('<center class=opts>No such course in our records</center>');?>
 
 <div class=mdl-grid>
 <div class="mdl-cell mdl-cell--8-col">

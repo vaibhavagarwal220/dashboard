@@ -63,7 +63,7 @@ foreach($rows as $row)
       $q="SELECT * FROM table_forum WHERE  forum_id=".$fid." "; 
             $name=$db->query($q);
     if(!$name->num_rows)
-      echo 'query works';
+      echo '';
             $sname=$name->fetch_all(MYSQLI_ASSOC);
            
     //echo '2';
@@ -100,7 +100,7 @@ foreach($rows as $row)
 
     </span>
     <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20">
-    <a class="mdl-navigation__link" href="studentt.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
+    <a class="mdl-navigation__link" href="index.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
     <a class="mdl-navigation__link" href="#" id=viewc> <i class="material-icons mdl-color-text--blue-grey-400 material-icons">class</i> Courses</a>
      <div id=showc> 
   <?php
@@ -146,7 +146,7 @@ foreach($rows as $row)
         <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">date_range</i> Calendar</a>
     <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">grade</i> Course Review</a>
-    <a class="mdl-navigation__link"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
+    <a class="mdl-navigation__link" href="contacts.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">event_seat</i> Book Bus Tickets</a>
     <a class="mdl-navigation__link" href=depart.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">flight_takeoff</i> Student Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="mdl-color-text--blue-grey-400 material-icons material-icons">motorcycle</i> Plan A Trip</a>
@@ -162,7 +162,7 @@ $cour=$db->query("SELECT * FROM trips ORDER by doj DESC");
 $fu=1;$fp=1;$ft=1;
 if (!$cour->num_rows)
 {   
-die('No trips to show ');
+echo "<br><br><center class=opts>No trips to show</center>";
   //echo 'Permission granted Enjoy due '  //print_r($per);}
 }
 

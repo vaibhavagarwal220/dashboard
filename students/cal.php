@@ -103,7 +103,7 @@ foreach($rows as $row)
 
     </span>
     <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20">
-    <a class="mdl-navigation__link" href="studentt.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
+    <a class="mdl-navigation__link" href="index.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
     <a class="mdl-navigation__link" href="#" id=viewc> <i class="material-icons mdl-color-text--blue-grey-400 material-icons">class</i> Courses</a>
      <div id=showc> 
   <?php
@@ -149,7 +149,7 @@ foreach($rows as $row)
         <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons" >date_range</i> Calendar</a>
     <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">grade</i> Course Review</a>
-    <a class="mdl-navigation__link"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
+    <a class="mdl-navigation__link" href="contacts.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">event_seat</i> Book Bus Tickets</a>
     <a class="mdl-navigation__link" href=depart.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">flight_takeoff</i> Student Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">motorcycle</i> Plan A Trip</a>
@@ -159,7 +159,7 @@ foreach($rows as $row)
   <main class="mdl-layout__content">
     <div class="page-content">
 	<br>
-	<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=iitmandi.cal%40gmail.com&amp;color=%23333333&amp;src=gymkhanaiitmandi%40gmail.com&amp;color=%230F4B38&amp;ctz=Asia%2FCalcutta" style="border-width:0"  frameborder="0" scrolling="no" id=caln></iframe>
+	<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=450&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=iitmandi.cal%40gmail.com&amp;color=%23333333&amp;src=gymkhanaiitmandi%40gmail.com&amp;color=%230F4B38&amp;ctz=Asia%2FCalcutta" style="border-width:0"  frameborder="0" scrolling="no" id=caln></iframe>
 	<br>
 	
 

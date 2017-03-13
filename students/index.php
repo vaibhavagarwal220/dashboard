@@ -106,7 +106,7 @@ foreach($rows as $row)
 
     </span>
     <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20" id=menuw>
-    <a class="mdl-navigation__link" href="studentt.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
+    <a class="mdl-navigation__link" href="index.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">dashboard</i> Dashboard </a>
     <a class="mdl-navigation__link" href="#" id=viewc> <i class="material-icons mdl-color-text--blue-grey-400 material-icons">class</i> Courses</a>
      <div id=showc> 
   <?php
@@ -152,7 +152,7 @@ foreach($rows as $row)
      <a class="mdl-navigation__link" href="cal.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">date_range</i> Calendar</a>
     <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">grade</i> Course Review</a>
-    <a class="mdl-navigation__link"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
+    <a class="mdl-navigation__link" href="contacts.php"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons mdl-color-text--blue-grey-400 material-icons">event_seat</i> Book Bus Tickets</a>
     <a class="mdl-navigation__link" href=depart.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">flight_takeoff</i> Student Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons mdl-color-text--blue-grey-400 material-icons">motorcycle</i> Plan A Trip</a>
@@ -165,23 +165,22 @@ foreach($rows as $row)
 
 <!-- Always shows a header, even in smaller screens. -->
 
-<br><br><br>
-<div class="mdl-grid">
-
-<div class="mdl-cell mdl-cell--8-col">
 
 <div class="mdl-grid">
+<div class="mdl-grid">
 
-<a class="ablock rbg mdl-cell mdl-cell--4-col" title="Calendar" href="cal.php"><i class="material-icons">date_range</i></a>
-<a class="ablock gbg mdl-cell mdl-cell--4-col" title=Timetable href="timetable/index.php"><i class="material-icons">list</i></a>
-<a class="ablock rbg mdl-cell mdl-cell--4-col" title="Course Review" href="review.php"><i class="material-icons">grade</i></a>
-<a class="ablock bbg mdl-cell mdl-cell--4-col" title=Contact><i class="material-icons">call</i></a>
-<a class="ablock pbg mdl-cell mdl-cell--4-col" title="Book Bus Tickets" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons">event_seat</i></a>
-<a href=depart.php class="ablock rbg mdl-cell mdl-cell--4-col" title="Student Departures"><i class="material-icons">flight_takeoff</i></a>     
-<a class="ablock gbg mdl-cell mdl-cell--4-col" href=planatrip.php title="Plan A Trip"><i class="material-icons">motorcycle</i></a>
-<a class="ablock gbg mdl-cell mdl-cell--4-col" href=adddrop.php title="Plan A Trip"><i class="material-icons">iso</i></a>
+<a class="ablock mdl-cell mdl-cell--4-col" title="Calendar" href="cal.php"><img src=assets/img/cal.png></a>
+<a class="ablock mdl-cell mdl-cell--4-col" title=Timetable href="timetable.php"><img src=assets/img/ttbl.png></a>
+<a class="ablock mdl-cell mdl-cell--4-col" title="Course Review" href="review.php"><img src=assets/img/rev.png></a>
+<a class="ablock mdl-cell mdl-cell--4-col" title=Contact href=contacts.php><img src=assets/img/cont.ico></a>
+<a class="ablock mdl-cell mdl-cell--4-col" title="Book Bus Tickets" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx">
+  <img src=assets/img/bus.ico>
+</a>
+<a href=depart.php class="ablock mdl-cell mdl-cell--4-col" title="Student Departures"><img src=assets/img/depr.png></a>     
+<a class="ablock mdl-cell mdl-cell--4-col" href=planatrip.php title="Plan A Trip"><img src=assets/img/trip.png></a>
+<a class="ablock mdl-cell mdl-cell--4-col" href=adddrop.php title="Add/Drop Courses"><img src=assets/img/adrp.png></a>
 </div>
-<br><br>
+<div class="mdl-cell mdl-cell--9-col">
 
 <div class="mdl-grid">
 <?php
@@ -190,7 +189,7 @@ $cour=$db->query("SELECT * FROM forum_post ORDER by time DESC");
 
 if (!$cour->num_rows)
 {   
-die('No posts.');
+echo '<div class=opts>No posts</div>';
   //echo 'Permission granted Enjoy due '  //print_r($per);}
 }
 
@@ -216,7 +215,7 @@ foreach($rows as $row)
     
       foreach($sname as $sn)
             {
-    echo " <div class=\"opts feed mdl-cell mdl-cell--6-col\">".getname($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$sn['forum_id']."> ".$sn['forum_name']."</a> <br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <b>$ttl</b><br><br> $bdy
+    echo " <div class=\"opts feed mdl-cell mdl-cell--4-col\">".getname($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$sn['forum_id']."> ".$sn['forum_name']."</a> <br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <b>$ttl</b><br><br> $bdy
   </div><br><br>";
        } 
 }
@@ -224,8 +223,38 @@ foreach($rows as $row)
 </div>
 </div>
 
-<div class="mdl-cell mdl-cell--4-col ">
-<div id="disqus_thread"></div>
+<div class="mdl-cell mdl-cell--3-col ">
+<center class=opts>
+ <h4> My Courses </h4>
+
+  <?php
+ 
+$cour=$db->query("SELECT * FROM CourseData WHERE STID=".$_SESSION['uname']."");
+
+if (!$cour->num_rows)
+{   
+echo "No Course to show ";
+}
+
+
+$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+
+
+foreach($rows as $row)
+{
+  $cname=$row['Course Name'] ;
+  $cid=$row['CID'];
+
+
+  echo "<a href=x.php?q=$cid class=\"mdl-chip\"><span class=\"mdl-chip__text\">$cname</span>
+</a><br><br>";
+}
+  ?>  </center>
+
+    </div>
+    </div>
+
+    <div id="disqus_thread"></div>
 <script>
 
 /**
@@ -245,50 +274,8 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                
-<center class=opts>
- <h4> My Courses </h4>
-
-  <?php
-  if(!loggedin()) header("Location:studentlogin.php");
-$cour=$db->query("SELECT * FROM CourseData WHERE STID=".$_SESSION['uname']."");
-
-if (!$cour->num_rows)
-{   
-echo "No Course to show ";
-  //echo 'Permission granted Enjoy due '  //print_r($per);}
-}
 
 
-$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
-
-
-foreach($rows as $row)
-{
-  $cname=$row['Course Name'] ;
-  $cid=$row['CID'];
-
-
-  echo "<a href=x.php?q=$cid class=\"mdl-chip\"><span class=\"mdl-chip__text\">$cname</span>
-</a><br><br>";
-}
-  ?>  </center>
-<br>
-
-
-
-
-
-
-    </div>
-
-    </div>
-
-
-
-
-
-    <!-- Your content goes here -->
     </div>
   </main>
 </div>

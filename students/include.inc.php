@@ -1,7 +1,7 @@
- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-red.min.css" /> 
+ <link rel="stylesheet" href="assets/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Asap|Lobster|Open+Sans|Roboto" rel="stylesheet">
+<script defer src="assets/material.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lemonada|Roboto|Pacifico" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -11,23 +11,32 @@
 
 
 <style>
+
+
+
+
+
+h1,h2,h3,h4,h5,h6{font-family:'Pacifico';}
+.mdl-navigation__link{font-size:11px;color:white !important;font-family:'Lemonada';}
+.mdl-navigation__link:hover{font-size:11px;color:black !important;}
 a{text-decoration:none;}
 .ts{color:grey;}
 .mdl-menu{max-height:200px;overflow:auto; }
-.mdl-layout__drawer{width:250px;height:100% !important;}
+.mdl-layout__drawer{width:260px;height:100% !important;}
 #dj{color:#E91E63;position:relative;left:-110px; font-size:12px; }
 #frm{display:inline-block; margin-left:35%;padding:20px;}
-.ablock{width:110px;height:110px;background:white;text-align:center;font-size:20px;margin:10px;}
+.ablock{width:90px;height:90px;margin:10px;}
 .opts{background:white;padding:10px;}
 a:hover{text-decoration:none;color:default;}
-.ablock i{font-size:90px;}
+.ablock img{width:90px;height:90px;}
 
 body{font-family:'Roboto';color:black;background:#EFF3F6;}
 .head{background: white;font-family:'Roboto';font-size:40;}
 #logo{margin:10px;}
-#caln{width:800px;height:500px;margin:auto;}
+
+#caln{width:1000px;height:550px;margin:auto;}
 .contain{width:90%;margin: auto;background: white;}
-.page-content{width:90%;margin: auto;color:black;}
+.page-content{width:90%;margin: auto;color:black;font-size:16px;}
 .rbg{background:#cc2c2c;color: white;}
 .gbg{background:#08a334;color: white;}
 

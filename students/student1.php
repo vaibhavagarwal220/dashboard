@@ -1,9 +1,6 @@
 <?php
 
-if(loggedin())
-{
- header('Location:studentt.php'); 
-}
+
 if(isset($_POST['uname'])&&isset($_POST['psw']))
 {
   if(!empty($_POST['uname'])&&!empty($_POST['psw']))
@@ -15,7 +12,7 @@ if(isset($_POST['uname'])&&isset($_POST['psw']))
 if(isset($_COOKIE['us'])&&!empty($_COOKIE['us']))
 {
   $_SESSION["uname"]= $_COOKIE['us'];
-  header('Location:studentt.php');
+  header('Location:index.php');
 }
 
 if (!$per->num_rows)
@@ -30,7 +27,7 @@ $_SESSION["password"] = $_POST['psw'];
 
 if(isset($_POST['rmm'])) setcookie('us',$_POST['uname'], time() + (86400 * 30), "/");
 
-header('Location:studentt.php');
+header('Location:index.php');
 }
 
   }
@@ -41,7 +38,7 @@ header('Location:studentt.php');
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap Example</title>
+  <title>Dashboard</title>
     <?php include 'include.inc.php';?>
     <style type="text/css">
       .mdl-layout {
@@ -86,6 +83,7 @@ header('Location:studentt.php');
         <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Log in</button>
       </div>
         </form>
+        <a href=forgotpass.php>Forgot Password</a>
 
                   </div>
       
