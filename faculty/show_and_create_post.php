@@ -43,7 +43,7 @@ require 'core.php';
     <span class="mdl-layout-title">
     <?php 
 
-    $query_res=$db->query("SELECT NAME from students where ROLLNO='".@$_SESSION['uname']."' ");
+    $query_res=$db->query("SELECT NAME from prof where TEACHER_ID='".@$_SESSION['unamefac']."' ");
     $rows=$query_res->fetch_all(MYSQLI_ASSOC) ;
 
     foreach($rows as $row)
@@ -65,7 +65,7 @@ require 'core.php';
   <?php
 
 
-    echo "<br><br><center class=opts id=frm><form method='POST' action='c_post.php?pauth=".$_SESSION['uname']."&cid=".$cr_id."&fid=".$forum_id."'>
+    echo "<br><br><center class=opts id=frm><form method='POST' action='c_post.php?cid=".$cr_id."&fid=".$forum_id."'>
                       <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
         <input name='post_title' class=\"mdl-textfield__input\" type=\"text\" id=\"sample3\">
         <label class=\"mdl-textfield__label\" for=\"sample3\">Title</label>

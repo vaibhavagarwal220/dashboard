@@ -39,8 +39,10 @@
 	<div id="h">
 		<div class="container">
 			<div class="row">
-			    		    <li><a class="btn btn-lg btn-info btn-register" href=admin/adminloginpage.php>Admin Login</a>
-			   <a class="btn btn-lg btn-info btn-register" href=students/studentlogin.php>Student Login</a>
+           <li>
+               <a class="btn btn-lg btn-info btn-register" href=admin/adminloginpage.php>Admin Login</a>
+			   <a class="btn btn-lg btn-info btn-register" href=group/grouplogin.php>Group Admin</a>
+               <a class="btn btn-lg btn-info btn-register" href=students/studentlogin.php>Student Login</a>
 			   <a class="btn btn-lg btn-info btn-register" href=faculty/facultylogin.php>Faculty Login</a></li>
 	
 			    <div class="col-md-10 col-md-offset-1 mt">
