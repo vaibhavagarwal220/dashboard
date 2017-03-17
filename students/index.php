@@ -24,9 +24,10 @@
 
 <!-- Always shows a header, even in smaller screens. -->
 
+<br>
+<div class="mdl-grid">
 
-<div class="mdl-grid">
-<div class="mdl-grid">
+<div class="mdl-grid opts ">
 
 <a class="ablock mdl-cell mdl-cell--4-col" title="Calendar" href="cal.php"><img src=assets/img/cal.png></a>
 <a class="ablock mdl-cell mdl-cell--4-col" title=Timetable href="timetable.php"><img src=assets/img/ttbl.png></a>
@@ -38,7 +39,9 @@
 <a href=depart.php class="ablock mdl-cell mdl-cell--4-col" title="Student Departures"><img src=assets/img/depr.png></a>     
 <a class="ablock mdl-cell mdl-cell--4-col" href=planatrip.php title="Plan A Trip"><img src=assets/img/trip.png></a>
 <a class="ablock mdl-cell mdl-cell--4-col" href=adddrop.php title="Add/Drop Courses"><img src=assets/img/adrp.png></a>
+
 </div>
+<div class="mdl-cell mdl-cell--12-col"><br><br></div>
 <div class="mdl-cell mdl-cell--9-col">
 
 <div class="mdl-grid">
@@ -61,13 +64,14 @@ foreach($rows as $row)
 {
   $ttl=$row['post_title'] ;
   $ath=$row['post_author'];
-  $bdy=$row['post_body'] ;
-  
+  $bdy=$row['post_body'] ;  
   $fid=$row['forum_id'] ;
+  $cd=$row['course_id'] ;
 
-
+    if(hascrs($cd)){
       $q="SELECT * FROM table_forum WHERE  forum_id=".$fid." "; 
             $name=$db->query($q);
+    
     if(!$name->num_rows)
      echo "";
             $sname=$name->fetch_all(MYSQLI_ASSOC);
@@ -78,6 +82,7 @@ foreach($rows as $row)
     echo " <div class=\"opts feed mdl-cell mdl-cell--4-col\">".getposter($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$fid."> ".$sn['forum_name']."</a> <br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <b>$ttl</b><br><br> $bdy
   </div><br><br>";
        } 
+     }
 }
 ?>
 
@@ -113,13 +118,7 @@ foreach($rows as $row)
 }
 ?>
 
-
-
 </div>
-
-
-
-
 
 </div>
 

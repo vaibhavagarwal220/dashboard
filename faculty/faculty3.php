@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 
   require 'connect.php' ;
@@ -56,7 +57,7 @@ if( isset($_POST['q1']) && isset($_POST['q2']) && isset($_POST['q3']))
   {
 
     
-    $q1 ="UPDATE CourseData SET QUIZ1=".$_POST['q1']." , QUIZ2=".$_POST['q2']." , QUIZ3=".$_POST['q2']."  WHERE STID=".$sid." && CID=".$cid." ";
+    $q1 ="UPDATE CourseData SET QUIZ1=".$_POST['q1']." , QUIZ2=".$_POST['q2']." , QUIZ3=".$_POST['q3']."  WHERE STID=".$sid." && CID=".$cid." ";
 
     //echo $q;
 
@@ -102,58 +103,15 @@ if( isset($_POST['q1']) && isset($_POST['q2']) && isset($_POST['q3']))
     ?>
 
 
-<!DOCTYPE html>
+
 <html>
 <head>
-  <title>Bootstrap Example</title>
+  <title>Student Details</title>
 
-<?php include 'include.inc.php';?>
+
     </head>
   <body>
-
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
-            mdl-layout--fixed-tabs">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">IIT Mandi</span>
-            <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="logout.php"><i class="material-icons">launch</i> Log Out</a>
-
-      </nav>
-
-    </div>
-    <!-- Tabs -->
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a href="#fixed-tab-1" class="mdl-layout__tab is-active"><i class="material-icons">chat</i> &nbsp;&nbsp;&nbsp;MESSAGE </a>
-      <a href="#fixed-tab-2" class="mdl-layout__tab"><i class="material-icons">import_contacts</i> &nbsp;&nbsp;&nbsp;QUIZ MARKS </a>
-      <a href="#fixed-tab-3" class="mdl-layout__tab"><i class="material-icons">pan_tool</i> &nbsp;&nbsp;&nbsp;ATTENDANCE</a>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-<span class="mdl-layout-title"><?php 
-        $q="SELECT * FROM PROF WHERE TEACHER_ID=".$_SESSION['unamefac']."";
-        $x=$db->query($q);
-        $y=$x->fetch_all(MYSQLI_ASSOC);
-        foreach($y as $row)
-        {
-          $n=$row['NAME'];
-        }
-
-      echo $n;
-
-      ?></span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="facultyy.php"><i class="material-icons">dashboard</i> Dashboard</a>
-      <a class="mdl-navigation__link" href="editinfo.php"><i class="material-icons">line_weight</i> Edit Info</a>
-    
-
-    </nav>  </div>
-  <main class="mdl-layout__content">
-    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-      <div class="page-content">
+<?php include 'include.php';?>
 
 
   <br><br>

@@ -1,7 +1,7 @@
  <link rel="stylesheet" href="assets/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lemonada|Roboto|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <style>
@@ -10,13 +10,13 @@
 
 
 
-h1,h2,h3,h4,h5,h6{font-family:'Pacifico';}
+h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
 .alig{
   vertical-align:-21%;font-size:20px;
 }
 
 .feedimg{width:500px;height:400px;}
-.mdl-navigation__link{font-size:11px;color:white !important;font-family:'Lemonada';}
+.mdl-navigation__link{font-size:11px;color:white !important;font-family:'Open Sans';}
 .mdl-navigation__link:hover{font-size:11px;color:black !important;}
 a{text-decoration:none;}
 .ts{color:grey;}
@@ -29,8 +29,8 @@ a{text-decoration:none;}
 a:hover{text-decoration:none;color:default;}
 .ablock img{width:90px;height:90px;}
 
-body{font-family:'Roboto';color:black;background:#EFF3F6;}
-.head{background: white;font-family:'Roboto';font-size:40;}
+body{font-family:'Open Sans';color:black;background:#EFF3F6;}
+.head{background: white;font-family:'Open Sans';font-size:40;}
 #logo{margin:10px;}
 
 #caln{width:1000px;height:550px;margin:auto;}
@@ -157,7 +157,8 @@ $cour=$db->query("SELECT * FROM CourseData WHERE STID=".$_SESSION['uname']."");
 
 if (!$cour->num_rows)
 {   
-echo "No Course to show ";
+echo "<a href=# class=\"mdl-navigation__link\">No Course to show 
+</a>";
   //echo 'Permission granted Enjoy due '  //print_r($per);}
 }
 
@@ -188,6 +189,44 @@ foreach($rows as $row)
   })
 </script>
 
+<a class="mdl-navigation__link" href="#" id=viewg> <i class="material-icons">group</i> Groups</a>
+     <div id=showg> 
+  <?php
+$cour=$db->query("SELECT * FROM groups");
+
+if (!$cour->num_rows)
+{   
+echo "<a href=# class=\"mdl-navigation__link\">No Course to show 
+</a>";
+  //echo 'Permission granted Enjoy due '  //print_r($per);}
+}
+
+
+$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+
+
+foreach($rows as $row)
+{
+  $id=$row['id'] ;
+  $name=$row['name'] ;
+
+
+
+  echo "     <a href=clubs.php?grp=$id class=\"mdl-navigation__link\">".$name."</a>";
+}
+  ?>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#showg').hide();
+    count=0;
+  });
+  $('#viewg').click(function(){
+    if(count%2==0) $('#showg').slideDown();
+    else $('#showg').slideUp();
+    count++;
+  })
+</script>
 
 	<a class="mdl-navigation__link" href=adddrop.php ><i class="material-icons">iso</i> Add/Drop Courses</a>
      

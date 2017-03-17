@@ -15,51 +15,11 @@ if(!loggedinfac())
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap Example</title>
-<?php include 'include.inc.php';?>
-
-
+  <title>Edit Info</title>
     </head>
   <body>
+  <?php include 'include.inc.php';?>
 
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">IIT Mandi</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="logout.php"><i class="material-icons">launch</i> Log Out</a>
-
-      </nav>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title"><?php 
-        $q="SELECT * FROM PROF WHERE TEACHER_ID=".$_SESSION['unamefac']."";
-        $x=$db->query($q);
-        $y=$x->fetch_all(MYSQLI_ASSOC);
-        foreach($y as $row)
-        {
-          $n=$row['NAME'];
-        }
-
-      echo $n;
-
-      ?></span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="facultyy.php"><i class="material-icons">dashboard</i> Dashboard</a>
-      <a class="mdl-navigation__link" href="editinfo.php"><i class="material-icons">line_weight</i> Edit Info</a>
-    
-
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here -->
-  
-    
     <?php
 
 //echo $_POST['name'];

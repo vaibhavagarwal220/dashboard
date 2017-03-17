@@ -16,7 +16,7 @@ if(!isset($_GET['grp'])||empty($_GET['grp']))
 <!DOCTYPE html>
 <html>
 <head>
-<title>Groups|Dashboard</title>
+<title>Groups | Dashboard</title>
 </head> 
 <body>
 <?php
@@ -31,11 +31,32 @@ if(!isset($_GET['grp'])||empty($_GET['grp']))
     }
   else die('<br><br><center class=opts>No such group in our database</center>');
   if(ispending($_SESSION['uname'],$val)) echo("<br><br><center class=opts>Request Pending</center>");
-  else if(!ismember($_SESSION['uname'],$val)) echo("<br><br><div id=sndiv><center class=opts>You are not a member of this group.<button class=\"subscr mdl-chip\" id=".$val."><span class=\"mdl-chip__text\">Subscribe</span></button></center></div>");
+  else if(!ismember($_SESSION['uname'],$val)) echo("<br><br><div id=sndiv><center class=opts>You are not a member of this group.<br><br><button class=\"subscr mdl-chip\" id=".$val."><span class=\"mdl-chip__text\"> <i class=\"material-icons alig\">group_add</i> Subscribe</span></button></center></div>");
  
 else{
-?>
-  <br><br>
+?><br>
+   <?php
+$cour=$db->query("SELECT * FROM groups where id=$val");
+$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+foreach($rows as $row)
+{
+  $bdy=$row['descr'] ;
+
+    echo " <center class=\"opts\"><h6>Group Description</h6><br>$bdy</center><br>";
+
+}
+
+
+
+
+
+?> 
+ <center>
+  <button type="button" class="mdl-chip" id=leavegrp>
+    <span class="mdl-chip__text"> <i class="material-icons alig">launch</i> Leave Group </span>
+</button>
+<br><br>
+
  <button id="show-dialog" type="button"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">POST <i class="material-icons alig">create</i></button>
   <dialog class="mdl-dialog">
     <h4 class="mdl-dialog__title">New Post</h4>
@@ -106,7 +127,7 @@ echo "</div>";
 
 ?>
 
-
+</center>
 
 
     </div>
@@ -123,6 +144,16 @@ echo "</div>";
       
         $.post("joingrp.php", {gid:$(this).attr('id')}, function(result){
         $("#sndiv").html("<center class=opts>"+result+"</center>");
+    });
+
+       
+  });
+
+    $('#leavegrp').click(function(){
+      
+        $.post("leavegrp.php", {gid:<?php echo $val;?>}, function(result){
+        $("#sndiv").html("<center class=opts>"+result+"</center>");
+        location.reload();
     });
 
        

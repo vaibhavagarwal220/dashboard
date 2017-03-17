@@ -13,7 +13,7 @@ require 'include.php';
 <style type="text/css">
     table{zoom:0.86;}
     tr{padding:0px !important;}
-    .mdl-textfield{margin:auto;}
+    .mdl-textfield{margin-left:40%;}
     .mdl-content{align-items: center;}
   </style>
 
@@ -22,9 +22,8 @@ require 'include.php';
       <div class="page-content">
 
 
-<div class=mdl-grid>
-<div class="mdl-cell mdl-cell--4-col"></div>
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-cell mdl-cell--4-col">
+
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-cell">
     <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
       <i class="material-icons">search</i>
     </label>
@@ -33,9 +32,7 @@ require 'include.php';
       <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
     </div>
   </div>
-  <div class=class="mdl-cell mdl-cell--4-col "></div>
-</div>
-<table width='90%' id=tblData class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-shadow--6dp">
+<table width='90%' id=tblData class="mdl-data-table mdl-js-data-table mdl-shadow--6dp">
 
 		<tr>
 			<td colspan='15'>
@@ -55,8 +52,9 @@ require 'include.php';
 
 		</tr>
 
-<tr><td >Timothy A Gonsalves</td><td >Director</td><td >267001</td><td >267003</td><td>9418047732/267009</td><td>director</td><td >Directorate Office -105</td><td >C-36 (S-1), NC</td></tr>
-<tr><td >Monika Kashyap</td><td >Superintendent</td><td >267002 / 267001</td><td >267090</td><td>9418055034/267009</td><td>monika, diroffice</td><td >Directorate Office -107</td><td >C-1 (GF), SC</td></tr>
+<tr><td >Timothy A Gonsalves</td><td >Director</td><td >267001</td><td >267003</td><td>267009</td><td>director</td><td >Directorate Office -105</td><td >C-36 (S-1), NC</td></tr>
+
+<tr><td >Monika Kashyap</td><td >Superintendent</td><td >267002</td><td >267090</td><td>267009</td><td>monika, diroffice</td><td >Directorate Office -107</td><td >C-1 (GF), SC</td></tr>
 <tr><td >Debleena Mukherjee
 </td><td >Green Consultant
 </td><td >267002
@@ -66,7 +64,7 @@ require 'include.php';
 </td><td >Directorate Office-107
 </td><td >C-2 GF, SC
 </td></tr>
-<tr><td >Nishant Kumar</td><td >Astt. Office Executive</td><td >267002</td><td ></td><td>9318220002/267009</td><td>nishantoa</td><td >Directorate Office-106</td><td >Off Campus</td></tr>
+<tr><td >Nishant Kumar</td><td >Astt. Office Executive</td><td >267002</td><td ></td><td>267009</td><td>nishantoa</td><td >Directorate Office-106</td><td >Off Campus</td></tr>
 <tr><td >Manoj Kumar</td><td >Junior Attendant</td><td >267002</td><td ></td><td>9816292266</td><td>manojkumar</td><td >Directorate Office-106</td><td >D-7, FF, NS</td></tr>
 <tr><td >Shyam Lal
 </td><td >Driver
@@ -840,32 +838,11 @@ Assoc. Professor (chairperson)
 {
 	$('#search').keyup(function()
 	{
-		searchTabl($(this).val());
+    Tablesrchthis($(this).val(),'tblData');
 	});
 });
  
-function searchTabl(inputVal)
-{
-	var table = $('#tblData');
-	table.find('tr').each(function(index, row)
-	{
-		var allCells = $(row).find('td');
-		if(allCells.length > 0)
-		{
-			var found = false;
-			allCells.each(function(index, td)
-			{
-				var regExp = new RegExp(inputVal, 'i');
-				if(regExp.test($(td).text()))
-				{
-					found = true;
-					return false;
-				}
-			});
-			if(found == true)$(row).show();else $(row).hide();
-		}
-	});
-}
+
 
 	</script>
 
@@ -1030,32 +1007,11 @@ function searchTabl(inputVal)
 {
 	$('#searc').keyup(function()
 	{
-		searchTab($(this).val());
+    Tablesrchthis($(this).val(),'tdata');
 	});
 });
  
-function searchTab(inputVal)
-{
-	var table = $('#tdata');
-	table.find('tr').each(function(index, row)
-	{
-		var allCells = $(row).find('td');
-		if(allCells.length > 0)
-		{
-			var found = false;
-			allCells.each(function(index, td)
-			{
-				var regExp = new RegExp(inputVal, 'i');
-				if(regExp.test($(td).text()))
-				{
-					found = true;
-					return false;
-				}
-			});
-			if(found == true)$(row).show();else $(row).hide();
-		}
-	});
-}
+
 
 	</script>
 
@@ -1212,32 +1168,10 @@ function searchTab(inputVal)
 {
 	$('#sear').keyup(function()
 	{
-		searchTa($(this).val());
+    Tablesrchthis($(this).val(),'tadata');
 	});
 });
  
-function searchTa(inputVal)
-{
-	var table = $('#tadata');
-	table.find('tr').each(function(index, row)
-	{
-		var allCells = $(row).find('td');
-		if(allCells.length > 0)
-		{
-			var found = false;
-			allCells.each(function(index, td)
-			{
-				var regExp = new RegExp(inputVal, 'i');
-				if(regExp.test($(td).text()))
-				{
-					found = true;
-					return false;
-				}
-			});
-			if(found == true)$(row).show();else $(row).hide();
-		}
-	});
-}
 
 	</script>
 
@@ -1264,32 +1198,10 @@ function searchTa(inputVal)
 {
 	$('#sea').keyup(function()
 	{
-		searchT($(this).val());
+    Tablesrchthis($(this).val(),'tabdata');
 	});
 });
  
-function searchT(inputVal)
-{
-	var table = $('#tabdata');
-	table.find('tr').each(function(index, row)
-	{
-		var allCells = $(row).find('td');
-		if(allCells.length > 0)
-		{
-			var found = false;
-			allCells.each(function(index, td)
-			{
-				var regExp = new RegExp(inputVal, 'i');
-				if(regExp.test($(td).text()))
-				{
-					found = true;
-					return false;
-				}
-			});
-			if(found == true)$(row).show();else $(row).hide();
-		}
-	});
-}
 
 	</script>
 
@@ -1466,32 +1378,10 @@ function searchT(inputVal)
 {
   $('#searh').keyup(function()
   {
-    searchTableq($(this).val());
+    Tablesrchthis($(this).val(),'tabldata');
   });
 });
  
-function searchTableq(inputVal)
-{
-  var table = $('#tabldata');
-  table.find('tr').each(function(index, row)
-  {
-    var allCells = $(row).find('td');
-    if(allCells.length > 0)
-    {
-      var found = false;
-      allCells.each(function(index, td)
-      {
-        var regExp = new RegExp(inputVal, 'i');
-        if(regExp.test($(td).text()))
-        {
-          found = true;
-          return false;
-        }
-      });
-      if(found == true)$(row).show();else $(row).hide();
-    }
-  });
-}
 
   </script>
 
@@ -1698,32 +1588,10 @@ function searchTableq(inputVal)
 {
   $('#searht').keyup(function()
   {
-    searchTabled($(this).val());
+     Tablesrchthis($(this).val(),'tabled');
   });
 });
  
-function searchTabled(inputVal)
-{
-  var table = $('#tabled');
-  table.find('tr').each(function(index, row)
-  {
-    var allCells = $(row).find('td');
-    if(allCells.length > 0)
-    {
-      var found = false;
-      allCells.each(function(index, td)
-      {
-        var regExp = new RegExp(inputVal, 'i');
-        if(regExp.test($(td).text()))
-        {
-          found = true;
-          return false;
-        }
-      });
-      if(found == true)$(row).show();else $(row).hide();
-    }
-  });
-}
 
   </script>
 
@@ -1797,32 +1665,9 @@ function searchTabled(inputVal)
 {
   $('#searhtx').keyup(function()
   {
-    searchTablex($(this).val());
-  });
+    Tablesrchthis($(this).val(),'tablex');  });
 });
  
-function searchTablex(inputVal)
-{
-  var table = $('#tablex');
-  table.find('tr').each(function(index, row)
-  {
-    var allCells = $(row).find('td');
-    if(allCells.length > 0)
-    {
-      var found = false;
-      allCells.each(function(index, td)
-      {
-        var regExp = new RegExp(inputVal, 'i');
-        if(regExp.test($(td).text()))
-        {
-          found = true;
-          return false;
-        }
-      });
-      if(found == true)$(row).show();else $(row).hide();
-    }
-  });
-}
 
   </script>
 
@@ -2073,32 +1918,10 @@ function searchTablex(inputVal)
 {
   $('#searchtx').keyup(function()
   {
-    searchTablesr($(this).val());
+    Tablesrchthis($(this).val(),'tablesr');
   });
 });
  
-function searchTablesr(inputVal)
-{
-  var table = $('#tablesr');
-  table.find('tr').each(function(index, row)
-  {
-    var allCells = $(row).find('td');
-    if(allCells.length > 0)
-    {
-      var found = false;
-      allCells.each(function(index, td)
-      {
-        var regExp = new RegExp(inputVal, 'i');
-        if(regExp.test($(td).text()))
-        {
-          found = true;
-          return false;
-        }
-      });
-      if(found == true)$(row).show();else $(row).hide();
-    }
-  });
-}
 
   </script>
 
@@ -2202,32 +2025,10 @@ function searchTablesr(inputVal)
 {
   $('#searchtbl').keyup(function()
   {
-    Tablesrc($(this).val());
+    Tablesrchthis($(this).val(),'tablesrc');
   });
 });
  
-function Tablesrc(inputVal)
-{
-  var table = $('#tablesrc');
-  table.find('tr').each(function(index, row)
-  {
-    var allCells = $(row).find('td');
-    if(allCells.length > 0)
-    {
-      var found = false;
-      allCells.each(function(index, td)
-      {
-        var regExp = new RegExp(inputVal, 'i');
-        if(regExp.test($(td).text()))
-        {
-          found = true;
-          return false;
-        }
-      });
-      if(found == true)$(row).show();else $(row).hide();
-    }
-  });
-}
 
   </script>
 
@@ -2303,13 +2104,14 @@ function Tablesrc(inputVal)
 {
   $('#searchtble').keyup(function()
   {
-    Tablesrch($(this).val());
+    Tablesrchthis($(this).val(),'tablesrch');
   });
 });
  
-function Tablesrch(inputVal)
+
+function Tablesrchthis(inputVal,tableid)
 {
-  var table = $('#tablesrch');
+  var table = $('#'+tableid);
   table.find('tr').each(function(index, row)
   {
     var allCells = $(row).find('td');
