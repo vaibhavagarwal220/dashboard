@@ -5,7 +5,7 @@ if(isset($_POST['uname'])&&isset($_POST['psw']))
 {
   if(!empty($_POST['uname'])&&!empty($_POST['psw']))
   {
-    $per=$db->query("SELECT * FROM groups WHERE cname='".$_POST['uname']."' && password='".$_POST['psw']."' ") ;
+    $per=$db->query("SELECT * FROM groups WHERE cname='".mysql_real_escape_string($_POST['uname'])."' && password='".mysql_real_escape_string($_POST['psw'])."' ") ;
 
 
 

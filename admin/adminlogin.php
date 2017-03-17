@@ -8,7 +8,7 @@ if(isset($_POST['uname'])&&isset($_POST['psw']))
 {
   if(!empty($_POST['uname'])&&!empty($_POST['psw']))
   {
-    $per=$db->query("SELECT * FROM ADMIN WHERE NAME='".$_POST['uname']."' && PASSWORD='".$_POST['psw']."' ") ;
+    $per=$db->query("SELECT * FROM ADMIN WHERE NAME='".mysql_real_escape_string($_POST['uname'])."' && PASSWORD='".mysql_real_escape_string($_POST['psw'])."' ") ;
 
 
 

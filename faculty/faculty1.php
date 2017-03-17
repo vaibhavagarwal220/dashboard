@@ -9,7 +9,7 @@ if(isset($_POST['uname'])&&isset($_POST['psw']))
   if(!empty($_POST['uname'])&&!empty($_POST['psw']))
   { 
     echo $_POST['psw'];
-    $per=$db->query("SELECT * FROM PROF WHERE TEACHER_ID=".$_POST['uname']." && PASSWORD='".$_POST['psw']."' ") ;
+    $per=$db->query("SELECT * FROM PROF WHERE TEACHER_ID=".mysql_real_escape_string($_POST['uname'])." && PASSWORD='".mysql_real_escape_string($_POST['psw'])."' ") ;
 
 
 
@@ -47,45 +47,18 @@ header('Location:index.php');
 <head>
   <title>Faculty Login</title>
    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-purple.min.css" /> 
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Asap|Lobster|Open+Sans|Roboto" rel="stylesheet">
-
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
 
 
 <style>
-.ablock{width:150px;height:150px;background:white;text-align:center;font-size:20px;margin:10px;line-height:200px;}
-.opts{background:white;padding:20px;}
 a:hover{text-decoration:none;color:default;}
-.ablock i{font-size:80px;}
-body{background:#eff3f6;font-family:'Roboto';color:black;}
-.head{background: white;font-family:'Roboto';font-size:40;}
-#frm{display:inline-block; margin-left:35%;}
-#logo{margin:10px;}
-#caln{width:600px;height:400px;margin:auto;}
-.contain{width:90%;margin: auto;background: white;}
-.page-content{width:90%;margin: auto;color:black;}
-.rbg{background:#cc2c2c;color: white;}
-.gbg{background:#08a334;color: white;}
-.bbg{background:#245199;color: white;}
-.pbg{background:#80159b;color: white;}
-#crs{font-size: 40px;}
-.feed{padding:20px;}
-#nost{list-style:none;}
-.past{background:gray;color: white;}
-.tod{background:#08a334;color: white;}
-.fut{background:gray;color: white;}
-#mid{margin:auto;}
-  
-</style>
-
-
-   <style type="text/css">
+body{background:#eff3f6;font-family:'Open Sans';color:black;}
       .mdl-layout {
   align-items: center;
   justify-content: center;
@@ -109,7 +82,7 @@ body{background:#eff3f6;font-family:'Roboto';color:black;}
         <form action="facultylogin.php" method=POST>
           <div class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="username"  name="uname" required>
-            <label class="mdl-textfield__label" for="username">Username</label>
+            <label class="mdl-textfield__label" for="username">Course ID</label>
           </div>
           <br>
           <div class="mdl-textfield mdl-js-textfield">

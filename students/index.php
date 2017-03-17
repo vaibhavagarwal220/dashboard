@@ -41,7 +41,7 @@
 <a class="ablock mdl-cell mdl-cell--4-col" href=adddrop.php title="Add/Drop Courses"><img src=assets/img/adrp.png></a>
 
 </div>
-<div class="mdl-cell mdl-cell--12-col"><br><br></div>
+<div class="mdl-cell mdl-cell--12-col"><br></div>
 <div class="mdl-cell mdl-cell--9-col">
 
 <div class="mdl-grid">
@@ -110,8 +110,9 @@ foreach($rows as $row)
   $ath=$row['post_author'];
   $bdy=$row['post_body'] ;
    $gid=$row['gid'] ;
+   $id=$row['post_id'] ;
 
-    if(ismember($_SESSION['uname'],$gid)){echo " <div class=\"opts\" id=frm>".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";if($ttl!="") echo "<img src=$ttl class=feedimg>";
+    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts\" id=frm>".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
     echo "<br>
   </div>";}
 

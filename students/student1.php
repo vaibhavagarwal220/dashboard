@@ -5,7 +5,7 @@ if(isset($_POST['uname'])&&isset($_POST['psw']))
 {
   if(!empty($_POST['uname'])&&!empty($_POST['psw']))
   {
-    $per=$db->query("SELECT * FROM Students WHERE ROLLNO=".$_POST['uname']." && PASSWORD='".$_POST['psw']."' ") ;
+    $per=$db->query("SELECT * FROM Students WHERE ROLLNO=".mysql_real_escape_string($_POST['uname'])." && PASSWORD='".mysql_real_escape_string($_POST['psw'])."' ") ;
 
 
 
@@ -75,7 +75,7 @@ header('Location:index.php');
         <form action="studentlogin.php" method=POST>
           <div class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="username"  name="uname" required>
-            <label class="mdl-textfield__label" for="username">Username</label>
+            <label class="mdl-textfield__label" for="username">Roll No</label>
           </div>
           <br>
           <div class="mdl-textfield mdl-js-textfield">

@@ -28,14 +28,14 @@ if(!loggedin())
 //echo "$_POST['uname']";
 
 
-if(isset($_POST['psw']) && isset($_POST['name'])&&isset($_POST['info']) &&isset($_POST['address']) &&isset($_POST['cno']) )
+if(isset($_POST['psw']) && isset($_POST['name']) &&isset($_POST['address']) &&isset($_POST['cno']) )
 {
 
-    if(!empty($_POST['psw']) && !empty($_POST['name'])&& !empty($_POST['info']) && !empty($_POST['address']) && !empty($_POST['cno']))
+    if(!empty($_POST['psw']) && !empty($_POST['name'])&& !empty($_POST['address']) && !empty($_POST['cno']))
   {
 
     
-    $q ="UPDATE Students SET NAME='".$_POST['name']."' , PASSWORD= '".$_POST['psw']."', CONTACT=".$_POST['cno'].", INFO='".$_POST['info']."', ADDRESS='".$_POST['address']."' WHERE ROLLNO=".$_SESSION['uname']." ";
+    $q ="UPDATE Students SET NAME='".$_POST['name']."' , PASSWORD= '".$_POST['psw']."', CONTACT=".$_POST['cno'].", ADDRESS='".$_POST['address']."' WHERE ROLLNO=".$_SESSION['uname']." ";
 
     //echo $q;
 
@@ -85,7 +85,7 @@ foreach($rows as $row)
 <br>
   <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
  
-    <input class=\"mdl-textfield__input\" type=\"password\" id=\"sample5\" name=\"psw\"   value=\"".$row['PASSWORD']."\"  required>
+    <input class=\"mdl-textfield__input\" type=\"password\" id=\"sample5\" name=\"psw\" required>
     <label class=\"mdl-textfield__label\" for=\"sample5\">Password</label>
 </div>
 <br>
@@ -94,12 +94,7 @@ foreach($rows as $row)
     <input class=\"mdl-textfield__input\" type=\"text\" id=\"sample6\" name=\"address\"    value=\"".$row['ADDRESS']."\"  required>
     <label class=\"mdl-textfield__label\" for=\"sample6\">Address</label>
 </div>
-<br>
-  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
-  
-    <input class=\"mdl-textfield__input\" type=\"text\" id=\"sample7\" name=\"info\"    value=\"".$row['INFO']."\"  required>
-    <label class=\"mdl-textfield__label\" for=\"sample7\">Info</label>
-    </div>
+
 <br><br>
     <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent\">Update</button>
     </form><br>

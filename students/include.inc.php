@@ -1,21 +1,20 @@
- <link rel="stylesheet" href="assets/material.min.css" /> 
+ <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script defer src="assets/material.min.js"></script>
+<script defer src="assets/js/material.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="assets/js/lightbox.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/lightbox.css">
+
 <style>
-
-
-
-
 
 h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
 .alig{
   vertical-align:-21%;font-size:20px;
 }
 
-.feedimg{width:500px;height:400px;}
+.feedimg{width:600px;height:500px;}
 .mdl-navigation__link{font-size:11px;color:white !important;font-family:'Open Sans';}
 .mdl-navigation__link:hover{font-size:11px;color:black !important;}
 a{text-decoration:none;}
