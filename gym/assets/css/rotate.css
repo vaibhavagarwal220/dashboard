@@ -1,0 +1,25 @@
+body{
+	background-color: blue;
+}
+#content123 img{
+	-webkit-webkit-transition: all 1s ease;
+	-moz-webkit-transition: all 1s ease;
+	-ms-webkit-transition: all 1s ease;
+	-o-webkit-transition: all 1s ease;
+	transition: all 1s ease;
+	
+	border: 1px solid #000000; 
+}
+#content123 img:hover{
+	-webkit-webkit-transition: all 1s ease;
+	-moz-webkit-transition: all 1s ease;
+	-ms-webkit-transition: all 1s ease;
+	-o-webkit-transition: all 1s ease;
+	transition: all 1s ease;
+	
+	transform: translateZ(25px) rotate(3deg);
+	border: 1px solid #000000;
+	box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+	
+}
+
