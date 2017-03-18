@@ -38,10 +38,10 @@ header('Location:index.php');
 <html>
 <head>
   <title>Dashboard</title>
-   <link rel="stylesheet" href="assets/material.min.css" /> 
+   <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script defer src="assets/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lemonada|Roboto|Pacifico" rel="stylesheet">
+<script defer src="assets/js/material.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -54,7 +54,7 @@ header('Location:index.php');
   padding: 24px;
   flex: none;
 }
-#bg{background-image: url('assets/img/back.jpg') ;background-repeat: round;}
+#bg{background-image: url('assets/img/back1.jpg') ;background-repeat: round;}
     </style>
 </head>
 <body >
@@ -88,7 +88,7 @@ header('Location:index.php');
         <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Log in</button>
       </div>
         </form>
-        <a href=forgotpass.php>Forgot Password</a>
+
 
                   </div>
       

@@ -100,8 +100,7 @@ $cour=$db->query("SELECT * FROM group_post where gid=$val ORDER by time DESC");
 
 if (!$cour->num_rows)
 {   
-echo '<div class=opts>No posts</div>';
-  //echo 'Permission granted Enjoy due '  //print_r($per);}
+echo "<div class=\"opts feed\">No posts</div>";
 }
 
 
@@ -116,7 +115,7 @@ foreach($rows as $row)
   $bdy=$row['post_body'] ;
    $gid=$row['gid'] ;
 
-    echo " <div class=\"opts\" id=frm>".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";if($ttl!="") echo "<img src=$ttl class=feedimg>";
+    echo " <div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
     echo "</div><br>";
 
 }

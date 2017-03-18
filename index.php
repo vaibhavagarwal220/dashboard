@@ -51,7 +51,7 @@
 			    	<h3>A platform for all students of IIT Mandi</h3>
 			    </div>
 			    <div class="col-md-12 mt hidden-xs">
-			    	<img src="assets/img/graph1.PNG" class="img-responsive aligncenter" alt="" data-effect="slide-bottom">
+			    	<img src="assets/img/screenshot.png" class="img-responsive aligncenter" alt="" data-effect="slide-bottom">
 			    </div>
 			</div>
 		</div>

@@ -108,7 +108,7 @@ echo "&nbsp;&nbsp;&nbsp;<div class=\"rte rshw\" > <i class=\"material-icons alig
 }
 }
 
-if(!hascrs($cd)) echo "<br><br><div class=opts>You are not enrolled in this course</div><br><br>";
+if(!hascrs($cd)) echo "<br><div class=opts>You are not enrolled in this course</div>";
 else if (!$cour->num_rows) 
 {   
 
@@ -152,11 +152,7 @@ else if (!$cour->num_rows)
       dialog.close();
     });
   </script>
-
-  
-  <br><br>
- 
-  
+ <br><br>
   <script type="text/javascript">
     $(document).ready(function(){
 
@@ -174,7 +170,7 @@ else if (!$cour->num_rows)
 }
 else 
 {
-echo "<br><br><div class=opts>You have already reviewed this course</div><br><br>";
+echo "<br><div class=opts>You have already reviewed this course</div><br>";
 }
 
 

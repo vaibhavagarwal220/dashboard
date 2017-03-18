@@ -67,7 +67,7 @@ body{background:#eff3f6;font-family:'Open Sans';color:black;}
   padding: 24px;
   flex: none;
 }
-#bg{background-image: url('assets/img/back.jpg') ;background-repeat: round;}
+#bg{background-image: url('assets/img/back1.jpg') ;background-repeat: round;}
     </style>
 
 </head>

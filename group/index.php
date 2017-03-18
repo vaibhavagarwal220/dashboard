@@ -21,6 +21,7 @@
 
 ?>
 <br><br>
+<center>
 <button id="show-dialog" type="button"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">POST <i class="material-icons alig">create</i></button>
   <dialog class="mdl-dialog">
     <h4 class="mdl-dialog__title">New Post</h4>
@@ -80,13 +81,13 @@ foreach($rows as $row)
   $ath=$row['post_author'];
   $bdy=$row['post_body'] ;
 
-    echo " <br><div class=\"opts\" id=frm>".getposte($ath)." posted in ".getgname($_SESSION['unamegrp'])." <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";if($ttl!="")echo"<img src=$ttl class=feedimg>";echo"<br>
-  </div><br>";
+    echo " <div class=opts>".getposte($ath)." posted in ".getgname($_SESSION['unamegrp'])." <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";if($ttl!="") echo"<img src=$ttl class=feedimg>";
+    echo"<br></div><br>";
 
 }
 echo "</div><br><br>";
 ?>
-
+</center>
     </div>
   </main>
 </div>

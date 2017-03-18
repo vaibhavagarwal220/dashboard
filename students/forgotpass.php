@@ -10,7 +10,12 @@ if(loggedin()) header('Location:index.php');
 <html>
 <head>
   <title>Dashboard</title>
-    <?php include 'include.inc.php';?>
+     <link rel="stylesheet" href="assets/css/material.min.css" /> 
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script defer src="assets/js/material.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lemonada|Roboto|Pacifico" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
     <style type="text/css">
       .mdl-layout {
   align-items: center;
@@ -20,7 +25,7 @@ if(loggedin()) header('Location:index.php');
   padding: 24px;
   flex: none;
 }
-#bg{background-image: url('assets/img/back.jpg') ;background-repeat: round;}
+#bg{background-image: url('assets/img/back1.jpg') ;background-repeat: round;}
     </style>
 </head>
 <body >
@@ -48,8 +53,6 @@ if(loggedin()) header('Location:index.php');
         <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Send Password</button>
       </div>
         </form>
-        <a href=forgotpass.php>Forgot Password</a>
-
                   </div>
       
     </div>

@@ -8,12 +8,12 @@
 <link rel="stylesheet" type="text/css" href="assets/css/lightbox.css">
 
 <style>
-
 h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
 .alig{
   vertical-align:-21%;font-size:20px;
 }
 
+#demo-menu-lower-right{color:#3E2723;}
 .feedimg{width:600px;height:500px;}
 .mdl-navigation__link{font-size:11px;color:white !important;font-family:'Open Sans';}
 .mdl-navigation__link:hover{font-size:11px;color:black !important;}
@@ -22,30 +22,26 @@ a{text-decoration:none;}
 .mdl-menu{max-height:200px;overflow:auto; }
 .mdl-layout__drawer{width:252px;height:100% !important;}
 #dj{color:#E91E63;position:relative;left:-110px; font-size:12px; }
-#frm{display:inline-block; padding:20px;margin:10px;}
+#frm{display:inline-block;}
+.posme{margin-left:300px;width:300px;}
 .ablock{width:90px;height:90px;margin:10px;}
-.opts{background:white;padding:10px;}
+.opts{background:white;padding:10px;margin:8px;}
 a:hover{text-decoration:none;color:default;}
 .ablock img{width:90px;height:90px;}
 
+
 body{font-family:'Open Sans';color:black;background:#EFF3F6;}
+/*body{background-image:url('assets/img/back1.jpg');background-repeat:round;}*/
 .head{background: white;font-family:'Open Sans';font-size:40;}
 #logo{margin:10px;}
 
-#caln{width:1000px;height:550px;margin:auto;}
+#caln{width:800px;height:540px;margin:auto;}
+.cal{width:800px;height:540px;margin:auto;}
+
 .contain{width:90%;margin: auto;background: white;}
 .page-content{width:90%;margin: auto;color:black;font-size:16px;}
-.rbg{background:#cc2c2c;color: white;}
-.gbg{background:#08a334;color: white;}
 
-.gbg:hover{background:#55a86d !important;color: white;}
-.rbg:hover{background:#e04e4e !important;color: white;}
-
-
-.bbg{background:#245199;color: white;}
-.pbg{background:#80159b;color: white;}
-#crs{font-size: 40px;}
-.feed{padding:20px;}
+.feed{padding:20px;display:inline-block;}
 #nost{list-style:none;}
 .past{background:gray;color: white;}
 .tod{background:#08a334;color: white;}
@@ -63,51 +59,28 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-      <button id="demo-menu-lower-right"
-        class="mdl-button mdl-js-button mdl-button--icon">
-  <i class="material-icons">forum</i>
-</button>
-
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-    for="demo-menu-lower-right">
-    <?php
-
-$cour=$db->query("SELECT * FROM forum_post ORDER by time DESC");
-
-if (!$cour->num_rows)
-{   
-echo 'No posts.';
-  //echo 'Permission granted Enjoy due '  //print_r($per);}
-}
-
-
-$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
-
-//  <a href=show_and_create_post.php?cid=".$cr_id."&fid=".$sn['forum_id']."&uname=".$u_name." > ".$sn['forum_name']."</a>
-
-foreach($rows as $row)
-{
-  $ttl=$row['post_title'] ;
-  $ath=$row['post_author'];
-  $bdy=$row['post_body'] ;
   
-  $fid=$row['forum_id'] ;
+<div class="material-icons mdl-badge mdl-badge--overlap" id="demo-menu-lower-right">notifications</div>
+  
+  <script type="text/javascript">
+      $('#demo-menu-lower-right').click(function(){$(this).css('color','#3E2723');$(this).removeAttr('data-badge');});
+      var audio = new Audio('assets/notif.mp3');
+      var result1="";
+      $.post("getnotif.php", {}, function(result){
+        if(result1!=result&&result1!=""){audio.play();}
+        $("#shownotif").html(result);
+        result1=result;
+    });
+      setInterval(function(){ $.post("getnotif.php", {}, function(result){
+        if(result1!=result&&result1!=""){$('#demo-menu-lower-right').css('color','white');audio.play();$('#demo-menu-lower-right').attr('data-badge','★');}
+        $("#shownotif").html(result);
 
+        result1=result;
+    });},1000);
+  </script>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-right" id=shownotif>
 
-      $q="SELECT * FROM table_forum WHERE  forum_id=".$fid." "; 
-            $name=$db->query($q);
-    if(!$name->num_rows)
-      echo 'query works';
-            $sname=$name->fetch_all(MYSQLI_ASSOC);
-           
-    //echo '2';
-    
-      foreach($sname as $sn)
-            {
-    echo "<a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$sn['forum_id']."><li class=\"mdl-menu__item\">".getposter($ath)." posted in ".$sn['forum_name']."</li> </a>";
-       } 
-}
-?>
 
  
 </ul>
@@ -195,7 +168,7 @@ $cour=$db->query("SELECT * FROM groups");
 
 if (!$cour->num_rows)
 {   
-echo "<a href=# class=\"mdl-navigation__link\">No Course to show 
+echo "<a href=# class=\"mdl-navigation__link\">No groups to show 
 </a>";
   //echo 'Permission granted Enjoy due '  //print_r($per);}
 }
@@ -241,5 +214,6 @@ foreach($rows as $row)
 
     </nav>
   </div>
+
   <main class="mdl-layout__content">
     <div class="page-content">

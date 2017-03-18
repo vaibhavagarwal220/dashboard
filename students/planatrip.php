@@ -32,14 +32,8 @@ $sql = "INSERT INTO trips(ROLLNO,dest,doj) VALUES('".$_SESSION['uname']."','".$d
 
    else
     {      
-        //redirect to back page
           header("Location:planatrip.php");
-            //echo 'post submitted successfully';
-        
-       }
-
-
-
+    }
   }
 }
 ?>
@@ -54,13 +48,8 @@ $sql = "INSERT INTO trips(ROLLNO,dest,doj) VALUES('".$_SESSION['uname']."','".$d
   <?php 
   $title="Plan a Trip";
   include 'include.inc.php';?>
-
-   <style type="text/css">
-     body{background:url('assets/img/1.jpg');background-repeat:round;}
-   </style>
-
     <br><br>
-<center class=opts id=frm>
+<center class="opts posme">
 <h4>Add a Trip</h4>
 <form action="c_trip.php" method=POST>
 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -75,7 +64,7 @@ $sql = "INSERT INTO trips(ROLLNO,dest,doj) VALUES('".$_SESSION['uname']."','".$d
   <br>
   <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
   </form>
-  </center>
+  </center></div>
 <script type="text/javascript">
   
   var today = new Date().toISOString().split('T')[0];

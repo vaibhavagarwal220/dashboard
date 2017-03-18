@@ -3,6 +3,7 @@
 <html>
 <head>
 <title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head> 
 <body>
 <?php
@@ -79,7 +80,7 @@ foreach($rows as $row)
       foreach($sname as $sn)
             {
 
-    echo " <div class=\"opts feed mdl-cell mdl-cell--4-col\">".getposter($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$fid."> ".$sn['forum_name']."</a> <br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <b>$ttl</b><br><br> $bdy
+    echo " <div class=\"opts feed mdl-cell mdl-cell--6-col\">".getposter($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$fid."> ".$sn['forum_name']."</a> <br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <b>$ttl</b><br><br> $bdy
   </div><br><br>";
        } 
      }
@@ -95,7 +96,7 @@ $cour=$db->query("SELECT * FROM group_post ORDER by time DESC");
 
 if (!$cour->num_rows)
 {   
-echo '<div class=opts>No posts</div>';
+echo "<div class=\"opts feed\">No posts</div>";
   //echo 'Permission granted Enjoy due '  //print_r($per);}
 }
 
@@ -112,9 +113,9 @@ foreach($rows as $row)
    $gid=$row['gid'] ;
    $id=$row['post_id'] ;
 
-    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts\" id=frm>".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
-    echo "<br>
-  </div>";}
+    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
+    echo "<br><br>
+  </div><br><br>";}
 
 }
 ?>
