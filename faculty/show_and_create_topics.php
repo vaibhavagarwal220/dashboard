@@ -3,21 +3,7 @@
 require 'connect.php';
 require 'core.php';
 
-//  user name and course id are inputs
-/*  here first we show topics under a course each having a link which shows posts in that topic
-    then if required topic is not present then we give an option to create that topic */
     $cr_id=$_GET['cid'];
-    //echo $cr_id;
-    /*if(loggedin())
-    {
-      $u_name=$_SESSION['uname'];
-    }
-
-    else if(loggedinfac())
-    {
-      $u_name=$_SESSION['unamefac'];
-    }
-    */
     $u_name=$_SESSION['unamefac'];
   ?>
    
@@ -28,10 +14,11 @@ require 'core.php';
   <title>Show/Create Topics</title>
   
 
-  <body >
-<?php include 'include.inc.php';?>
+  <body>
+<?php 
+  $title="Topics";
 
-    <?php
+include 'include.inc.php';
 
 
 

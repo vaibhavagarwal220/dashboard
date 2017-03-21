@@ -18,12 +18,11 @@ if(!loggedinfac())
     </head>
 
   <body>
-  <?php include 'include.inc.php';?>
+  <?php
+  $title="Home"; 
+  include 'include.inc.php';
 
-     <?php
-
-  if(!loggedinfac()) header("Location:facultylogin.php");
-
+  
 $cour=$db->query("SELECT * FROM SEM_COURSES WHERE COURSE_ID= ".$_SESSION['unamefac']."");
 
 if (!$cour->num_rows)
@@ -49,9 +48,8 @@ foreach($rows as $row)
 <div class="mdl-grid opts">
 
 <a class="ablock rbg mdl-cell mdl-cell--4-col" title="Calendar" href="cal.php"><i class="material-icons">date_range</i></a>
-<a class="ablock pbg mdl-cell mdl-cell--4-col" title=Timetable><i class="material-icons">list</i></a>
+<a class="ablock pbg mdl-cell mdl-cell--4-col" title=Timetable href="timetable.php"><i class="material-icons">list</i></a>
 <a class="ablock gbg mdl-cell mdl-cell--4-col" title="Course Review" href="review.php"><i class="material-icons">grade</i></a>
-<a class="ablock bbg mdl-cell mdl-cell--4-col" title=Contact><i class="material-icons">call</i></a>
 <a class="ablock pbg mdl-cell mdl-cell--4-col" title=Upload href="fupl.php?q=<?php echo $cid;?>"><i class="material-icons">unarchive</i></a>
 <a class="ablock rbg mdl-cell mdl-cell--4-col" title="Student List" href="listst.php"><i class="material-icons">recent_actors</i></a>
 

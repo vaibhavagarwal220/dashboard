@@ -20,7 +20,9 @@ require 'core.php';
   <title>Show/Create Posts</title>
     </head>
   <body>
-<?php include 'include.inc.php';?>
+<?php 
+  $title="Posts";
+include 'include.inc.php';?>
 
   <?php
 

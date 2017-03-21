@@ -14,10 +14,12 @@ if(!loggedinfac())
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Faculty Access</title>
+  <title>Students List</title>
     </head>
   <body>
-  <?php include 'include.inc.php';?>
+  <?php 
+  $title="Students List";
+  include 'include.inc.php';?>
 
 <center>
 
@@ -39,10 +41,6 @@ if(!loggedinfac())
       <th class="mdl-data-table__cell--non-numeric">Name</th>
       <th>Contact</th>
       <th class="mdl-data-table__cell--non-numeric">Address</th>
-      <th class="mdl-data-table__cell--non-numeric">Info</th>
- 
- 
- 
     </tr>
   </thead>
   <tbody>
@@ -77,7 +75,6 @@ if(!loggedinfac())
                   </a></td>
                   <td>".$row['CONTACT']."</td>
                   <td class=\"mdl-data-table__cell--non-numeric\">".$row['ADDRESS']."</td>
-                  <td class=\"mdl-data-table__cell--non-numeric\">".$row['INFO']."</td>
                   </tr>";
                   }
           }

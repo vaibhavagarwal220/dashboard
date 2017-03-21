@@ -1,11 +1,8 @@
- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-blue.min.css" /> 
+ <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script defer src="assets/js/material.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
 
 
 

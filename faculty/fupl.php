@@ -20,10 +20,12 @@ if(!loggedinfac())
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Faculty Access</title>
+  <title>File Upload</title>
     </head>
   <body>
-    <?php include 'include.inc.php';?>
+    <?php 
+    $title="Upload Files";
+    include 'include.inc.php';?>
 
 <br><br>
 

@@ -3,7 +3,7 @@
   require 'connect.php' ;
   require 'core.php' ;
 
-$cour=$db->query("SELECT * FROM group_post ORDER by time DESC");
+$cour=$db->query("SELECT * FROM group_post WHERE post_author!=".$_SESSION['uname']." ORDER by time DESC");
 
 if (!$cour->num_rows)
 {   

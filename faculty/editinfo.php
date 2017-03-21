@@ -18,7 +18,9 @@ if(!loggedinfac())
   <title>Edit Info</title>
     </head>
   <body>
-  <?php include 'include.inc.php';?>
+  <?php 
+$title="Update Info";
+  include 'include.inc.php';?>
 
     <?php
 
@@ -26,14 +28,14 @@ if(!loggedinfac())
 //echo "$_POST['uname']";
 
 
-if(isset($_POST['psw']) && isset($_POST['name'])&&isset($_POST['info'])&&isset($_POST['address']) &&isset($_POST['cno']) )
+if(isset($_POST['psw']) && isset($_POST['name'])&&isset($_POST['address']) &&isset($_POST['cno']) )
 {
 
-    if(!empty($_POST['psw']) && !empty($_POST['name'])&& !empty($_POST['info'])&& !empty($_POST['address']) && !empty($_POST['cno']))
+    if(!empty($_POST['psw']) && !empty($_POST['name'])&& !empty($_POST['address']) && !empty($_POST['cno']))
   {
 
     
-    $q ="UPDATE PROF SET NAME='".$_POST['name']."' , PASSWORD= '".$_POST['psw']."', CONTACT=".$_POST['cno'].", INFO='".$_POST['info']."', ADDRESS='".$_POST['address']."' WHERE TEACHER_ID=".$_SESSION['unamefac']." ";
+    $q ="UPDATE PROF SET NAME='".$_POST['name']."' , PASSWORD= '".$_POST['psw']."', CONTACT=".$_POST['cno'].",ADDRESS='".$_POST['address']."' WHERE TEACHER_ID=".$_SESSION['unamefac']." ";
 
     //echo $q;
 
@@ -60,7 +62,7 @@ if(isset($_POST['psw']) && isset($_POST['name'])&&isset($_POST['info'])&&isset($
 foreach($rows as $row)
 {
   //echo $row['NAME'] ;
-  echo "<br><br><center class=opts id=frm>  <h4>Users Info</h4><form action=\"editinfo.php\" method=\"POST\">
+  echo "<br><br><center class=opts id=frm>  <h4>Update Info</h4><form action=\"editinfo.php\" method=\"POST\">
  
     <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
     <input class=\"mdl-textfield__input\" type=\"text\" id=\"sample3\" name=\"name\" value=\"".$row['NAME']."\" required>
@@ -87,11 +89,6 @@ foreach($rows as $row)
 
     <br>
 
-       <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
-    <input class=\"mdl-textfield__input\" type=\"text\" id=\"sample8\" name=\"info\" value=\"".$row['INFO']."\" required>
-    <label class=\"mdl-textfield__label\" for=\"sample8\">Info</label>
-  </div>
-    <br>
     <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent\" type=\"submit\">Submit</button>
   </form></center>
   ";

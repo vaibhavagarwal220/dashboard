@@ -1,8 +1,8 @@
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lemonada|Roboto|Pacifico" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Amatic+SC" rel="stylesheet">
+<script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <style>
 
@@ -11,18 +11,30 @@
 
 
 h1,h2,h3,h4,h5,h6{font-family:'Pacifico';}
+
 .alig{
   vertical-align:-21%;font-size:20px;
 }
+.acnt{font-size:26px;}
+
+a{text-decoration:none;}
+
+.mdl-navigation__link{font-family:'Amatic SC' !important;}
+
+.mdl-navigation__link{font-size:25px;color:white !important;}
+
+.mdl-navigation__link:hover{font-size:25px;color:black !important;}
+
+
+
 .feedimg{width:500px;height:400px;}
-.mdl-navigation__link{font-size:11px;color:white !important;font-family:'Lemonada';}
-.mdl-navigation__link:hover{font-size:11px;color:black !important;}
+
 a{text-decoration:none;}
 .ts{color:grey;}
 .mdl-menu{max-height:200px;overflow:auto; }
 .mdl-layout__drawer{width:252px;height:100% !important;}
 #dj{color:#E91E63;position:relative;left:-110px; font-size:12px; }
-#frm{display:inline-block;padding:20px;}
+#frm{display:block;margin:auto;}
 .ablock{width:90px;height:90px;margin:10px;}
 .opts{background:white;padding:10px;}
 a:hover{text-decoration:none;color:default;}

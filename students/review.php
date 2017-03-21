@@ -41,7 +41,7 @@ $title="Course Reviews";
   include 'include.inc.php';?>
   <style type="text/css">
        #content {width:100%;margin:auto;}
-    .opt{background-color: white;display: inline-block;padding:10px;}
+    .opt{background-color: white;display: inline-block;padding:10px;margin:4px;}
 .align{
   vertical-align:-21%;font-size:16px;
 }
