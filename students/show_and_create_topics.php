@@ -12,10 +12,11 @@ require 'core.php';
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Topics</title>
   <body>
     <?php 
-  $title="Topics | Discussion Forum";
+  $title="Topics";
   include 'include.inc.php';?>
 
      <?php

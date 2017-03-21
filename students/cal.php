@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <title>Calendar | IIT Mandi</title>
 </head>
 <?php 

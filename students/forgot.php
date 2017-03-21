@@ -83,6 +83,15 @@ if(!$mail->send()) {
 <head>
   <title>Dashboard</title>
 
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <title>Forgot Password</title>
+     <link rel="stylesheet" href="assets/css/material.min.css" /> 
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script defer src="assets/js/material.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
     <style type="text/css">
       .mdl-layout {
   align-items: center;
@@ -92,7 +101,7 @@ if(!$mail->send()) {
   padding: 4px;
   flex: none;
 }
-#bg{background-image: url('assets/img/back.jpg') ;background-repeat: round;}
+#bg{background-image: url('assets/img/back1.jpg') ;background-repeat: round;}
     </style>
 </head>
 <body >

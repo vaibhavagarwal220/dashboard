@@ -17,6 +17,7 @@ require 'core.php';
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Posts | Discussion Forum</title>
       </head>
 

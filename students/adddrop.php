@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Add/Drop Courses</title>
-
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     </head>
   <body>
   <?php 

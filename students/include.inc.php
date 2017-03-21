@@ -1,7 +1,8 @@
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Ultra" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Ultra|Amatic+SC" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="assets/js/lightbox.js"></script>
@@ -20,6 +21,13 @@
           .cal{width:300px !important;height:275px !important;margin:auto !important;}
 }
 
+.mdl-navigation__link{font-family:'Amatic SC' !important;}
+
+.mdl-navigation__link{font-size:25px;color:white !important;}
+
+.mdl-navigation__link:hover{font-size:25px;color:black !important;}
+
+
 h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
 
 .alig{
@@ -30,7 +38,6 @@ h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
 
 .gbg{background:#08a334;color: white;}
 
-
 .gbg:hover{background:#55a86d !important;color: white;}
 
 .rbg:hover{background:#e04e4e !important;color: white;}
@@ -40,11 +47,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
 
 #demo-menu-lower-right{color:#3E2723;position:absolute;left:255px;top:0px;}
 
-.feedimg{width:500px;height:600px;}
-
-.mdl-navigation__link{font-size:11px;color:white !important;font-family:'Open Sans';}
-
-.mdl-navigation__link:hover{font-size:11px;color:black !important;}
+.feedimg{width:550px;height:600px;}
 
 a{text-decoration:none;}
 
@@ -73,13 +76,11 @@ a:hover{text-decoration:none;color:default;}
 body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 /*body{background-image:url('assets/img/back1.jpg');background-repeat:round;}*/
 
-
 #logo{margin:10px;}
 
 #caln{width:800px;height:540px;margin:auto;}
 
 .cal{width:800px;height:540px;margin:auto;}
-
 
 .page-content{width:90%;margin: auto;color:black;font-size:16px;}
 
@@ -87,11 +88,10 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 
 #nost{list-style:none;}
 
-.past{background:gray;color: white;}
+.past,.fut{background:gray;color: white;}
 
 .tod{background:#08a334;color: white;}
 
-.fut{background:gray;color: white;}
 
 
 </style>
@@ -258,7 +258,7 @@ foreach($rows as $row)
     <a class="mdl-navigation__link cont" href="contacts.php"><i class="material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx">
     <i class="material-icons">event_seat</i> Book Bus Tickets</a>
-    <a class="mdl-navigation__link" href=depart.php><i class="material-icons">flight_takeoff</i> Student Departures</a>     
+    <a class="mdl-navigation__link" href=depart.php><i class="material-icons">flight_takeoff</i> Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons">motorcycle</i> Plan A Trip</a>
     
 

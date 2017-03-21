@@ -9,11 +9,12 @@ if(loggedin()) header('Location:index.php');
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard</title>
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <title>Forgot Password</title>
      <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lemonada|Roboto|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <style type="text/css">

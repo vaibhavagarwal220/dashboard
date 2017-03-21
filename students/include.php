@@ -1,55 +1,51 @@
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Amatic+SC|Ultra" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
 
+.mdl-lout{font-family:'Ultra';display:inline;}
 
+.mdl-navigation__link{font-family:'Amatic SC' !important;}
 
 #demo-menu-lower-right{color:#3E2723;position:absolute;left:300px;top:20px;}
+
 h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
-.mdl-navigation__link{font-size:11px;color:white !important;font-family:'Open Sans';}
-.mdl-navigation__link:hover{font-size:11px;color:black !important;}
+
+.mdl-navigation__link{font-size:25px;color:white !important;}
+
+.mdl-navigation__link:hover{font-size:25px;color:black !important;}
+
 a{text-decoration:none;}
+
 .ts{color:grey;}
+
 .alig{
+
   vertical-align:-21%;font-size:20px;
 }
+
 .mdl-menu{max-height:200px;overflow:auto; }
-.mdl-layout__drawer{width:252px;height:100% !important;}
-#dj{color:#E91E63;position:relative;left:-110px; font-size:12px; }
+
+
+
 #frm{display:inline-block; margin-left:35%;padding:20px;}
-.ablock{width:90px;height:90px;margin:10px;}
-.opts{background:white;padding:10px;}
+
+
 a:hover{text-decoration:none;color:default;}
-.ablock img{width:90px;height:90px;}
 
 body{font-family:'Open Sans';color:black;background:#EFF3F6;}
-.head{background: white;font-family:'Open Sans';font-size:40;}
-#logo{margin:10px;}
 
-#caln{width:1000px;height:550px;margin:auto;}
-.contain{width:90%;margin: auto;background: white;}
+
 .page-content{width:90%;margin: auto;color:black;font-size:16px;}
-.rbg{background:#cc2c2c;color: white;}
-.gbg{background:#08a334;color: white;}
 
-.gbg:hover{background:#55a86d !important;color: white;}
-.rbg:hover{background:#e04e4e !important;color: white;}
+.acnt{font-size:26px;}
 
-
-.bbg{background:#245199;color: white;}
-.pbg{background:#80159b;color: white;}
-#crs{font-size: 40px;}
-.feed{padding:20px;}
 #nost{list-style:none;}
-.past{background:gray;color: white;}
-.tod{background:#08a334;color: white;}
-.fut{background:gray;color: white;}
 
 </style>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
@@ -57,7 +53,7 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title"><?php echo $title;?></span>
+      <span class="mdl-layout-title"><div class=mdl-lout><?php echo $title;?></div></span>
       <!-- Add spacer, to align navigation to the right -->
           <div class="material-icons mdl-badge mdl-badge--overlap" id="demo-menu-lower-right">notifications</div>
   
@@ -113,7 +109,7 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 
     foreach($rows as $row)
       {
-        $nm=$row['NAME']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id=demo-menu-lower
+        $nm="<i class=\"material-icons alig acnt\">account_circle</i> &nbsp;".$row['NAME']."&nbsp;&nbsp;<button id=demo-menu-lower
         class=\"mdl-button mdl-js-button mdl-button--icon\">
   <i class=material-icons>more_vert</i>
 </button>
@@ -217,7 +213,7 @@ foreach($rows as $row)
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons">grade</i> Course Review</a>
     <a class="mdl-navigation__link" href="contacts.php"><i class="material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons">event_seat</i> Book Bus Tickets</a>
-    <a class="mdl-navigation__link" href=depart.php><i class="material-icons">flight_takeoff</i> Student Departures</a>     
+    <a class="mdl-navigation__link" href=depart.php><i class="material-icons">flight_takeoff</i> Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons">motorcycle</i> Plan A Trip</a>
     
 

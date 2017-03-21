@@ -53,6 +53,7 @@ echo 'No Course to show ';
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Course Details</title>
     </head>
   <body>

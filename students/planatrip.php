@@ -41,6 +41,7 @@ $sql = "INSERT INTO trips(ROLLNO,dest,doj) VALUES('".$_SESSION['uname']."','".$d
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Plan a Trip</title>
     </head>
   <body>
