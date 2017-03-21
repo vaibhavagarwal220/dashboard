@@ -1,51 +1,98 @@
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Ultra" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="assets/js/lightbox.js"></script>
 <link rel="stylesheet" type="text/css" href="assets/css/lightbox.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+@media only screen and (max-width: 500px) {
+          #chart_div{zoom:0.5 !important;}
+          #chart_div3{zoom:0.5 !important;}
+          .feedimg{width:245px !important;height:275px !important;}
+          .ccde{display:none;}
+          .cslt{display:none;}
+          #caln{width:300px !important;height:275px !important;margin:auto !important;}
+          .cont{display:none !important;}
+          .cal{width:300px !important;height:275px !important;margin:auto !important;}
+}
+
 h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
+
 .alig{
   vertical-align:-21%;font-size:20px;
 }
 
-#demo-menu-lower-right{color:#3E2723;}
-.feedimg{width:600px;height:500px;}
-.mdl-navigation__link{font-size:11px;color:white !important;font-family:'Open Sans';}
-.mdl-navigation__link:hover{font-size:11px;color:black !important;}
-a{text-decoration:none;}
-.ts{color:grey;}
-.mdl-menu{max-height:200px;overflow:auto; }
-.mdl-layout__drawer{width:252px;height:100% !important;}
-#dj{color:#E91E63;position:relative;left:-110px; font-size:12px; }
-#frm{display:inline-block;}
-.posme{margin-left:300px;width:300px;}
-.ablock{width:90px;height:90px;margin:10px;}
-.opts{background:white;padding:10px;margin:8px;}
-a:hover{text-decoration:none;color:default;}
-.ablock img{width:90px;height:90px;}
+.rbg{background:#cc2c2c;color: white;}
 
+.gbg{background:#08a334;color: white;}
+
+
+.gbg:hover{background:#55a86d !important;color: white;}
+
+.rbg:hover{background:#e04e4e !important;color: white;}
+
+
+.mdl-lout{font-family:'Ultra';display:inline;}
+
+#demo-menu-lower-right{color:#3E2723;position:absolute;left:255px;top:0px;}
+
+.feedimg{width:500px;height:600px;}
+
+.mdl-navigation__link{font-size:11px;color:white !important;font-family:'Open Sans';}
+
+.mdl-navigation__link:hover{font-size:11px;color:black !important;}
+
+a{text-decoration:none;}
+
+.ts{color:grey;}
+
+.mdl-menu{max-height:200px;overflow:auto; }
+
+.mdl-layout__drawer{width:252px;height:100% !important;}
+
+#dj{color:#E91E63;position:relative;left:-110px; font-size:12px; }
+
+#frm{display:inline-block;}
+
+.posme{margin:auto !important;width:330px;}
+
+.ablock{width:90px;height:90px;margin:auto;}
+
+.opts{background:white;padding:10px;margin:5px;}
+
+a:hover{text-decoration:none;color:default;}
+
+.ablock img{width:90px;height:90px;padding:10px;}
+
+.acnt{font-size:26px;}
 
 body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 /*body{background-image:url('assets/img/back1.jpg');background-repeat:round;}*/
-.head{background: white;font-family:'Open Sans';font-size:40;}
+
+
 #logo{margin:10px;}
 
 #caln{width:800px;height:540px;margin:auto;}
+
 .cal{width:800px;height:540px;margin:auto;}
 
-.contain{width:90%;margin: auto;background: white;}
+
 .page-content{width:90%;margin: auto;color:black;font-size:16px;}
 
 .feed{padding:20px;display:inline-block;}
+
 #nost{list-style:none;}
+
 .past{background:gray;color: white;}
+
 .tod{background:#08a334;color: white;}
+
 .fut{background:gray;color: white;}
+
 
 </style>
 
@@ -54,12 +101,8 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title"><?php echo $title;?></span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-  
+      <span class="mdl-layout-title"><div class="mdl-lout"><?php echo $title;?> </div>
+
 <div class="material-icons mdl-badge mdl-badge--overlap" id="demo-menu-lower-right">notifications</div>
   
   <script type="text/javascript">
@@ -81,9 +124,15 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
     for="demo-menu-lower-right" id=shownotif>
 
-
- 
 </ul>
+
+
+      </span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+  
 
        
      <!-- Right aligned menu below button -->
@@ -102,7 +151,7 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 
     foreach($rows as $row)
       {
-        $nm=$row['NAME']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id=demo-menu-lower
+        $nm="<i class=\"material-icons alig acnt\">account_circle</i> &nbsp;".$row['NAME']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id=demo-menu-lower
         class=\"mdl-button mdl-js-button mdl-button--icon\">
   <i class=material-icons>more_vert</i>
 </button>
@@ -197,7 +246,8 @@ foreach($rows as $row)
     if(count%2==0) $('#showg').slideDown();
     else $('#showg').slideUp();
     count++;
-  })
+  });
+
 </script>
 
 	<a class="mdl-navigation__link" href=adddrop.php ><i class="material-icons">iso</i> Add/Drop Courses</a>
@@ -205,7 +255,7 @@ foreach($rows as $row)
      <a class="mdl-navigation__link" href="cal.php"><i class="material-icons">date_range</i> Calendar</a>
     <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons">grade</i> Course Review</a>
-    <a class="mdl-navigation__link" href="contacts.php"><i class="material-icons">call</i> Contact</a>
+    <a class="mdl-navigation__link cont" href="contacts.php"><i class="material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx">
     <i class="material-icons">event_seat</i> Book Bus Tickets</a>
     <a class="mdl-navigation__link" href=depart.php><i class="material-icons">flight_takeoff</i> Student Departures</a>     

@@ -10,7 +10,7 @@
 
 
 
-#demo-menu-lower-right{color:#3E2723;}
+#demo-menu-lower-right{color:#3E2723;position:absolute;left:300px;top:20px;}
 h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
 .mdl-navigation__link{font-size:11px;color:white !important;font-family:'Open Sans';}
 .mdl-navigation__link:hover{font-size:11px;color:black !important;}
@@ -59,10 +59,7 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
       <!-- Title -->
       <span class="mdl-layout-title"><?php echo $title;?></span>
       <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-      <div class="material-icons mdl-badge mdl-badge--overlap" id="demo-menu-lower-right">notifications</div>
+          <div class="material-icons mdl-badge mdl-badge--overlap" id="demo-menu-lower-right">notifications</div>
   
   <script type="text/javascript">
       $('#demo-menu-lower-right').click(function(){$(this).css('color','#3E2723');$(this).removeAttr('data-badge');});
@@ -86,6 +83,10 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
     for="demo-menu-lower-right" id=shownotif>
 </ul>
 
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+  
        </nav>
     </div>
     <!-- Tabs -->
@@ -93,13 +94,13 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
       <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Institute</a>
       <a href="#fixed-tab-2" class="mdl-layout__tab">B.Tech. 2013</a>
       <a href="#fixed-tab-3" class="mdl-layout__tab">B.Tech. 2014</a>
-            <a href="#fixed-tab-4" class="mdl-layout__tab">B.Tech. 2015</a>
+      <a href="#fixed-tab-4" class="mdl-layout__tab">B.Tech. 2015</a>
       <a href="#fixed-tab-5" class="mdl-layout__tab">B.Tech. 2016</a>
       <a href="#fixed-tab-6" class="mdl-layout__tab">MS</a>
-            <a href="#fixed-tab-7" class="mdl-layout__tab">Ph. D</a>
+      <a href="#fixed-tab-7" class="mdl-layout__tab">Ph. D</a>
       <a href="#fixed-tab-8" class="mdl-layout__tab">M.Sc.</a>
       <a href="#fixed-tab-9" class="mdl-layout__tab">M.Tech.</a>
-            <a href="#fixed-tab-10" class="mdl-layout__tab">Int.Ph.D.</a>
+      <a href="#fixed-tab-10" class="mdl-layout__tab">Int.Ph.D.</a>
       
     </div>
   </header>

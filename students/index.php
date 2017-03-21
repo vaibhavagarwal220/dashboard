@@ -28,22 +28,21 @@
 <br>
 <div class="mdl-grid">
 
-<div class="mdl-grid opts ">
+<center class="mdl-grid opts feed">
 
-<a class="ablock mdl-cell mdl-cell--4-col" title="Calendar" href="cal.php"><img src=assets/img/cal.png></a>
-<a class="ablock mdl-cell mdl-cell--4-col" title=Timetable href="timetable.php"><img src=assets/img/ttbl.png></a>
-<a class="ablock mdl-cell mdl-cell--4-col" title="Course Review" href="review.php"><img src=assets/img/rev.png></a>
-<a class="ablock mdl-cell mdl-cell--4-col" title=Contact href=contacts.php><img src=assets/img/cont.ico></a>
-<a class="ablock mdl-cell mdl-cell--4-col" title="Book Bus Tickets" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx">
-  <img src=assets/img/bus.ico>
-</a>
-<a href=depart.php class="ablock mdl-cell mdl-cell--4-col" title="Student Departures"><img src=assets/img/depr.png></a>     
-<a class="ablock mdl-cell mdl-cell--4-col" href=planatrip.php title="Plan A Trip"><img src=assets/img/trip.png></a>
-<a class="ablock mdl-cell mdl-cell--4-col" href=adddrop.php title="Add/Drop Courses"><img src=assets/img/adrp.png></a>
+<a class="ablock mdl-cell mdl-cell--3-col" title="Calendar" href="cal.php"><img src=assets/img/cal.png></a>
+<a class="ablock mdl-cell mdl-cell--3-col" title=Timetable href="timetable.php"><img src=assets/img/ttbl.png></a>
+<a class="ablock mdl-cell mdl-cell--3-col" title="Course Review" href="review.php"><img src=assets/img/rev.png></a>
+<a class="ablock mdl-cell mdl-cell--3-col cont" title=Contact href=contacts.php><img src=assets/img/cont.ico></a>
+<a class="ablock mdl-cell mdl-cell--3-col" title="Book Bus Tickets" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><img src=assets/img/busicon.ico></a>
+<a class="ablock mdl-cell mdl-cell--3-col" href=depart.php title="Student Departures"><img src=assets/img/depr.png></a>     
+<a class="ablock mdl-cell mdl-cell--3-col" href=planatrip.php title="Plan A Trip"><img src=assets/img/trip.png></a>
+<a class="ablock mdl-cell mdl-cell--3-col" href=adddrop.php title="Add/Drop Courses"><img src=assets/img/adrp.png></a>
 
-</div>
+</center>
+
 <div class="mdl-cell mdl-cell--12-col"><br></div>
-<div class="mdl-cell mdl-cell--9-col">
+<div class="mdl-cell mdl-cell--8-col">
 
 <div class="mdl-grid">
 <?php
@@ -91,7 +90,6 @@ foreach($rows as $row)
 
 <?php
 
-
 $cour=$db->query("SELECT * FROM group_post ORDER by time DESC");
 
 if (!$cour->num_rows)
@@ -113,7 +111,12 @@ foreach($rows as $row)
    $gid=$row['gid'] ;
    $id=$row['post_id'] ;
 
-    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
+    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
+    
+$pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
+   $topr = $topr.preg_replace($pattern, '<a href="http$2://$3">$0</a>', $bdy)."<br>";
+
+    echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
     echo "<br><br>
   </div><br><br>";}
 
@@ -124,7 +127,7 @@ foreach($rows as $row)
 
 </div>
 
-<div class="mdl-cell mdl-cell--3-col ">
+<div class="mdl-cell mdl-cell--4-col ">
 <center class=opts>
  <h4> My Courses </h4>
 

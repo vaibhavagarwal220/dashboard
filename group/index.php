@@ -81,7 +81,13 @@ foreach($rows as $row)
   $ath=$row['post_author'];
   $bdy=$row['post_body'] ;
 
-    echo " <div class=opts>".getposte($ath)." posted in ".getgname($_SESSION['unamegrp'])." <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";if($ttl!="") echo"<img src=$ttl class=feedimg>";
+    $topr=" <div class=opts>".getposte($ath)." posted in ".getgname($_SESSION['unamegrp'])." <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
+
+$pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
+   $topr = $topr.preg_replace($pattern, '<a href="http$2://$3">$0</a>', $bdy)."<br>";
+
+   echo nl2br($topr);
+    if($ttl!="") echo"<img src=$ttl class=feedimg>";
     echo"<br></div><br>";
 
 }

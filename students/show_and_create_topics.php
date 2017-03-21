@@ -12,7 +12,7 @@ require 'core.php';
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Topics | Discussion Forum</title>
+  <title>Topics</title>
   <body>
     <?php 
   $title="Topics | Discussion Forum";

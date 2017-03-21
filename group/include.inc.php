@@ -69,7 +69,7 @@ body{font-family:'Roboto';color:black;background:#EFF3F6;}
 
     foreach($rows as $row)
       {
-        $nm=$row['NAME']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id=demo-menu-lower
+        $nm=$row['NAME']." <button id=demo-menu-lower
         class=\"mdl-button mdl-js-button mdl-button--icon\">
   <i class=material-icons>more_vert</i>
 </button>

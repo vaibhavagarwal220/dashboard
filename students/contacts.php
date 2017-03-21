@@ -32,29 +32,31 @@ require 'include.php';
       <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
     </div>
   </div>
+<div class=tt>
 <table width='90%' id=tblData class="mdl-data-table mdl-js-data-table mdl-shadow--6dp">
 
 		<tr>
 			<td colspan='15'>
-				<center><b><h5>Directorate Office</h5></b></center>
+				<center>Directorate Office</center>
 			</td>
 		</tr>
 
 		<tr>
-			<th >Name</th>
-			<th >Designation</th>
-			     <th>Office</th>
+			<th>Name</th>
+			<th>Designation</th>
+			<th>Office</th>
       <th>Home</th>
       <th>Other/Fax</th>
-      <th >Email</th>
-			<th >Office</th>
-			<th >Residence</th>
+      <th>Email</th>
+			<th>Office</th>
+			<th>Residence</th>
 
 		</tr>
 
 <tr><td >Timothy A Gonsalves</td><td >Director</td><td >267001</td><td >267003</td><td>267009</td><td>director</td><td >Directorate Office -105</td><td >C-36 (S-1), NC</td></tr>
 
 <tr><td >Monika Kashyap</td><td >Superintendent</td><td >267002</td><td >267090</td><td>267009</td><td>monika, diroffice</td><td >Directorate Office -107</td><td >C-1 (GF), SC</td></tr>
+
 <tr><td >Debleena Mukherjee
 </td><td >Green Consultant
 </td><td >267002
@@ -64,6 +66,7 @@ require 'include.php';
 </td><td >Directorate Office-107
 </td><td >C-2 GF, SC
 </td></tr>
+
 <tr><td >Nishant Kumar</td><td >Astt. Office Executive</td><td >267002</td><td ></td><td>267009</td><td>nishantoa</td><td >Directorate Office-106</td><td >Off Campus</td></tr>
 <tr><td >Manoj Kumar</td><td >Junior Attendant</td><td >267002</td><td ></td><td>9816292266</td><td>manojkumar</td><td >Directorate Office-106</td><td >D-7, FF, NS</td></tr>
 <tr><td >Shyam Lal
@@ -74,7 +77,7 @@ require 'include.php';
 </td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Deans</h5></b></center>
+				<center>Deans</center>
 			</td>
 		</tr>
 
@@ -94,7 +97,7 @@ require 'include.php';
 </td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Associate Deans</h5></b></center>
+				<center>Associate Deans</center>
 			</td>
 		</tr>
 
@@ -106,7 +109,7 @@ require 'include.php';
 <tr><td >Vishal Singh Chauhan</td><td >Associate Dean (F&A)</td><td >267044</td><td >267196</td><td>8679321375</td><td>adfin</td><td >A3-308</td><td >C-7 (G-1), SC</td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Registrar Office</h5></b></center>
+				<center>Registrar Office</center>
 			</td>
 		</tr>
 
@@ -122,7 +125,7 @@ require 'include.php';
 <tr><td >Leela Dhar</td><td >Office Attendant</td><td >267015</td><td ></td><td>9418744554</td><td>-</td><td >Bamboo Hut-102</td><td >D-6, SC</td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>School of Computing & Electrical Engineering</h5></b></center>
+                                <center>School of Computing & Electrical Engineering</center>
                         </td>
                 </tr>
 
@@ -173,7 +176,7 @@ Assoc. Professor (chairperson)
 <td >A3-209</td><td >Off Campus</td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>School of Basic Sciences</h5></b></center>
+                                <center>School of Basic Sciences</center>
                         </td>
                 </tr>
 
@@ -216,7 +219,7 @@ Assoc. Professor (chairperson)
 <tr><td >Physics LAB</td><td >Physics LAB</td><td >267226</td><td ></td><td></td><td></td><td >Physics LAB</td><td ></td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>School of Engineering</h5></b></center>
+                                <center>School of Engineering</center>
                         </td>
                 </tr>
 
@@ -255,7 +258,7 @@ Assoc. Professor (chairperson)
 <tr><td >Mechanical Laboratory</td><td ></td><td >267231</td><td ></td><td></td><td></td><td >Mechanical Laboratory</td><td ></td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>School of Humanities & Social Sciences</h5></b></center>
+                                <center>School of Humanities & Social Sciences</center>
                         </td>
                 </tr>
 
@@ -277,7 +280,7 @@ Assoc. Professor (chairperson)
 <tr><td >Prateek </td><td >Office Assistant</td><td >267061</td><td ></td><td>9418161961</td><td>shssoffice</td><td >A3-209</td><td >Off Campus</td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>Advanced Materials Research Center (AMRC)</h5></b></center>
+                                <center>Advanced Materials Research Center (AMRC)</center>
                         </td>
                 </tr>
 
@@ -348,7 +351,7 @@ Assoc. Professor (chairperson)
 </td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Administration</h5></b></center>
+				<center>Administration</center>
 
 			</td>
 		</tr>
@@ -368,7 +371,7 @@ Assoc. Professor (chairperson)
 <tr><td >Sanjay Kumar</td><td >Office Attendant</td><td ></td><td ></td><td>8988520785</td><td></td><td >Bamboo Hut -101 </td><td >Off Campus</td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>Central Postal Service(Dak) </h5></b></center>
+                                <centerCentral Postal Service(Dak) </center>
                         </td>
                 </tr>
 
@@ -383,7 +386,7 @@ Assoc. Professor (chairperson)
 <tr>
 			<td colspan='15'>
 
-				<center><b><h5>Dean (Academics) Office</h5></b></center>
+				<center>Dean (Academics) Office</center>
 			</td>
 		</tr>
 
@@ -393,7 +396,7 @@ Assoc. Professor (chairperson)
 <tr><td >Hitender Kumar</td><td >Office Assistant</td><td >267063</td><td ></td><td></td><td>acadoa1</td><td >A3-107</td><td >Off Campus</td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Finance & Accounts Section</h5></b></center>
+				<center>Finance & Accounts Section</center>
 			</td>
 		</tr>
 
@@ -407,7 +410,7 @@ Assoc. Professor (chairperson)
 <tr><td >Adesh Kumar Kagra</td><td >Office Attendent</td><td >267177</td><td ></td><td></td><td></td><td >Bamboo Hut -101</td><td >Off Campus</td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>Recruitment Cell</h5></b></center>
+                                <center>Recruitment Cell</center>
                         </td>
                 </tr>
 
@@ -415,7 +418,7 @@ Assoc. Professor (chairperson)
 <tr><td >Neelam Kumari</td><td >Office Assistant</td><td >267037</td><td ></td><td></td><td></td><td >Bamboo Hut -101</td><td >Off Campus</td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Internal Audit Section</h5></b></center>
+				<center>Internal Audit Section</center>
 			</td>
 		</tr>
 
@@ -424,7 +427,7 @@ Assoc. Professor (chairperson)
 <tr><td >Kahan Singh</td><td >Office Assistant</td><td >267130</td><td ></td><td>9805408688</td><td></td><td >Bamboo Hut -101</td><td >Off Campus</td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>Store & Purchase Section</h5></b></center>
+                                <center>Store & Purchase Section</center>
                         </td>
                 </tr>
 
@@ -435,7 +438,7 @@ Assoc. Professor (chairperson)
            <tr><td >Budhi Singh</td><td >Office Attendent</td><td ></td><td ></td><td>9816307145</td><td></td><td >Bamboo Hut -101</td><td >Off Campus</td></tr>
            <tr>
                         <td colspan='15'>
-                                <center><b><h5>Medical Unit</h5></b></center>
+                                <center>Medical Unit</center>
                         </td>
                 </tr>
 
@@ -447,7 +450,7 @@ Assoc. Professor (chairperson)
            <tr><td >Emergency Number </td><td ></td><td ></td><td ></td><td>9816663003</td><td></td><td ></td><td ></td></tr>
            <tr>
                         <td colspan='15'>
-                                <center><b><h5>Central Library</h5></b></center>
+                                <center>Central Library</center>
                         </td>
                 </tr>
 
@@ -495,7 +498,7 @@ Assoc. Professor (chairperson)
 </td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>WING (Web Information & Networks Group)</h5></b></center>
+                                <center>WING (Web Information & Networks Group)</center>
                         </td>
                 </tr>
 
@@ -508,14 +511,14 @@ Assoc. Professor (chairperson)
            <tr><td >Vignesh</td><td >Project Associate</td><td >267034</td><td ></td><td>7807105175</td><td>vignesh</td><td >A5-301</td><td >G-4, Suvalsar Hostel, SC</td></tr>
            <tr>
 			<td colspan='15'> 
-				<center><b><h5>Dean (SRIC) Office</h5></b></center>
+				<center>Dean (SRIC) Office</center>
 			</td>
 		</tr>
 
 		<tr><td >Sandeep Kumar</td><td >Field officer (SRIC)</td><td >267132</td><td ></td><td> </td><td>sricoffice</td><td >Directorate Office -103</td><td >Off Campus</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Dean (Students) Office</h5></b></center>
+				<center>Dean (Students) Office</center>
 			</td>
 		</tr>
 
@@ -525,14 +528,14 @@ Assoc. Professor (chairperson)
     <tr><td >suruchi</td><td >Office Assistant</td><td >267063</td><td ></td><td>9882069373</td><td>suruchioa</td><td >Bamboo Hut -101</td><td >Off Campus</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Wardens</h5></b></center>
+				<center>Wardens</center>
 			</td>
 		</tr>
 
 		<tr><td >Varun Dutt</td><td >Chief Warden</td><td >267041</td><td >267084</td><td>7018371014</td><td>chiefwarden</td><td >Bamboo Hut-127</td><td >C-7 (G-2), SC</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Parashar Hostel</h5></b></center>
+				<center>Parashar Hostel</center>
 			</td>
 		</tr>
     <tr><td >Rajanish Giri</td><td >Warden</td><td >267134</td><td >267156</td><td>9816014007</td><td>rajanishgiri</td><td >A4-201</td><td >C-5 (G-1), SC</td></tr>
@@ -541,7 +544,7 @@ Assoc. Professor (chairperson)
     <tr><td >B1 Block</td><td ></td><td >267074</td><td ></td><td></td><td></td><td >B1-Block</td><td ></td></tr>
     <tr>
 			<td  colspan='15'>
-				<center><b><h5>Chandertaal Hostel</h5></b></center>
+				<center>Chandertaal Hostel</center>
 			</td>
 		</tr>
     <tr><td >Jaspreet Kaur Randhawa</td><td >Warden</td><td >267056</td><td >267190</td><td>9805191075</td><td>jaspreet</td><td >A1-323</td><td >C-6 (G-1), SC</td></tr>
@@ -550,7 +553,7 @@ Assoc. Professor (chairperson)
     <tr><td >Pawna Thakur</td><td >Caretaker</td><td >267076</td><td ></td><td>9418712934</td><td>caretaker_chandrataal</td><td ></td><td >Off Campus</td></tr>
     <tr>
 			<td  colspan='15'>
-				<center><b><h5>Suvalsar Hostel</h5></b></center>
+				<center>Suvalsar Hostel</center>
 			</td>
 		</tr>
     <tr><td >Hari Varma P.</td><td >Warden</td><td >267064</td><td >267080</td><td>9816009446</td><td>hari</td><td >A3-206</td><td >C-7 (S-1), SC</td></tr>
@@ -559,7 +562,7 @@ Assoc. Professor (chairperson)
     <tr><td >Chaman Lal</td><td >Caretaker</td><td >267189</td><td ></td><td>9418161301</td><td>caretaker_suvalsar</td><td ></td><td >Off Campus</td></tr>
     <tr>
 			<td  colspan='15'>
-				<center><b><h5>Nako Hostel</h5></b></center>
+				<center>Nako Hostel</center>
 			</td>
 		</tr>
     <tr><td >Arnav Bhavsar</td><td >Warden</td><td >267049</td><td >267104</td><td>9816637024</td><td>arnav</td><td >A3-307</td><td >C-4 (S-3), SC</td></tr>
@@ -570,14 +573,14 @@ Assoc. Professor (chairperson)
 <tr><td >Joginder Pal</td><td >Caretaker</td><td >267019</td><td ></td><td>9882492063</td><td>caretaker_nako</td><td ></td><td >Off Campus</td></tr>
 <tr>
 			<td  colspan='15'>
-				<center><b><h5>Renuka Hostel</h5></b></center>
+				<center>Renuka Hostel</center>
 			</td>
 		</tr>
     <tr><td >Sarita Azad</td><td >Warden</td><td >267141</td><td >267205</td><td>9736548922</td><td>sarita</td><td >A4-207</td><td >C-34 (F-2), NC</td></tr>
     <tr><td >Bharati</td><td >Caretaker</td><td >237947</td><td ></td><td>9805555632</td><td>renuka</td><td ></td><td >Off Campus</td></tr>
     <tr>
 			<td  colspan='15'>
-				<center><b><h5>Dashir Hostel</h5></b></center>
+				<center>Dashir Hostel</center>
 			</td>
 		</tr>
     <tr><td >C.S. Yadav</td><td >Warden</td><td >267135</td><td >267207</td><td>9816614494</td><td>shekhar</td><td >A1-324</td><td >C-34 (S-2), NC</td></tr>
@@ -585,7 +588,7 @@ Assoc. Professor (chairperson)
     <tr><td >Khem Chand</td><td >Caretaker</td><td >237948</td><td ></td><td>8626888866</td><td></td><td ></td><td >Off Campus</td></tr>
     <tr>
                         <td  colspan='15'>
-                                <center><b><h5>Beas Kund Hostel</h5></b></center>
+                                <center>Beas Kund Hostel</center>
                         </td>
                 </tr>
                 <tr><td >C.S. Yadav</td><td >Warden
@@ -597,7 +600,7 @@ Assoc. Professor (chairperson)
 <tr><td >Kamal Kant</td><td >Caretaker</td><td >269201</td><td ></td><td>9459858481</td><td>caretaker_beaskund</td><td ></td><td >Off Campus</td></tr>
 <tr>
                         <td  colspan='15'>
-                                <center><b><h5>Gauri Kund Hostel</h5></b></center>
+                                <center>Gauri Kund Hostel</center>
                         </td>
                 </tr>
                 <tr><td >Aditi Halder</td><td >Warden</td><td >267139</td><td >267218</td><td>9736142435</td><td>aditi</td><td >A4-205</td><td >C-36 (S-2), NC</td></tr>
@@ -605,7 +608,7 @@ Assoc. Professor (chairperson)
                 <tr><td >Jaiwanti</td><td >Caretaker</td><td >269201</td><td ></td><td>9418958194</td><td>caretaker_gaurikund</td><td ></td><td >Off Campus</td></tr>
                 <tr>
 			<td colspan='15'>
-				<center><b><h5>Sports</h5></b></center>
+				<center>Sports</center>
 			</td>
 		</tr>
 
@@ -614,7 +617,7 @@ Assoc. Professor (chairperson)
     <tr><td >Kaul Singh </td><td >Instructor</td><td >267033 </td><td >9882103546</td><td>9418400781</td><td>kaulsingh</td><td >Bamboo Hut-126</td><td >D 5, first floor, SC</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>NSS</h5></b></center>
+				<center>NSS</center>
 			</td>
 		</tr>
 
@@ -623,7 +626,7 @@ Assoc. Professor (chairperson)
     <tr><td >Prateek</td><td >Field Officer</td><td >267061</td><td ></td><td>9418161961</td><td>nss</td><td >A3-209</td><td >Off Campus</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Common Rooms</h5></b></center>
+				<center>Common Rooms</center>
 			</td>
 		</tr>
 
@@ -657,35 +660,35 @@ Assoc. Professor (chairperson)
 </td><td >Off Campus</td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Career & Placement Cell</h5></b></center>
+				<center>Career & Placement Cell</center>
 			</td>
 		</tr>
 
 	<tr><td >Jyoti Singh</td><td >CnP Executive</td><td >267005,267006</td><td ></td><td>9816852900</td><td>jyotisingh</td><td >Bamboo Hut- Block-D</td><td >Garpha, SC</td></tr>
   <tr>
                         <td colspan='15'>
-                                <center><b><h5>IIT Mandi Catalyst</h5></b></center>
+                                <center>IIT Mandi Catalyst</center>
                         </td>
                 </tr>
 
     <tr><td >Rahul Shrivastava</td><td >Manager</td><td >267146</td><td ></td><td>8826912944</td><td>rahul_s**</td><td ></td><td ></td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Guidance & Counselling Cell</h5></b></center>
+				<center>Guidance & Counselling Cell</center>
 			</td>
 		</tr>
 
 	<tr><td >Lishma Anand</td><td >Counselor (GCS)</td><td >267008</td><td >267088</td><td>9816098766</td><td>lishma</td><td >Bamboo Hut-130</td><td >C2-Top Floor, SC</td></tr>
   <tr>
 			<td colspan='15'>
-				<center><b><h5>PRC Office</h5></b></center>
+				<center>PRC Office</center>
 			</td>
 		</tr>
 
 		<tr><td >Chandan Sharma</td><td >Jr. Superintendent</td><td >267132</td><td ></td><td>9418053066</td><td>chandan</td><td >Directorate Office -102</td><td >Off Campus</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Construction Cell</h5></b></center>
+				<center>Construction Cell</center>
 			</td>
 		</tr>
 
@@ -699,7 +702,7 @@ Assoc. Professor (chairperson)
     <tr><td >Chirag Vaidya</td><td >JE Electrical</td><td >267022</td><td ></td><td> 7807022753</td><td>chirag</td><td >Construction Wing</td><td >Off Campus</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Estate & Maintenance Cell</h5></b></center>
+				<center>Estate & Maintenance Cell</center>
 			</td>
 		</tr>
 
@@ -708,7 +711,7 @@ Assoc. Professor (chairperson)
     <tr><td >Navish</td><td >T. A. (Civil)</td><td >267029</td><td ></td><td>9459945014</td><td>navishta</td><td >Construction Wing</td><td >D-7, GF, KS</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Transportation</h5></b></center>
+				<center>Transportation</center>
 			</td>
 		</tr>
 
@@ -716,7 +719,7 @@ Assoc. Professor (chairperson)
     <tr><td >Ashok Pathania</td><td >Office Assistant</td><td >267016</td><td ></td><td>9418611295</td><td>pathaniaoa</td><td >Bamboo Hut-127</td><td >Off Campus</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Guest House</h5></b></center>
+				<center>Guest House</center>
 			</td>
 		</tr>
 
@@ -724,14 +727,14 @@ Assoc. Professor (chairperson)
     <tr><td >Rakesh Bhatt</td><td >Astt. Office Executive</td><td >267176</td><td ></td><td>9418906200</td><td>rakeshoa</td><td >C5 Guest House</td><td >Off Campus</td></tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Creche</h5></b></center>
+				<center>Creche</center>
 			</td>
 		</tr>
 
 		<tr><td >Creche</td><td ></td><td >267013</td><td ></td><td></td><td></td><td ></td><td ></td></tr>
     <tr>
                         <td colspan='15'>
-                                <center><b><h5>Infrastructure & Services / Land acquisition</h5></b></center>
+                                <center>Infrastructure & Services / Land acquisition</center>
                         </td>
                 </tr>
 
@@ -765,7 +768,7 @@ Assoc. Professor (chairperson)
 </td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Security Unit</h5></b></center>
+				<center>Security Unit</center>
 			</td>
 		</tr>
 
@@ -775,7 +778,7 @@ Assoc. Professor (chairperson)
 <tr><td ></td><td >267096</td><td ></td><td></td><td></td><td >Kamand</td><td ></td></tr>
 <tr>
                         <td colspan='15'>
-                                <center><b><h5>Recreation Center</h5></b></center>
+                                <center>Recreation Center</center>
                         </td>
                 </tr>
 
@@ -791,7 +794,7 @@ Assoc. Professor (chairperson)
 <tr><td >Recreation Center-02</td><td >Recreation Center-02 KMD</td><td >267230</td><td ></td><td></td><td></td><td  colspan='2'>Recreation Center-02</td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>CPWD</h5></b></center>
+				<center>CPWD</center>
 			</td>
 		</tr>
 
@@ -800,7 +803,7 @@ Assoc. Professor (chairperson)
 <tr><td >CPWD 3</td><td ></td><td >267025</td><td ></td><td></td><td></td><td ></td><td ></td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Central Mess</h5></b></center>
+				<center>Central Mess</center>
 			</td>
 		</tr>
 
@@ -810,12 +813,12 @@ Assoc. Professor (chairperson)
 </td><td>messiitmandi</td><td >B-2 SC</td><td >Off Campus</td></tr>
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Other Important Numbers</h5></b></center>
+				<center>Other Important Numbers</center>
 			</td>
 		</tr>
     <tr>
 			<td colspan='15'>
-				<center><b><h5>Banks</h5></b></center>
+				<center>Banks</center>
 			</td>
 		</tr>
 
@@ -824,14 +827,14 @@ Assoc. Professor (chairperson)
 
 <tr>
 			<td colspan='15'>
-				<center><b><h5>Police Chowki Kamand</h5></b></center>
+				<center>Police Chowki Kamand</center>
 			</td>
 		</tr>
 
 <tr><td >Kamand Police Chowki</td><td ></td><td >269400</td><td ></td><td></td><td></td><td  colspan='2'>Kamand</td></tr>
 
 </table>
-
+</div>
 
 	<script>
 	$(document).ready(function()
@@ -871,15 +874,15 @@ Assoc. Professor (chairperson)
 </tr>
 
 <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
-<th><h5>Contact</h5></th>                  
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th> 
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
+<th>Contact</th>                  
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th> 
  
 </tr>
 
@@ -1035,15 +1038,15 @@ Assoc. Professor (chairperson)
 <table width='90%' align='center' class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=tadata>
 
 <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
-<th><h5>Contact</h5></th>                       
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th> 
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
+<th>Contact</th>                       
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th> 
  
 </tr>
 <tr><td>B14101</td><td>Amanshu Raikwar</td><td>CSE</td><td>Suvalsar G3</td><td>6</td><td>9736849670</td><td>Rajesh Raikwar</td><td>-</td><td>9425149670</td></tr>
@@ -1209,15 +1212,15 @@ Assoc. Professor (chairperson)
 
 <table width='90%' align='center' class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=tabdata>
 <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
-<th><h5>Contact</h5></th>                               
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th>  
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
+<th>Contact</th>                               
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th>  
 </tr>
 <tr><td>B15101</td><td>Aayush Mishra</td><td>CSE</td><td>Suvalsar G4</td><td>6</td><td>9805674131</td><td>Kamal Swaroop  Mishra</td><td>-</td><td>9936108321</td></tr>
 <tr><td>B15102</td><td>Abhijeet Sharma</td><td>CSE</td><td>Suvalsar G4</td><td>8</td><td>8629015433</td><td>Brijendara Prasad</td><td>-</td><td>9826217402</td></tr>
@@ -1390,15 +1393,15 @@ Assoc. Professor (chairperson)
 <table width='90%' align='center' class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=tabldata>
 
 <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
-<th><h5>Contact</h5></th>                               
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th>  
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
+<th>Contact</th>                               
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th>  
 </tr>
 
 <tr>
@@ -1599,16 +1602,16 @@ Assoc. Professor (chairperson)
 
 <table width='90%' align='center' class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=tabled>
 <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
                                  
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th> 
-<th><h5>Contact</h5></th> 
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th> 
+<th>Contact</th> 
 </tr>
 
 <tr><td>S13001</td><td>Tulika Agarwal</td><td>SCEE</td><td>Chandertaal Annexe</td><td>107</td><td>Mr. Rajendra Prasad Agarwal</td><td>-</td><td></td><td>9816923598</td></tr>
@@ -1676,16 +1679,16 @@ Assoc. Professor (chairperson)
 <table width='90%' align='center' class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=tablex>
 
 <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
                                  
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th> 
-<th><h5>Contact</h5></th> 
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th> 
+<th>Contact</th> 
 </tr>
 <tr><td>D10002</td><td>Anna Varughese</td><td>SBS </td><td>Chandertaal Annexe</td><td>5</td><td>Mr. Kuriakose V Kocheril</td><td>-</td><td>9447562676</td><td>8894873714</td></tr>
 <tr><td>D10003</td><td>Navneet Singh</td><td>SBS </td><td>Staying Outside </td><td>-</td><td></td><td>-</td><td>-</td><td>9418302336</td></tr>
@@ -1932,16 +1935,16 @@ Assoc. Professor (chairperson)
 
 
 <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
                                  
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th> 
-<th><h5>Contact</h5></th> 
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th> 
+<th>Contact</th> 
 </tr>
 <tr><td>V15001</td><td>Akshita Sharma</td><td>SBS</td><td>Chandertaal B3</td><td>3</td><td>Mr. Adesh Kumar Sharma</td><td>011-45683785</td><td></td><td>9810802093</td></tr>
 <tr><td>V15002</td><td>Parveen Kumar</td><td>SBS</td><td>Suvalsar B5</td><td>6</td><td>Mr. Surender Kumar</td><td>-</td><td>9555283843</td><td>9582373417</td></tr>
@@ -2040,16 +2043,16 @@ Assoc. Professor (chairperson)
         
 
         <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
                                  
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th> 
-<th><h5>Contact</h5></th> 
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th> 
+<th>Contact</th> 
 </tr>
 <tr><td>T15001</td><td>Sidhant</td><td>M.Tech </td><td>Suvals</td><td>104</td><td>Santosh Kumar</td><td>8894978277</td><td>9899948306</td><td>88609-24704</td></tr>
 <tr><td>T15002</td><td>Vikrant </td><td>M.Tech </td><td>Suvals</td><td>10</td><td>Uday Vir Singh</td><td>-</td><td>94160-91668</td><td>8894947279</td></tr>
@@ -2139,16 +2142,16 @@ function Tablesrchthis(inputVal,tableid)
 <table width='90%' align='center' class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=tablesrch>
 
 <tr>
-<th><h5>Roll No</h5></th>
-<th><h5>Name</h5></th>
-<th><h5>Branch</h5></th>
-<th><h5>Hostels</h5></th>
-<th><h5>Room No</h5></th>
+<th>Roll No</th>
+<th>Name</th>
+<th>Branch</th>
+<th>Hostels</th>
+<th>Room No</th>
                                  
-<th><h5>Emergeny Contact</h5></th> 
-<th><h5>Landline</h5></th> 
-<th><h5>Mobile </h5></th> 
-<th><h5>Contact</h5></th> 
+<th>Emergeny Contact</th> 
+<th>Landline</th> 
+<th>Mobile </th> 
+<th>Contact</th> 
 </tr>
 <tr><td>DI1501</td><td>Chinmoy Samanth</td><td>SBS</td><td>Nako B6</td><td>202</td><td>Kalipada Samanta</td><td>-</td><td>96091-21519</td><td>8350939353</td></tr>
 <tr><td>DI1502</td><td>Gopika Lakshmi Bhai S.</td><td>SBS</td><td>Chandertaal Annexe</td><td>4</td><td>Sreekumar G.</td><td>0478-2561234</td><td>94474-61221</td><td>82817-90212</td></tr>

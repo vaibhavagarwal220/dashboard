@@ -17,9 +17,62 @@
   $title="Add/Drop Courses";
 include 'include.inc.php';?>
 <br><br><br>
+<style type="text/css">
+  #tablesrch{overflow:auto;}
+</style>
 <center>
-  <?php
-  if(!loggedin()) header("Location:studentlogin.php");
+
+
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+    <label class="mdl-button mdl-js-button mdl-button--icon" for="searchtble">
+      <i class="material-icons">search</i>
+    </label>
+    <div class="mdl-textfield__expandable-holder">
+      <input class="mdl-textfield__input" type="text" id="searchtble">
+      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+    </div>
+  </div>
+
+      <script>
+  $(document).ready(function()
+{
+  $('#searchtble').keyup(function()
+  {
+    Tablesrchthis($(this).val(),'tablesrch');
+  });
+});
+ 
+
+function Tablesrchthis(inputVal,tableid)
+{
+  var table = $('#'+tableid);
+  table.find('tr').each(function(index, row)
+  {
+    var allCells = $(row).find('td');
+    if(allCells.length > 0)
+    {
+      var found = false;
+      allCells.each(function(index, td)
+      {
+        var regExp = new RegExp(inputVal, 'i');
+        if(regExp.test($(td).text()))
+        {
+          found = true;
+          return false;
+        }
+      });
+      if(found == true)$(row).show();else $(row).hide();
+    }
+  });
+}
+
+  </script>
+
+
+
+<?php
+  
+
 $cour=$db->query("SELECT * FROM sem_courses");
 
 if (!$cour->num_rows)
@@ -32,12 +85,12 @@ echo "No Course to show ";
 $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
 ?>
 
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--6dp">
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=tablesrch> 
   <thead>
     <tr>
       <th class="mdl-data-table__cell--non-numeric">Course Name</th>
-      <th class="mdl-data-table__cell--non-numeric">Course Code</th>
-      <th class="mdl-data-table__cell--non-numeric">Slot</th>
+      <th class="mdl-data-table__cell--non-numeric ccde">Course Code</th>
+      <th class="mdl-data-table__cell--non-numeric cslt">Slot</th>
       <th class="mdl-data-table__cell--non-numeric">Add/Drop</th>
     </tr>
   </thead>
@@ -56,8 +109,8 @@ foreach($rows as $row)
  if(hascrs($cid)) echo "
 <tr>
       <td class=\"mdl-data-table__cell--non-numeric\">$cname</td>
-      <td class=\"mdl-data-table__cell--non-numeric\">$cde</td>
-      <td class=\"mdl-data-table__cell--non-numeric\">$slt</td>
+      <td class=\"mdl-data-table__cell--non-numeric ccde\">$cde</td>
+      <td class=\"mdl-data-table__cell--non-numeric cslt\">$slt</td>
       <td class=\"mdl-data-table__cell--non-numeric\">
       <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect tst dra rbg\" id=".$cid.">
       DROP
@@ -70,8 +123,8 @@ else
 echo "
 <tr>
       <td class=\"mdl-data-table__cell--non-numeric\">$cname</td>
-      <td class=\"mdl-data-table__cell--non-numeric\">$cde</td>
-      <td class=\"mdl-data-table__cell--non-numeric\">$slt</td>
+      <td class=\"mdl-data-table__cell--non-numeric ccde\">$cde</td>
+      <td class=\"mdl-data-table__cell--non-numeric cslt\">$slt</td>
       <td class=\"mdl-data-table__cell--non-numeric\">
       <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect tst adr gbg\" id=".$cid.">
       ADD

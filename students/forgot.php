@@ -82,7 +82,7 @@ if(!$mail->send()) {
 <html>
 <head>
   <title>Dashboard</title>
-    <?php include 'include.inc.php';?>
+
     <style type="text/css">
       .mdl-layout {
   align-items: center;

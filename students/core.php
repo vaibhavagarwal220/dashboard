@@ -100,6 +100,35 @@ foreach($rows as $row)
 
 }
 
+function getcrscde($cid)
+{
+$db = new MYSQLI('localhost','root','','Project') ; //or die('Error connecting to MySQL server.');
+
+if($db->connect_errno)
+{
+  echo $db->connect_error;
+  die ('Unable to connect to the database ');
+}
+$cour=$db->query("SELECT code FROM sem_courses where COURSE_ID=".$cid."");
+
+if (!$cour->num_rows)
+{   
+echo "Error";
+  //echo 'Permission granted Enjoy due '  //print_r($per);}
+}
+else 
+{
+$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+
+foreach($rows as $row)
+{
+  return $row['code'] ;
+ 
+}
+}
+
+}
+
 
 function hasrev()
 {

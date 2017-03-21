@@ -59,7 +59,7 @@ echo 'No Course to show ';
 
   <?php 
   $title="";
-  if(iscrs($cid)) $title=getcrs($cid);
+  if(iscrs($cid)) $title=getcrscde($cid);
   include 'include.inc.php';?>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">

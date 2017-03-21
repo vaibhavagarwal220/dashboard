@@ -17,6 +17,7 @@ if(!isset($_GET['grp'])||empty($_GET['grp']))
 <html>
 <head>
 <title>Groups | Dashboard</title>
+
 </head> 
 <body>
 <?php
@@ -51,6 +52,7 @@ foreach($rows as $row)
 
 
 ?> 
+
  <center>
   <button type="button" class="mdl-chip" id=leavegrp>
     <span class="mdl-chip__text"> <i class="material-icons alig">launch</i> Leave Group </span>
@@ -115,7 +117,12 @@ foreach($rows as $row)
   $bdy=$row['post_body'] ;
    $gid=$row['gid'] ;
 
-    echo " <div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>$bdy<br>";if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
+    $topr="<div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
+
+$pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
+   $topr=$topr.preg_replace($pattern, '<a href="http$2://$3">$0</a>', $bdy)."<br>";
+
+    echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
     echo "</div><br>";
 
 }

@@ -12,7 +12,7 @@
     header('Location:studentlogin.php');
   }
 
-$title="Student Departures";
+$title="Departures";
 include 'include.inc.php';?>
 
   <?php

@@ -23,7 +23,7 @@ require 'core.php';
   <body>
 
   <?php
-$title="Posts | Discussion Forum";
+$title="Posts";
 include 'include.inc.php';?>
 
 

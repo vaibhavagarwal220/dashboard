@@ -64,7 +64,7 @@ $sql = "INSERT INTO trips(ROLLNO,dest,doj) VALUES('".$_SESSION['uname']."','".$d
   <br>
   <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
   </form>
-  </center></div>
+  </center>
 <script type="text/javascript">
   
   var today = new Date().toISOString().split('T')[0];

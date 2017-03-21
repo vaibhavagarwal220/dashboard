@@ -35,14 +35,14 @@ $ftime = array
   $title="Timetable";
   include 'include.inc.php';?>
   <style type="text/css">
-       .tt{width:100%;zoom:0.9;margin:auto;}
-       #content {width:100%;margin:auto;}
-
+       .tt{width:100%;margin:auto;overflow:auto;}
+       table{zoom:0.85;}
          </style>
+       
 
 
    <br><br>
-<div id=content>
+
 
   	<div id=crss>
   	</div>
@@ -97,8 +97,9 @@ foreach($rows as $row)
   $slot=getslot($cd);
 
   echo "<script>
+$('#crss').hide().append('<span class=\"mdl-chip\"> <span class=\"mdl-chip__text\" title=\"$nm\" id=\"$code\">".$code."</span></span>').fadeIn();
 
-$('#crss').hide().append('<span class=\"mdl-chip\" > <span class=\"mdl-chip__text\" title=\"$nm\">".$code."</span></span>').fadeIn();
+
 
 $('.".$slot."').not('option').hide().html('<span class=\"mdl-chip\" cont=".$code."> <span class=\"mdl-chip__text\" style=\"font-size:16px;\">".$code."</span></span>').fadeIn();
 
@@ -106,8 +107,11 @@ $('.".$slot."').not('option').hide().html('<span class=\"mdl-chip\" cont=".$code
 }
 ?>
 
-</div>
+
   </div></main></div>
 
 </body>
+  
+
+
 </html>
