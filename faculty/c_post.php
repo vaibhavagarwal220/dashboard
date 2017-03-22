@@ -16,9 +16,8 @@ $fiid=$_GET['fid'];
 
 
 
-$sql = "INSERT INTO forum_post(post_title,
-                    post_body,course_id,post_author,forum_id,`time`)
-				VALUES('".$_POST['post_title']."','".$_POST['post_body']."',".$cid.",".$_SESSION['unamefac'].",".$fiid.",CURRENT_TIMESTAMP)";
+$sql = "INSERT INTO forum_post(post_body,course_id,post_author,forum_id,`time`)
+				VALUES('".$_POST['post_body']."',".$cid.",".$_SESSION['unamefac'].",".$fiid.",CURRENT_TIMESTAMP)";
          
         $result = $db->query($sql);
         

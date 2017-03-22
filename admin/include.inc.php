@@ -1,7 +1,7 @@
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Cabin|Lato" rel="stylesheet">
   <script src="assets/js/jquery.min.js"></script>
 
 
@@ -13,22 +13,16 @@
 a:hover{text-decoration:none;color:default;}
 .ablock i{font-size:80px;}
 body{background:#eff3f6;font-family:'Open Sans';color:black;}
-.head{background: white;font-family:'Open Sans';font-size:40;}
-#frm{display:inline-block; margin-left:35%;}
-#logo{margin:10px;}
-#caln{width:600px;height:400px;margin:auto;}
-.contain{width:90%;margin: auto;background: white;}
+
+
 .page-content{width:90%;margin: auto;color:black;}
 .rbg{background:#cc2c2c;color: white;}
 .gbg{background:#08a334;color: white;}
 .bbg{background:#245199;color: white;}
 .pbg{background:#80159b;color: white;}
 #crs{font-size: 40px;}
-.feed{padding:20px;}
 #nost{list-style:none;}
-.past{background:gray;color: white;}
-.tod{background:#08a334;color: white;}
-.fut{background:gray;color: white;}
+
 #mid{margin:auto;}
 </style>
 

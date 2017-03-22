@@ -35,7 +35,7 @@
 <a class="ablock mdl-cell mdl-cell--3-col" title=Timetable href="timetable.php"><img src=assets/img/ttbl.png></a>
 <a class="ablock mdl-cell mdl-cell--3-col" title="Course Review" href="review.php"><img src=assets/img/rev.png></a>
 <a class="ablock mdl-cell mdl-cell--3-col cont" title=Contact href=contacts.php><img src=assets/img/cont.ico></a>
-<a class="ablock mdl-cell mdl-cell--3-col" title="Book Bus Tickets" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><img src=assets/img/busicon.ico></a>
+<a class="ablock mdl-cell mdl-cell--3-col" title="Book Bus Tickets" target=_blank href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><img src=assets/img/busicon.ico></a>
 <a class="ablock mdl-cell mdl-cell--3-col" href=depart.php title="Student Departures"><img src=assets/img/depr.png></a>     
 <a class="ablock mdl-cell mdl-cell--3-col" href=planatrip.php title="Plan A Trip"><img src=assets/img/trip.png></a>
 <a class="ablock mdl-cell mdl-cell--3-col" href=adddrop.php title="Add/Drop Courses"><img src=assets/img/adrp.png></a>
@@ -63,7 +63,7 @@ $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
 
 foreach($rows as $row)
 {
-  $ttl=$row['post_title'] ;
+
   $ath=$row['post_author'];
   $bdy=$row['post_body'] ;  
   $fid=$row['forum_id'] ;
@@ -80,7 +80,7 @@ foreach($rows as $row)
       foreach($sname as $sn)
             {
 
-    echo " <div class=\"opts feed mdl-cell mdl-cell--6-col\">".getposter($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$fid."> ".$sn['forum_name']."</a> <br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <b>$ttl</b><br><br> $bdy
+    echo " <div class=\"opts feed mdl-cell mdl-cell--6-col\">".getposter($ath)." posted in  <b>".getcrs($cd)."</b><br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$fid."> ".$sn['forum_name']."</a><br><br> $bdy
   </div><br><br>";
        } 
      }

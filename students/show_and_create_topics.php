@@ -20,7 +20,7 @@ require 'core.php';
   include 'include.inc.php';?>
 
      <?php
-        echo "<br><br><center class=opts id=frm><form method='POST' action='c_topic.php?uname=".$u_name."&cid=".$cr_id."'>
+        echo "<br><br><center class=\"opts posme\"><form method='POST' action='c_topic.php?cid=".$cr_id."'>
         
          
 
@@ -32,13 +32,7 @@ require 'core.php';
         </div>
         
         <br>
-
-         <div class=\"mdl-textfield mdl-js-textfield\"> 
-        <textarea name='forum_description' class=\"mdl-textfield__input\"  rows= \"3\" id=\"sample5\"></textarea>
-            <label class=\"mdl-textfield__label\" for=\"sample5\">Description</label>
-          </div>
-
-        <br><br>
+<br>
 
         
         <input type='submit' value='Create Topic' class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent\"/>
@@ -62,8 +56,7 @@ else
 {*/
 	$sql = "SELECT
                     forum_id,
-                    forum_name,
-                    forum_description
+                    forum_name
                 FROM
                     table_forum
                 WHERE course_id=".$cr_id."";

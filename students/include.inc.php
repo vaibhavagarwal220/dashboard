@@ -2,7 +2,7 @@
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Ultra|Amatic+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Cabin|Lato" rel="stylesheet">
 <script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="assets/js/lightbox.js"></script>
@@ -21,14 +21,14 @@
           .cal{width:300px !important;height:275px !important;margin:auto !important;}
 }
 
-.mdl-navigation__link{font-family:'Amatic SC' !important;}
+.mdl-navigation__link{font-family:'Lato' !important;}
 
-.mdl-navigation__link{font-size:25px;color:white !important;}
+.mdl-navigation__link{font-size:15px;color:white !important;}
 
-.mdl-navigation__link:hover{font-size:25px;color:black !important;}
+.mdl-navigation__link:hover{font-size:15px;color:black !important;}
 
 
-h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
+h1,h2,h3,h4,h5,h6{font-family:'Cabin';}
 
 .alig{
   vertical-align:-21%;font-size:20px;
@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Open Sans';}
 .rbg:hover{background:#e04e4e !important;color: white;}
 
 
-.mdl-lout{font-family:'Ultra';display:inline;}
+.mdl-lout{font-family:'Cabin';display:inline;}
 
 #demo-menu-lower-right{color:#3E2723;position:absolute;left:255px;top:0px;}
 
@@ -256,7 +256,7 @@ foreach($rows as $row)
     <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons">grade</i> Course Review</a>
     <a class="mdl-navigation__link cont" href="contacts.php"><i class="material-icons">call</i> Contact</a>
-    <a class="mdl-navigation__link" href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx">
+    <a class="mdl-navigation__link" target=_blank href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx">
     <i class="material-icons">event_seat</i> Book Bus Tickets</a>
     <a class="mdl-navigation__link" href=depart.php><i class="material-icons">flight_takeoff</i> Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons">motorcycle</i> Plan A Trip</a>

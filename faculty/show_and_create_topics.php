@@ -22,7 +22,7 @@ include 'include.inc.php';
 
 
 
-         echo "<br><br><center class=opts id=frm><form method='POST' action='c_topic.php?uname=".$u_name."&cid=".$cr_id."'>
+         echo "<br><br><center class=opts id=frm><form method='POST' action='c_topic.php?cid=".$cr_id."'>
         
          
 
@@ -33,13 +33,6 @@ include 'include.inc.php';
         <label class=\"mdl-textfield__label\" for=\"sample3\">Topic</label>
         </div>
         
-        <br>
-
-         <div class=\"mdl-textfield mdl-js-textfield\"> 
-        <textarea name='forum_description' class=\"mdl-textfield__input\"  rows= \"3\" id=\"sample5\"></textarea>
-            <label class=\"mdl-textfield__label\" for=\"sample5\">Description</label>
-          </div>
-
         <br><br>
 
         
@@ -61,8 +54,7 @@ else
 {*/
   $sql = "SELECT
                     forum_id,
-                    forum_name,
-                    forum_description
+                    forum_name
                 FROM
                     table_forum
                 WHERE course_id=".$cr_id."";
@@ -95,7 +87,7 @@ else
     
       foreach($sname as $sn)
             {
-    echo "<center> <a href=show_and_create_post.php?cid=".$cr_id."&fid=".$sn['forum_id']." > ".$sn['forum_name']."</a></center>";
+    echo "<center> <a class=\"mdl-chip\" href=show_and_create_post.php?cid=".$cr_id."&fid=".$sn['forum_id']." ><span class=\"mdl-chip__text\">".$sn['forum_name']."</span></a></center>";
     echo "</br>";
        }
           }

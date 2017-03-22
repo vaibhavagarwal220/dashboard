@@ -28,13 +28,6 @@ include 'include.inc.php';?>
 
 
     echo "<br><br><center class=opts id=frm><form method='POST' action='c_post.php?cid=".$cr_id."&fid=".$forum_id."'>
-                      <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
-        <input name='post_title' class=\"mdl-textfield__input\" type=\"text\" id=\"sample3\">
-        <label class=\"mdl-textfield__label\" for=\"sample3\">Title</label>
-        </div>
-        
-        <br>
-
          <div class=\"mdl-textfield mdl-js-textfield\"> 
         <textarea name='post_body' class=\"mdl-textfield__input\"  rows= \"3\" id=\"sample5\"></textarea>
             <label class=\"mdl-textfield__label\" for=\"sample5\">Body</label>
@@ -54,8 +47,7 @@ include 'include.inc.php';?>
 $sql = "SELECT
                     post_id,
                     post_author,
-                    post_body,
-                    post_title
+                    post_body
                 FROM
                     forum_post
                 WHERE course_id=".$cr_id." AND forum_id=".$forum_id." ORDER BY time DESC ";
@@ -64,7 +56,7 @@ $sql = "SELECT
         
     if (!$result->num_rows)
   {   
-    echo ('No posts are created under this course ');
+    echo '<center class=opts>No posts are created under this course </center>';
   }   
 
 
@@ -78,34 +70,13 @@ $sql = "SELECT
           foreach($rows as $row)
           {
 
-//            $q="SELECT * FROM forum_post WHERE course_id=".$cr_id." && forum_id=".$forum_id." && post_id=".$row['post_id']." order by time ASC"; 
-  //          $name=$db->query($q);
-
-    //        $sname=$name->fetch_all(MYSQLI_ASSOC);
-      //      foreach($sname as $name1)
-        //    {
-              //$studentname =$name['NAME']; 
-            
-//foreach($sname as $sn)
 echo "<center class=opts>";
-            echo "<h4>posted by:  ".$row['post_author']." </h4>";
-                  echo "</br>";
-                  echo $row['post_title'];
-      echo "</br>";
-            echo $row['post_body'];
-echo "</center><br><br>";
-          //  }
+            echo "<h4>".getname($row['post_author'])." </h4>";
+                  echo $row['post_body']."</center><br>";
               
           }
 
        }
-
-
-    /* now we create option to start new discussion under this course*/
-    //echo $u_name;
-
-
-  
 
 
 ?>

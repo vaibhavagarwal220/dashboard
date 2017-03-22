@@ -1,7 +1,7 @@
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Roboto|Amatic+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Cabin|Lato" rel="stylesheet">
 <script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <style>
@@ -10,7 +10,7 @@
 
 
 
-h1,h2,h3,h4,h5,h6{font-family:'Pacifico';}
+h1,h2,h3,h4,h5,h6{font-family:'Cabin';}
 
 .alig{
   vertical-align:-21%;font-size:20px;
@@ -19,11 +19,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Pacifico';}
 
 a{text-decoration:none;}
 
-.mdl-navigation__link{font-family:'Amatic SC' !important;}
+.mdl-navigation__link{font-family:'Lato' !important;}
 
-.mdl-navigation__link{font-size:25px;color:white !important;}
+.mdl-navigation__link{font-size:15px;color:white !important;}
 
-.mdl-navigation__link:hover{font-size:25px;color:black !important;}
+.mdl-navigation__link:hover{font-size:15px;color:black !important;}
 
 
 
@@ -40,8 +40,7 @@ a{text-decoration:none;}
 a:hover{text-decoration:none;color:default;}
 .ablock img{width:90px;height:90px;}
 
-body{font-family:'Roboto';color:black;background:#EFF3F6;}
-.head{background: white;font-family:'Roboto';font-size:40;}
+body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 #logo{margin:10px;}
 
 .contain{width:90%;margin: auto;background: white;}

@@ -79,7 +79,7 @@ $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
 
 foreach($rows as $row)
 {
-  $ttl=$row['post_title'] ;
+
   $ath=$row['post_author'];
   $bdy=$row['post_body'] ;
   
@@ -96,7 +96,7 @@ foreach($rows as $row)
     
       foreach($sname as $sn)
             {
-    echo " <div class=\"opts feed mdl-cell mdl-cell--3-col\">".getname($ath)." posted in <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$sn['forum_id']."> ".$sn['forum_name']."</a> <br><br><br> <b>$ttl</b><br><br> ".nl2br($bdy)."
+    echo " <div class=\"opts feed mdl-cell mdl-cell--3-col\">".getname($ath)." <br> <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$sn['forum_id']."> ".$sn['forum_name']."</a> <br> ".nl2br($bdy)."
   </div><br><br>";
        } 
 }

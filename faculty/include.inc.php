@@ -1,7 +1,7 @@
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Roboto|Amatic+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Cabin|Lato" rel="stylesheet">
 
   <script src="assets/js/jquery.min.js"></script>
 
@@ -18,18 +18,17 @@
 
 a{text-decoration:none;}
 
-.mdl-navigation__link{font-family:'Amatic SC' !important;}
+.mdl-navigation__link{font-family:'Lato' !important;}
 
-.mdl-navigation__link{font-size:25px;color:white !important;}
+.mdl-navigation__link{font-size:15px;color:white !important;}
 
-.mdl-navigation__link:hover{font-size:25px;color:black !important;}
+.mdl-navigation__link:hover{font-size:15px;color:black !important;}
 
 .ablock{width:150px;height:150px;background:white;text-align:center;font-size:20px;margin:10px;line-height:200px;}
 .opts{background:white;padding:20px;}
 a:hover{text-decoration:none;color:default;}
 .ablock i{font-size:80px;}
-body{background:#eff3f6;font-family:'Roboto';color:black;}
-.head{background: white;font-family:'Roboto';font-size:40;}
+body{background:#eff3f6;font-family:'Open Sans';color:black;}
 #frm{display:inline-block; margin-left:35%;}
 #logo{margin:10px;}
 #caln{width:600px;height:400px;margin:auto;}
