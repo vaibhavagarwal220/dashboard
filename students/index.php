@@ -80,7 +80,7 @@ foreach($rows as $row)
       foreach($sname as $sn)
             {
 
-    echo " <div class=\"opts feed mdl-cell mdl-cell--6-col\">".getposter($ath)." posted in  <b>".getcrs($cd)."</b><br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$fid."> ".$sn['forum_name']."</a><br><br> $bdy
+    echo " <div class=\"opts feed mdl-cell mdl-cell--6-col mdl-shadow--6dp\">".getposter($ath)." posted in  <b>".getcrs($cd)."</b><br><div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br><br> <a href=show_and_create_post.php?cid=".$sn['course_id']."&fid=".$fid."> ".$sn['forum_name']."</a><br><br> $bdy
   </div><br><br>";
        } 
      }
@@ -112,7 +112,7 @@ foreach($rows as $row)
    $gid=$row['gid'] ;
    $id=$row['post_id'] ;
 
-    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
+    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts feed mdl-shadow--6dp\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
     
 $pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
    $topr = $topr.preg_replace($pattern, '<a href="http$2://$3">$0</a>', $bdy)."<br>";

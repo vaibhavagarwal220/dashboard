@@ -17,14 +17,11 @@
 
     </head>
   <body>
-      <?php include 'include.inc.php';?>
+      <?php
+      $title="Search Students"; 
+      include 'include.inc.php';?>
 <center>
-
-<h3>Students List</h3>
-
-<br><br>
-
-
+<br>
 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="myInput" onkeyup="myFunction2()">
     <label class="mdl-textfield__label" for="myInput">Search...</label>
@@ -37,10 +34,7 @@
       <th>Roll No.</th>
       <th class="mdl-data-table__cell--non-numeric">Name</th>
       <th>Contact</th>
-      <th class="mdl-data-table__cell--non-numeric">Address</th>
- 
- 
- 
+      <th class="mdl-data-table__cell--non-numeric">Address</th> 
     </tr>
   </thead>
   <tbody>
@@ -81,26 +75,11 @@
   </tbody>
 </table>
 </center>
-
-
-
-
-
-
-
-
-
-
-
+<br><br>
     </div>
   </main>
 </div>
 
-
-
-
-
-  
 <script>
 function myFunction2() {
   var input, filter, table, tr, td, i;
@@ -109,14 +88,24 @@ function myFunction2() {
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    td1 = tr[i].getElementsByTagName("td")[1];
+    td2 = tr[i].getElementsByTagName("td")[0];
+    td3 = tr[i].getElementsByTagName("td")[2];
+    td4 = tr[i].getElementsByTagName("td")[3];
+    if (td1||td2||td3||td4) {
+
+      if (td1.innerHTML.toUpperCase().indexOf(filter) > -1||td2.innerHTML.toUpperCase().indexOf(filter) > -1||td3.innerHTML.toUpperCase().indexOf(filter) > -1||td4.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
-      } else {
+      } 
+      else 
+      {
         tr[i].style.display = "none";
       }
+    
+
     }
+
+
   }
 }
 </script>

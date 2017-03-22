@@ -36,7 +36,7 @@ $ftime = array
   $title="Timetable";
   include 'include.inc.php';?>
   <style type="text/css">
-       .tt{width:100%;margin:auto;overflow:auto;}
+       .tt{width:100%;margin:auto;overflow:auto;padding:10px;}
        table{zoom:0.85;}
          </style>
        
@@ -47,10 +47,10 @@ $ftime = array
 
   	<div id=crss>
   	</div>
-  	<br><br>
+  	<br><br><div class=tt>
   	<?php
 
- echo "<div class=tt><table class=\"mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--6dp\"><tr>";  
+ echo "<table class=\"mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--6dp\"><tr>";  
   for($i=0;$i<10;$i++)
     echo "<th class=\"mdl-data-table__cell--non-numeric\">".$time[$i]."</th>";
    echo "</tr>";

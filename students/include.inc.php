@@ -65,7 +65,7 @@ a{text-decoration:none;}
 
 .ablock{width:90px;height:90px;margin:auto;}
 
-.opts{background:white;padding:10px;margin:5px;}
+.opts{background:white;padding:10px;margin:7px;}
 
 a:hover{text-decoration:none;color:default;}
 
@@ -85,6 +85,8 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 .page-content{width:90%;margin: auto;color:black;font-size:16px;}
 
 .feed{padding:20px;display:inline-block;}
+
+#feedspost{width:650px;}
 
 #nost{list-style:none;}
 

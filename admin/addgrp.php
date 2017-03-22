@@ -16,7 +16,9 @@
   <title>Add Student</title>
     </head>
   <body>
-  <?php include 'include.inc.php';?>
+  <?php 
+  $title="Add Group";
+  include 'include.inc.php';?>
    <?php
 
 if(isset($_POST['cname'])&&isset($_POST['psw'])&&isset($_POST['name']) &&isset($_POST['descr']))
@@ -59,7 +61,7 @@ if(isset($_POST['cname'])&&isset($_POST['psw'])&&isset($_POST['name']) &&isset($
 
 <br><br>
 <center class=opts id=frm>
- <h3>Add Group</h3>
+
 
 
   <form action="addgrp.php" method="POST">

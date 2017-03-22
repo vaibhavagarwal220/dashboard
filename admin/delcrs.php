@@ -17,7 +17,9 @@ if(!loggedinadm())
   <title>Remove Course</title>
     </head>
   <body>
-<?php include 'include.inc.php';?>
+<?php 
+$title="Remove Course";
+include 'include.inc.php';?>
 <?php
 
 if( isset($_POST['cidd']))
@@ -58,7 +60,7 @@ if( isset($_POST['cidd']))
 ?>
 <br><br>
 <center class=opts id=frm>
- <h3>Remove Course</h3>
+
   <form action="delcrs.php" method="POST">
     
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

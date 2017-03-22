@@ -16,7 +16,9 @@
   <title>Remove Student</title>     
     </head>
   <body>
-<?php include 'include.inc.php';?>
+<?php 
+$title="Remove Student";
+include 'include.inc.php';?>
 
     <?php
 
@@ -58,7 +60,7 @@ if( isset($_POST['unamedel']))
 ?>
 <br><br>
 <center class=opts id=frm>
- <h3>Delete Student</h3>
+
   <form action="rmst.php" method="POST">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="sample3" name="unamedel"  required>

@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 
   require 'connect.php' ;
@@ -8,87 +8,78 @@
     header('Location:adminloginpage.php');
   }
 
-?>  
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Faculty List</title>
-
-
+  <title>Student List</title> 
 
     </head>
-
   <body>
-     <?php 
-     $title="Search Faculty";
-     include 'include.inc.php';?>
-
-
+      <?php
+      $title="Search Students"; 
+      include 'include.inc.php';?>
 <center>
-
+<br>
 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="myInput" onkeyup="myFunction2()">
     <label class="mdl-textfield__label" for="myInput">Search...</label>
   </div>
 
-<br><br>
-
+      <br><br>
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=myTable>
   <thead>
     <tr>
-      <th>Faculty ID</th>
-      <th class="mdl-data-table__cell--non-numeric">Name</th>
-      <th>Contact</th>
-      <th class="mdl-data-table__cell--non-numeric">Address</th>
-
+      <th>ID</th>
+      <th class="mdl-data-table__cell--non-numeric">Name</th> 
+       
     </tr>
   </thead>
   <tbody>
+ 
+  <?php
 
+    $stud = "SELECT * FROM groups ";
 
-<?php
-
-    $prof = "SELECT * FROM PROF ";
-
-    $faculty=$db->query($prof);
+    $students=$db->query($stud);
     
 
-  if (!$faculty->num_rows)
+  if (!$students->num_rows)
   {   
-    echo ('NO profesor to show ');
+    echo ('NO Student to show ');
   }         
     else
     {
 
-          $rows=$faculty->fetch_all(MYSQLI_ASSOC);
+          $rows=$students->fetch_all(MYSQLI_ASSOC);
           
 
           foreach($rows as $row)
           {
 
-
             echo "<tr>
-            <td>".$row['TEACHER_ID']."</td>
-            <td class=\"mdl-data-table__cell--non-numeric\"> ".$row['NAME']."</td>
-            <td>".$row['CONTACT']."</td>
-            <td class=\"mdl-data-table__cell--non-numeric\"> ".$row['ADDRESS']."</td>
-
-            </tr>
-              ";
+                  <td>".$row['id']."</td>
+                  <td class=\"mdl-data-table__cell--non-numeric\">".$row['name']."</td>
+                  </tr>";
           }
   
     }
 
 
    ?>
-  
+
   </tbody>
 </table>
 </center>
 <br><br>
+    </div>
+  </main>
+</div>
+
 <script>
 function myFunction2() {
-    var input, filter, table, tr, td, i;
+  var input, filter, table, tr, td, i;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   table = document.getElementById("myTable");
@@ -96,11 +87,9 @@ function myFunction2() {
   for (i = 0; i < tr.length; i++) {
     td1 = tr[i].getElementsByTagName("td")[1];
     td2 = tr[i].getElementsByTagName("td")[0];
-    td3 = tr[i].getElementsByTagName("td")[2];
-    td4 = tr[i].getElementsByTagName("td")[3];
-    if (td1||td2||td3||td4) {
+    if (td1||td2) {
 
-      if (td1.innerHTML.toUpperCase().indexOf(filter) > -1||td2.innerHTML.toUpperCase().indexOf(filter) > -1||td3.innerHTML.toUpperCase().indexOf(filter) > -1||td4.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      if (td1.innerHTML.toUpperCase().indexOf(filter) > -1||td2.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } 
       else 
@@ -115,20 +104,6 @@ function myFunction2() {
   }
 }
 </script>
-
-
-
-
-    </div>
-  </main>
-</div>
-
-
-
-
-
-
-
-
 </body>
 </html>
+

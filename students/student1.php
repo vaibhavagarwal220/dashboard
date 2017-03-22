@@ -1,38 +1,3 @@
-<?php
-
-
-if(isset($_POST['uname'])&&isset($_POST['psw']))
-{
-  if(!empty($_POST['uname'])&&!empty($_POST['psw']))
-  {
-    $per=$db->query("SELECT * FROM Students WHERE ROLLNO=".mysql_real_escape_string($_POST['uname'])." && PASSWORD='".mysql_real_escape_string($_POST['psw'])."' ") ;
-
-
-
-if(isset($_COOKIE['us'])&&!empty($_COOKIE['us']))
-{
-  $_SESSION["uname"]= $_COOKIE['us'];
-  header('Location:index.php');
-}
-
-if (!$per->num_rows)
-{ 
-echo 'Username and Password is incorrect ';
-}
- 
-else
-{
-$_SESSION["uname"]= $_POST['uname'];
-$_SESSION["password"] = $_POST['psw'];
-
-if(isset($_POST['rmm'])) setcookie('us',$_POST['uname'], time() + (86400 * 30), "/");
-
-header('Location:index.php');
-}
-
-  }
-}
-?>
 
 
 <!DOCTYPE html>
@@ -57,6 +22,7 @@ header('Location:index.php');
   flex: none;
 }
 #bg{background-image: url('assets/img/back1.jpg') ;background-repeat: round;}
+.bbg{background:#5BC0DE;color: white; padding:20px;border-radius:10px;}
     </style>
 </head>
 <body >
@@ -67,6 +33,34 @@ header('Location:index.php');
 
 
 <div id=bg class="mdl-layout mdl-js-layout mdl-color--grey-100">
+
+<?php
+
+
+if(isset($_POST['uname'])&&isset($_POST['psw']))
+{
+  if(!empty($_POST['uname'])&&!empty($_POST['psw']))
+  {
+    $per=@$db->query("SELECT * FROM Students WHERE ROLLNO=".mysql_real_escape_string($_POST['uname'])." && PASSWORD='".mysql_real_escape_string($_POST['psw'])."' ") ;
+
+if (@!$per->num_rows)
+{ 
+echo '<div class=bbg>Username / Password is incorrect</div>';
+}
+ 
+else
+{
+$_SESSION["uname"]= $_POST['uname'];
+
+if(isset($_POST['rmm'])) setcookie('us',$_POST['uname'], time() + (86400 * 30), "/");
+
+header('Location:index.php');
+}
+
+  }
+}
+?>
+
   <main class="mdl-layout__content">
     <div class="mdl-card mdl-shadow--6dp">
       <div class="mdl-card__title mdl-color--primary mdl-color-text--white">

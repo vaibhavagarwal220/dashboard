@@ -14,10 +14,12 @@ if(!loggedinadm())
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Add</title>
+  <title>Add Course</title>
     </head>
   <body>
-  <?php include 'include.inc.php';?>
+  <?php 
+$title="Add Course";
+  include 'include.inc.php';?>
 <?php
 
 if( isset($_POST['cnamen'])&&isset($_POST['cidn'])&&isset($_POST['des'])&&isset($_POST['code']))
@@ -61,7 +63,7 @@ if( isset($_POST['cnamen'])&&isset($_POST['cidn'])&&isset($_POST['des'])&&isset(
 ?>
 <br><br>
 <center class=opts id=frm>
-  <h3>Add Courses</h3>
+  
   
   <form action="addcrs.php" method="POST">
 
@@ -85,10 +87,38 @@ if( isset($_POST['cnamen'])&&isset($_POST['cidn'])&&isset($_POST['des'])&&isset(
     <label class="mdl-textfield__label" for="sample6">Course Code</label>
   </div><br>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample5" name="des" required>
-    <label class="mdl-textfield__label" for="sample5">Slot</label>
+
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+<select name=des id=sample16 class=mdl-textfield__input>
+            <option>A3</option>
+            <option>B3</option>
+            <option>C3</option>
+            <option>D3</option>
+            <option>E3</option>
+            <option>F3</option>
+            <option>G3</option>
+            <option>I3</option>
+            <option>A4</option>
+            <option>B4</option>
+            <option>C4</option>
+            <option>D4</option>
+            <option>E4</option>
+            <option>F4</option>
+            <option>G4</option>
+            <option>I4</option>
+            <option>L1</option>
+            <option>L2</option>
+            <option>L3</option>
+            <option>L4</option>
+            <option>L5</option>
+
+
+
+</select>
+<label class="mdl-textfield__label" for="sample16">Slot</label>
   </div>
+
     <br>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Submit</button>
 </form>

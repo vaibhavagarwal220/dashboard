@@ -16,7 +16,9 @@
   <title>Add Student</title>
     </head>
   <body>
-  <?php include 'include.inc.php';?>
+  <?php 
+$title="Add Student";
+  include 'include.inc.php';?>
    <?php
 
 if( isset($_POST['uname'])&&isset($_POST['psw'])&&isset($_POST['name']) &&isset($_POST['address']) &&isset($_POST['cno']) )
@@ -59,7 +61,6 @@ if( isset($_POST['uname'])&&isset($_POST['psw'])&&isset($_POST['name']) &&isset(
 
 <br><br>
 <center class=opts id=frm>
- <h3>Add Student</h3>
 
 
   <form action="addst.php" method="POST">

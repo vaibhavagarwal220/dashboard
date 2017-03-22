@@ -15,7 +15,9 @@
   <title>Remove Faculty</title>
     </head>
   <body>
-     <?php include 'include.inc.php';?>
+     <?php 
+     $title="Remove Group";
+     include 'include.inc.php';?>
     <?php
 
 if( isset($_POST['unamedel']))
@@ -56,7 +58,7 @@ if( isset($_POST['unamedel']))
 ?>
 <br><br>
 <center class=opts id=frm>
- <h3>Delete Professor</h3>
+
   <form action="rmfac.php" method="POST">
     
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

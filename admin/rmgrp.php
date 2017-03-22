@@ -16,7 +16,9 @@
   <title>Remove Group</title>     
     </head>
   <body>
-<?php include 'include.inc.php';?>
+<?php 
+$title="Remove Group";
+include 'include.inc.php';?>
 
     <?php
 
@@ -48,7 +50,7 @@ if( isset($_POST['unamedel']))
     }
 
   else
-    echo "<center><h4>Group does not exists! </h3></center>";
+    echo "<center><h4>Group does not exist! </h3></center>";
 
 
   }
@@ -58,7 +60,7 @@ if( isset($_POST['unamedel']))
 ?>
 <br><br>
 <center class=opts id=frm>
- <h3>Delete Student</h3>
+
   <form action="rmgrp.php" method="POST">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="sample3" name="unamedel"  required>

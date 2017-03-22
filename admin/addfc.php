@@ -15,7 +15,9 @@
   <title>Add Faculty</title>
     </head>
   <body >
-<?php include 'include.inc.php';?>
+<?php 
+$title="Add Faculty";
+include 'include.inc.php';?>
 
 <?php
 
@@ -61,8 +63,33 @@ if( isset($_POST['uname'])&&isset($_POST['psw'])&&isset($_POST['name']) &&isset(
 ?>
 <br><br>
 <center class=opts id=frm>
-<h4>Add Professor </h4>
   <form action="addfc.php" method="POST">
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+<?php
+$q="SELECT COURSE_ID FROM sem_courses where COURSE_ID NOT IN (SELECT TEACHER_ID FROM prof)";
+$qr=$db->query($q);
+    
+    if(!$qr->num_rows)
+    {
+
+
+    }
+
+    else{
+
+          $rows=$qr->fetch_all(MYSQLI_ASSOC);
+          
+          echo "<select name=\"uname\" id=sample16 class=\"mdl-textfield__input\">";
+          foreach($rows as $row)
+          {
+            echo "<option>".$row['COURSE_ID']."</option>";
+          }
+          echo "</select>";
+        }
+?>
+<label class="mdl-textfield__label" for="sample16">Course ID</label>
+  </div>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="sample3" name="name" required>
@@ -70,11 +97,7 @@ if( isset($_POST['uname'])&&isset($_POST['psw'])&&isset($_POST['name']) &&isset(
   </div>
     <br>
 
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample4" name="uname" required>
-    <label class="mdl-textfield__label" for="sample4">Course ID</label>
-  </div>
-    <br>
+
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="sample5" name="cno" required>
