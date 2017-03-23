@@ -33,12 +33,18 @@ if(isset($_POST['descri'])&&isset($_POST['sld']))
   <head>
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Course Reviews</title>
+
+
 </head>
   <body>
 
   <?php 
 $title="Course Reviews";
   include 'include.inc.php';?>
+    <style type="text/css">
+.rview{font-size:15px;color:black !important;background-color:white !important; }
+  
+</style>
   <style type="text/css">
        #content {width:100%;margin:auto;}
        .mdl-chip{margin:10px;}

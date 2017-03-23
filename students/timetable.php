@@ -30,7 +30,10 @@ $ftime = array
   <head>
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Timetable</title>       
+  
+
   </head>
+
   <body>
   <?php 
   $title="Timetable";
@@ -39,7 +42,11 @@ $ftime = array
        .tt{width:100%;margin:auto;overflow:auto;padding:10px;}
        table{zoom:0.85;}
          </style>
-       
+  <style type="text/css">
+.ttmbl{font-size:15px;color:black !important;background-color:white !important; }
+  
+</style>
+     
 
 
    <br><br>

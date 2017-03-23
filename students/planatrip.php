@@ -41,6 +41,7 @@ $sql = "INSERT INTO trips(ROLLNO,dest,doj) VALUES('".$_SESSION['uname']."','".$d
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Plan a Trip</title>
     </head>
@@ -49,6 +50,11 @@ $sql = "INSERT INTO trips(ROLLNO,dest,doj) VALUES('".$_SESSION['uname']."','".$d
   <?php 
   $title="Plan a Trip";
   include 'include.inc.php';?>
+  <style type="text/css">
+.ptrip{font-size:15px;color:black !important;background-color:white !important; }
+  
+</style>
+
     <br><br>
 <center class="opts posme">
 <h4>Add a Trip</h4>

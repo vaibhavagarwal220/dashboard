@@ -36,7 +36,7 @@ include 'include.inc.php';?>
         <br>
 
          <div class=\"mdl-textfield mdl-js-textfield\"> 
-          <textarea name='post_body' class=\"mdl-textfield__input\"  rows= \"3\" id=\"sample5\"></textarea>
+          <textarea name='post_body' class=\"mdl-textfield__input\"  rows= \"3\" id=\"sample5\" required></textarea>
             <label class=\"mdl-textfield__label\" for=\"sample5\">Content</label>
           </div>
 

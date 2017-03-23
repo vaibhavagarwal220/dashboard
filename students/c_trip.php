@@ -18,6 +18,9 @@ $sql = "INSERT INTO trips(ROLLNO,dest,doj) VALUES('".$_SESSION['uname']."','".$d
         else header("Location:planatrip.php");       
 
   }
+  else header("Location:planatrip.php");
+
 }
+else header("Location:planatrip.php");
 
 ?>

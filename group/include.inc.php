@@ -19,6 +19,9 @@ h1,h2,h3,h4,h5,h6{font-family:'Cabin';}
 
 a{text-decoration:none;}
 
+
+#feedspost{width:65%;margin:auto;}
+
 .mdl-navigation__link{font-family:'Lato' !important;}
 
 .mdl-navigation__link{font-size:15px;color:white !important;}

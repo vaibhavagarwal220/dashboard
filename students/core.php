@@ -234,7 +234,7 @@ $cour=$db->query("SELECT NAME FROM students where ROLLNO=$roll");
 if (!$cour->num_rows)
 {  $cou=$db->query("SELECT NAME FROM prof where TEACHER_ID=$roll"); 
       if (!$cou->num_rows)
-      echo 'Invalid Course Details.';
+      echo 'Invalid Person ';
     else{
       $rows=$cou->fetch_all(MYSQLI_ASSOC) ;
 

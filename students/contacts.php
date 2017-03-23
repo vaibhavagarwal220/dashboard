@@ -8,13 +8,14 @@
 <?php require 'core.php';
 require 'connect.php';
 $title="Contacts";
-require 'include.php';
+include 'include.php';
 ?>
 <style type="text/css">
     table{zoom:0.86;}
     tr{padding:0px !important;}
     .mdl-textfield{margin-left:40%;}
     .mdl-content{align-items: center;}
+.cntckt{font-size:15px;color:black !important;background-color:white !important; }
   </style>
 
 
@@ -23,15 +24,10 @@ require 'include.php';
 
 
 
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-cell">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="search">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+<div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="search" placeholder="Search">
   </div>
+
 <div class=tt>
 <table width='90%' id=tblData class="mdl-data-table mdl-js-data-table mdl-shadow--6dp">
 
@@ -860,14 +856,8 @@ Assoc. Professor (chairperson)
     <section class="mdl-layout__tab-panel" id="fixed-tab-2">
       <div class="page-content"><!-- Your content goes here -->
   
-      	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="searc">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="searc">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+      	<div class="mdl-textfield mdl-js-textfield ">
+      <input class="mdl-textfield__input" type="text" id="searc" placeholder="Search">
   </div>
 
 <table width='90%' align='center' class="mdl-data-table mdl-js-data-table mdl-shadow--6dp" id=tdata>
@@ -1024,14 +1014,8 @@ Assoc. Professor (chairperson)
     <section class="mdl-layout__tab-panel" id="fixed-tab-3">
       <div class="page-content"><!-- Your content goes here -->
       	
-      	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="sear">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="sear">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+      	<div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="sear" placeholder="Search">
   </div>
 
 
@@ -1186,15 +1170,9 @@ Assoc. Professor (chairperson)
       <div class="page-content"><!-- Your content goes here -->
 
   
-      	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="sea">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="sea">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
-  </div>
+      	<div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="sea" placeholder="Search">
+     </div>
 
       <script>
 	$(document).ready(function()
@@ -1366,14 +1344,9 @@ Assoc. Professor (chairperson)
 
 
   
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="searh">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="searh">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+        <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="searh" placeholder="Search">
+
   </div>
 
       <script>
@@ -1576,14 +1549,8 @@ Assoc. Professor (chairperson)
 
 
 
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="searht">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="searht">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+        <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="searht" placeholder="Search">
   </div>
 
       <script>
@@ -1653,14 +1620,8 @@ Assoc. Professor (chairperson)
       <div class="page-content"><!-- Your content goes here -->
         
 
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="searhtx">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="searhtx">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+        <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="searhtx" placeholder="Search">
   </div>
 
       <script>
@@ -1906,14 +1867,8 @@ Assoc. Professor (chairperson)
       <div class="page-content"><!-- Your content goes here -->
 
 
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="searchtx">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="searchtx">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+        <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="searchtx" placeholder="Search">
   </div>
 
       <script>
@@ -2013,14 +1968,9 @@ Assoc. Professor (chairperson)
 
 
 
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="searchtbl">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="searchtbl">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+        <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="searchtbl" placeholder="Search">
+
   </div>
 
       <script>
@@ -2092,14 +2042,9 @@ Assoc. Professor (chairperson)
       <div class="page-content"><!-- Your content goes here -->
         
 
-     <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-    <label class="mdl-button mdl-js-button mdl-button--icon" for="searchtble">
-      <i class="material-icons">search</i>
-    </label>
-    <div class="mdl-textfield__expandable-holder">
-      <input class="mdl-textfield__input" type="text" id="searchtble">
-      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-    </div>
+     <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="searchtble" placeholder="Search">
+    
   </div>
 
       <script>

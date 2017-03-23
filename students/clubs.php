@@ -16,6 +16,7 @@ if(!isset($_GET['grp'])||empty($_GET['grp']))
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <title>Groups | Dashboard</title>
 
@@ -37,6 +38,11 @@ if(!isset($_GET['grp'])||empty($_GET['grp']))
  
 else{
 ?><br>
+<style type="text/css">
+  
+  .grps,.grps:hover{font-size:15px;color:black !important;background-color:white !important; }
+
+</style>
    <?php
 $cour=$db->query("SELECT * FROM groups where id=$val");
 $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
@@ -121,7 +127,7 @@ foreach($rows as $row)
     $topr="<div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
 
 $pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
-   $topr=$topr.preg_replace($pattern, '<a href="http$2://$3">$0</a>', $bdy)."<br>";
+   $topr=$topr.preg_replace($pattern, '<a href="http$2://$3" target=_blank>$0</a>', $bdy)."<br>";
 
     echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
     echo "</div><br>";

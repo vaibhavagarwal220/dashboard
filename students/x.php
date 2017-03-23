@@ -1,67 +1,66 @@
-<?php
-
-
-require 'connect.php' ;
-require 'core.php' ;
-//session_start();
-if(!loggedin()) header("Location:studentlogin.php");
- if(isset($_GET['q'])&&!empty($_GET['q']))
-    {
-      $cid=$_GET['q'];
-
-      //echo $cid;
-    }
-
-
-?>   
-
-
-<?php
-
-$cour=$db->query("SELECT ATTENDANCE,TOTAL_CLASSES,QUIZ1,QUIZ2,QUIZ3,avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE STID=".$_SESSION["uname"]." && CID=".$cid." ");
-$cour1=$db->query("SELECT avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE CID=".$cid." ");
-            //echo $cid;
-if (!$cour->num_rows)
-{   
-echo 'No Course to show ';
-}         
-          //$att=$db->result($cour,0,'ATTENDANCE');
-
-          $rows=$cour->fetch_all(MYSQLI_ASSOC);
-          $rows1=$cour1->fetch_all(MYSQLI_ASSOC);
-          foreach($rows as $row)
-{
-    $att= $row['ATTENDANCE'] ;
-    $atttotal= $row['TOTAL_CLASSES'];
-        $q1= $row['QUIZ1'] ;
-    $q2= $row['QUIZ2'];
-        $q3= $row['QUIZ3'] ;
-
-}
-          foreach($rows1 as $row1)
-{
-         $a1= $row1['q1'] ;
-    $a2= $row1['q2'];
-        $a3= $row1['q3'] ;
-         $m1= $row1['m1'] ;
-    $m2= $row1['m2'];
-        $m3= $row1['m3'] ;
-
-}
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Course Details</title>
+
+  
     </head>
   <body>
+<?php
 
-  <?php 
-  $title="";
-  if(iscrs($cid)) $title=getcrscde($cid);
-  include 'include.inc.php';?>
+
+require 'connect.php' ;
+require 'core.php' ;
+
+if(!loggedin()) header("Location:studentlogin.php");
+$title="";
+
+  if(@iscrs($_GET['q'])) $title=@getcrscde($_GET['q']);
+
+  include 'include.inc.php';
+ if(isset($_GET['q'])&&!empty($_GET['q'])&&iscrs($_GET['q']))
+    {
+      $cid=$_GET['q'];
+
+$cour=$db->query("SELECT ATTENDANCE,TOTAL_CLASSES,QUIZ1,QUIZ2,QUIZ3,avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE STID=".$_SESSION["uname"]." && CID=".$cid." ");
+$cour1=$db->query("SELECT avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE CID=".$cid." ");
+            //echo $cid;
+if (!$cour->num_rows)
+{   
+echo '<div class=opts>Not enrolled in this course</div>';
+}         
+          //$att=$db->result($cour,0,'ATTENDANCE');
+
+    else{
+      $rows=$cour->fetch_all(MYSQLI_ASSOC);
+          $rows1=$cour1->fetch_all(MYSQLI_ASSOC);
+          foreach($rows as $row)
+            {
+            $att= $row['ATTENDANCE'] ;
+            $atttotal= $row['TOTAL_CLASSES'];
+            $q1= $row['QUIZ1'] ;
+            $q2= $row['QUIZ2'];
+            $q3= $row['QUIZ3'] ;
+            }
+
+         foreach($rows1 as $row1)
+           {
+          $a1= $row1['q1'] ;
+          $a2= $row1['q2'];
+          $a3= $row1['q3'] ;
+          $m1= $row1['m1'] ;
+          $m2= $row1['m2'];
+          $m3= $row1['m3'] ;
+            }
+    }
+?>
+  <style type="text/css">
+  .crss{font-size:15px;color:black !important;background-color:white !important; }
+  
+</style>
+
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
 
@@ -126,15 +125,12 @@ echo 'No Course to show ';
         <style type="text/css">
           #chart_div{width:100%;height:45%;zoom:0.9;}
           #chart_div3{width:100%;height:45%;zoom:0.9;}
+          .lects{margin:auto;overflow:auto;max-height:200px;}
+           .lect{margin:auto;overflow:auto;max-height:205px;}
         </style>
 
-
-<br><br>
-
-<?php if(!hascrs($cid) ||!iscrs($cid) ) die('<center class=opts>No such course in our records</center>');?>
-
 <div class=mdl-grid>
-<div class="mdl-cell mdl-cell--8-col">
+<div class="mdl-cell mdl-cell--7-col">
 <br>
 <div id="chart_div"></div>
 <br><br>
@@ -142,25 +138,27 @@ echo 'No Course to show ';
         </div>
 
 
-<div class="mdl-cell mdl-cell--4-col">
+<div class="mdl-cell mdl-cell--5-col">
     <?php
 $cour=$db->query("SELECT * FROM CourseData WHERE STID=".$_SESSION["uname"]." && CID=$cid ");
 
 if (!$cour->num_rows)
 {   
-echo 'No Course to show ';
+echo '<div class=opts>Not enrolled in this course</div>';
 }
 
-
-$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+else{
+  $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
   
-echo "<center class=opts><h4>Announcements</h4>";
+echo "<center class=\"opts\"><h4>Announcements</h4>";
 
     foreach($rows as $row)
     
-      echo $row['ANNCS'] ;
+      echo "<div class=lect>".$row['ANNCS']. "</div>";
     
 echo "</center>";
+
+}
 ?>
 <br><br>
 <center>
@@ -168,13 +166,13 @@ echo "</center>";
 
 <br><br>
 
-<div class="opts">
-<center>
+
 <?php
 
 //$a=$_GET['cid'];
 $thelist="";  
-if ($handle = opendir("../Lectures/".$cid."/")) { //replace 111 by course ID variable
+if ($handle = opendir("../Lectures/".$cid."/")) 
+{ 
     while (false !== ($file = readdir($handle))) {
       if ($file != "." && $file != "..") {
   $thelist .= "<a class=\"mdl-chip\" href=../Lectures/$cid/$file>
@@ -185,22 +183,24 @@ if ($handle = opendir("../Lectures/".$cid."/")) { //replace 111 by course ID var
     closedir($handle);
   }
 ?>
-
+<center class="opts">
 <h4>List of files</h4>
-<ul id=nost><?php echo $thelist; ?></ul>
+<div class=lects>
+<ul id=nost><?php echo $thelist; ?></ul></div>
 </center>
-</div>
-
  </div>
-
-
-
-
      </div>
 
+<?php
+ 
+}
+else {
+  ?>
+ 
 
-    
+<br><br>
 
+<?php  die('<center class=opts>No such course in our records</center>'); }?>
 
 </div>
   </main>

@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+
 </head>
                     <!--===========================FreiChat=======START=========================-->
 <!--  For uninstalling ME , first remove/comment all FreiChat related code i.e below code
@@ -72,6 +74,10 @@ found!');</script>";
   include 'include.inc.php';
 
 ?>
+<style type="text/css">
+  .dashb{font-size:15px;color:black !important;background-color:white !important; }
+  
+</style>
 
 
 
@@ -166,7 +172,7 @@ foreach($rows as $row)
     if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts feed mdl-shadow--6dp\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
     
 $pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
-   $topr = $topr.preg_replace($pattern, '<a href="http$2://$3">$0</a>', $bdy)."<br>";
+   $topr = $topr.preg_replace($pattern, '<a href="http$2://$3" target=_blank>$0</a>', $bdy)."<br>";
 
     echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
     echo "<br><br>

@@ -27,7 +27,7 @@ require 'core.php';
     
 
         <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
-        <input name='forum_name' class=\"mdl-textfield__input\" type=\"text\" id=\"sample3\">
+        <input name='forum_name' class=\"mdl-textfield__input\" type=\"text\" id=\"sample3\" required>
         <label class=\"mdl-textfield__label\" for=\"sample3\">Topic</label>
         </div>
         

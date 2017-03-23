@@ -3,6 +3,7 @@
 <head>
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <title>Student Departures</title>
+
 </head>
 <?php
   require 'connect.php' ;
@@ -15,7 +16,10 @@
 
 $title="Departures";
 include 'include.inc.php';?>
+<style type="text/css">
+  .dept{font-size:15px;color:black !important;background-color:white !important; }
 
+</style>
   <?php
   if(!loggedin()) header("Location:studentlogin.php");
 $cour=$db->query("SELECT * FROM trips ORDER by doj DESC");

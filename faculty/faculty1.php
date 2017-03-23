@@ -1,43 +1,3 @@
-<?php
-
-if(loggedinfac())
-{
- header('Location:facultyy.php'); 
-}
-if(isset($_POST['uname'])&&isset($_POST['psw']))
-{
-  if(!empty($_POST['uname'])&&!empty($_POST['psw']))
-  { 
-    echo $_POST['psw'];
-    $per=$db->query("SELECT * FROM PROF WHERE TEACHER_ID=".mysql_real_escape_string($_POST['uname'])." && PASSWORD='".mysql_real_escape_string($_POST['psw'])."' ") ;
-
-
-
-if(isset($_COOKIE['usfac'])&&!empty($_COOKIE['usfac']))
-{
-  $_SESSION["unamefac"]= $_COOKIE['usfac'];
-  header('Location:index.php');
-}
-
-if (!$per->num_rows)
-{ 
-echo 'Username and Password is incorrect ';
-}
- 
-else
-{
-$_SESSION["unamefac"]= $_POST['uname'];
-$_SESSION["passwordfac"] = $_POST['psw'];
-
-if(isset($_POST['rmm'])) setcookie('usfac',$_POST['uname'], time() + (86400 * 30), "/");
-
-header('Location:index.php');
-}
-
-  }
-}
-?>
-
 
 
 
@@ -73,6 +33,38 @@ body{background:#eff3f6;font-family:'Open Sans';color:black;}
 </head>
 <body>
 <div id=bg class="mdl-layout mdl-js-layout mdl-color--grey-100">
+
+<?php
+
+
+if(isset($_POST['uname'])&&isset($_POST['psw']))
+{
+  if(!empty($_POST['uname'])&&!empty($_POST['psw']))
+  { 
+    echo $_POST['psw'];
+    $per=$db->query("SELECT * FROM PROF WHERE TEACHER_ID=".mysql_real_escape_string($_POST['uname'])." && PASSWORD='".mysql_real_escape_string($_POST['psw'])."' ") ;
+
+if (!$per->num_rows)
+{ 
+echo 'Username and Password is incorrect ';
+}
+ 
+else
+{
+$_SESSION["unamefac"]= $_POST['uname'];
+$_SESSION["passwordfac"] = $_POST['psw'];
+
+if(isset($_POST['rmm'])) setcookie('usfac',$_POST['uname'], time() + (86400 * 30), "/");
+
+header('Location:index.php');
+}
+
+  }
+}
+?>
+
+
+
   <main class="mdl-layout__content">
     <div class="mdl-card mdl-shadow--6dp">
       <div class="mdl-card__title mdl-color--primary mdl-color-text--white">

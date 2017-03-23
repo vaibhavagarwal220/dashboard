@@ -4,6 +4,9 @@
 <head>
   <title>Add/Drop Courses</title>
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+
+
+
     </head>
   <body>
   <?php 
@@ -16,6 +19,10 @@
   }
   $title="Add/Drop Courses";
 include 'include.inc.php';?>
+<style type="text/css">
+.adrp{font-size:15px;color:black !important;background-color:white !important; }  
+</style>
+
 <br><br><br>
 <style type="text/css">
   #tablesrch{overflow:auto;}

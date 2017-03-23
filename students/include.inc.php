@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
  <link rel="stylesheet" href="assets/css/material.min.css" /> 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -7,19 +8,14 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="assets/js/lightbox.js"></script>
 <link rel="stylesheet" type="text/css" href="assets/css/lightbox.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <style>
-@media only screen and (max-width: 500px) {
-          #chart_div{zoom:0.5 !important;}
-          #chart_div3{zoom:0.5 !important;}
-          .feedimg{width:245px !important;height:275px !important;}
-          .ccde{display:none;}
-          .cslt{display:none;}
-          #caln{width:300px !important;height:275px !important;margin:auto !important;}
-          .cont{display:none !important;}
-          .cal{width:300px !important;height:275px !important;margin:auto !important;}
-}
+
+
+
+#demo-menu-lower-right{color:#3E2723;position:absolute;left:1000px;top:1px;cursor:hand;cursor:pointer;}
+
 
 .mdl-navigation__link{font-family:'Lato' !important;}
 
@@ -45,7 +41,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Cabin';}
 
 .mdl-lout{font-family:'Cabin';display:inline;}
 
-#demo-menu-lower-right{color:#3E2723;position:absolute;left:255px;top:0px;}
+
 
 .feedimg{width:550px;height:600px;}
 
@@ -93,6 +89,18 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 .past,.fut{background:gray;color: white;}
 
 .tod{background:#08a334;color: white;}
+
+@media only screen and (max-width: 500px) {
+          #chart_div{zoom:0.5 !important;}
+          #chart_div3{zoom:0.5 !important;}
+          .feedimg{width:245px !important;height:275px !important;}
+          .ccde{display:none;}
+          .cslt{display:none;}
+          #caln{width:300px !important;height:275px !important;margin:auto !important;}
+          .cont{display:none !important;}
+          .cal{width:300px !important;height:275px !important;margin:auto !important;}
+          #demo-menu-lower-right{color:#3E2723;position:absolute;left:255px;top:0px;cursor:hand;cursor:pointer;}
+}
 
 
 
@@ -172,8 +180,8 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 
     </span>
     <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20" id=menuw>
-    <a class="mdl-navigation__link" href="index.php"><i class=" material-icons">dashboard</i> Dashboard </a>
-    <a class="mdl-navigation__link" href="#" id=viewc> <i class=" material-icons">class</i> Courses</a>
+    <a class="mdl-navigation__link dashb" href="index.php"><i class=" material-icons">dashboard</i> Dashboard </a>
+    <a class="mdl-navigation__link crss" href="#" id=viewc> <i class=" material-icons">class</i> Courses</a>
      <div id=showc> 
   <?php
 $cour=$db->query("SELECT * FROM CourseData WHERE STID=".$_SESSION['uname']."");
@@ -212,7 +220,7 @@ foreach($rows as $row)
   })
 </script>
 
-<a class="mdl-navigation__link" href="#" id=viewg> <i class="material-icons">group</i> Groups</a>
+<a class="mdl-navigation__link grps" href="#" id=viewg> <i class="material-icons">group</i> Groups</a>
      <div id=showg> 
   <?php
 $cour=$db->query("SELECT * FROM groups");
@@ -235,7 +243,7 @@ foreach($rows as $row)
 
 
 
-  echo "     <a href=clubs.php?grp=$id class=\"mdl-navigation__link\">".$name."</a>";
+  echo "<a href=clubs.php?grp=$id class=\"mdl-navigation__link\">".$name."</a>";
 }
   ?>
 </div>
@@ -252,16 +260,15 @@ foreach($rows as $row)
 
 </script>
 
-	<a class="mdl-navigation__link" href=adddrop.php ><i class="material-icons">iso</i> Add/Drop Courses</a>
-     
-     <a class="mdl-navigation__link" href="cal.php"><i class="material-icons">date_range</i> Calendar</a>
-    <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons">list</i> Timetable</a>
-    <a class="mdl-navigation__link" href="review.php"><i class="material-icons">grade</i> Course Review</a>
-    <a class="mdl-navigation__link cont" href="contacts.php"><i class="material-icons">call</i> Contact</a>
-    <a class="mdl-navigation__link" target=_blank href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx">
+	<a class="mdl-navigation__link adrp" href=adddrop.php ><i class=" material-icons">iso</i> Add/Drop Courses</a>
+     <a class="mdl-navigation__link caldr " href="cal.php"><i class="material-icons">date_range</i> Calendar</a>
+    <a class="mdl-navigation__link ttmbl" href="timetable.php"><i class="material-icons">list</i> Timetable</a>
+    <a class="mdl-navigation__link rview" href="review.php"><i class="material-icons">grade</i> Course Review</a>
+    <a class="mdl-navigation__link cont cntckt" href="contacts.php"><i class=" material-icons">call</i> Contact</a>
+    <a class="mdl-navigation__link bbtck " target=_blank href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx">
     <i class="material-icons">event_seat</i> Book Bus Tickets</a>
-    <a class="mdl-navigation__link" href=depart.php><i class="material-icons">flight_takeoff</i> Departures</a>     
-    <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons">motorcycle</i> Plan A Trip</a>
+    <a class="mdl-navigation__link dept " href=depart.php><i class="material-icons">flight_takeoff</i> Departures</a>     
+    <a class="mdl-navigation__link ptrip " href=planatrip.php><i class="material-icons">motorcycle</i> Plan A Trip</a>
     
 
     </nav>

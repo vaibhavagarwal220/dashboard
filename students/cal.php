@@ -1,6 +1,10 @@
 <!doctype html>
 <html>
 <head>
+<style type="text/css">
+.caldr{font-size:15px;color:black !important;background-color:white !important; }  
+</style>
+
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <title>Calendar | IIT Mandi</title>
 </head>
@@ -18,6 +22,12 @@ include 'include.inc.php';?>
   #caln{background:url('assets/img/cload2.gif');background-repeat:round;}
   #caln{display:block;}
 </style>
+
+<style type="text/css">
+.caldr{font-size:15px;color:black !important;background-color:white !important; }
+  
+</style>
+
 
 	<br>
     

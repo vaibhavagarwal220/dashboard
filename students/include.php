@@ -12,7 +12,7 @@
 
 .mdl-navigation__link{font-family:'Lato' !important;}
 
-#demo-menu-lower-right{color:#3E2723;position:absolute;left:300px;top:20px;}
+#demo-menu-lower-right{color:#3E2723;position:absolute;left:1200px;top:20px;cursor:hand;cursor:pointer;}
 
 h1,h2,h3,h4,h5,h6{font-family:'Cabin';}
 
@@ -211,7 +211,7 @@ foreach($rows as $row)
      <a class="mdl-navigation__link" href="cal.php"><i class="material-icons">date_range</i> Calendar</a>
     <a class="mdl-navigation__link" href="timetable.php"><i class="material-icons ">list</i> Timetable</a>
     <a class="mdl-navigation__link" href="review.php"><i class="material-icons">grade</i> Course Review</a>
-    <a class="mdl-navigation__link" href="contacts.php"><i class="material-icons">call</i> Contact</a>
+    <a class="mdl-navigation__link cntckt" href="contacts.php"><i class="material-icons">call</i> Contact</a>
     <a class="mdl-navigation__link" target=_blank href="https://www.redbus.in/bus-tickets/mandi-himachal-pradesh-to-delhi.aspx"><i class="material-icons">event_seat</i> Book Bus Tickets</a>
     <a class="mdl-navigation__link" href=depart.php><i class="material-icons">flight_takeoff</i> Departures</a>     
     <a class="mdl-navigation__link" href=planatrip.php><i class="material-icons">motorcycle</i> Plan A Trip</a>

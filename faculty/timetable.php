@@ -15,15 +15,15 @@ $time = array
  $days =array( "Monday","Tuesday","Wednesday","Thursday","Friday");
 $ftime = array
   (
-  array("<div class=\"A3 A4 co\"></div>","<div class=\"B3 B4 co\"></div>","<div class=\"co C3 C4\"></div>","<div class=\"co D3 D4\"></div>","L","<div class=\"co G3 G4\"></div>","<div class=\"co I3 I4\"></div><div class=\"L1 co\"></div>","<div class=\"L1 co\"></div>","<div class=\"L1 co\"></div>","",""),
+  array("<div class=\"A3 A4\"></div>","<div class=\"B3 B4\"></div>","<div class=\"C3 C4\"></div>","<div class=\"D3 D4\"></div>","L","<div class=\"G3 G4\"></div>","<div class=\"I3 I4\"></div><div class=\"L1\"></div>","<div class=\"L1\"></div>","<div class=\"L1\"></div>","",""),
   
-  array("<div class=\"E3 E4 co\"></div>","<div class=\"F3 F4 co\"></div>","<div class=\"G3 G4 co\"></div>","<div class=\"co I3 I4\"></div>","U","<div class=\"A4 co\"></div>","<div class=\"L2 co\"></div><div class=\"C4 co\"></div>","<div class=\"L2 co\"></div>","<div class=\"L2 co\"></div>","",""),
+  array("<div class=\"E3 E4\"></div>","<div class=\"F3 F4\"></div>","<div class=\"G3 G4\"></div>","<div class=\"I3 I4\"></div>","U","<div class=\"A4\"></div>","<div class=\"L2\"></div><div class=\"C4\"></div>","<div class=\"L2 \"></div>","<div class=\"L2\"></div>","",""),
   
-  array("<div class=\"B3 B4 co\"></div>","<div class=\"C3 C4 co\"></div>","<div class=\"D3 D4 co\"></div>","<div class=\"A3 A4 co\"></div>","N","<div class=\"F3 F4 co\"></div>","<div class=\"L3 co\"></div><div class=\"G4 co\"></div>","<div class=\"L3 co\"></div><div class=\"E4 co\"></div>","<div class=\"L3 co\"></div><div class=\"I4 co\"></div>","",""),
+  array("<div class=\"B3 B4\"></div>","<div class=\"C3 C4\"></div>","<div class=\"D3 D4\"></div>","<div class=\"A3 A4\"></div>","N","<div class=\"F3 F4\"></div>","<div class=\"L3\"></div><div class=\"G4\"></div>","<div class=\"L3\"></div><div class=\"E4\"></div>","<div class=\"L3\"></div><div class=\"I4\"></div>","",""),
 
-  array("<div class=\"F3 F4 co\"></div>","<div class=\"E3 E4 co\"></div>","<div class=\"I3 I4 co\"></div>","<div class=\"G3 G4 co\"></div>","C","<div class=\"D4 co\"></div>","<div class=\"L4 co\"></div><div class=\"B4 co\"></div>","<div class=\"L4 co\"></div>","<div class=\"L4 co\"></div>","","") ,
+  array("<div class=\"F3 F4\"></div>","<div class=\"E3 E4\"></div>","<div class=\"I3 I4\"></div>","<div class=\"G3 G4\"></div>","C","<div class=\"D4\"></div>","<div class=\"L4\"></div><div class=\"B4\"></div>","<div class=\"L4\"></div>","<div class=\"L4\"></div>","","") ,
 
-  array("<div class=\"C3 C4 co\"></div>","<div class=\"D3 D4 co\"></div>","<div class=\"A3 A4 co\"></div>","<div class=\"B3 B4 co\"></div>","H","<div class=\"E3 E4 co\"></div>","<div class=\"F4 co\"></div><div class=\"L5 co\"></div>","<div class=\"L5 co\"></div>","<div class=\"L5 co\"></div>","","")
+  array("<div class=\"C3 C4\"></div>","<div class=\"D3 D4\"></div>","<div class=\"A3 A4\"></div>","<div class=\"B3 B4\"></div>","H","<div class=\"E3 E4\"></div>","<div class=\"F4\"></div><div class=\"L5\"></div>","<div class=\"L5\"></div>","<div class=\"L5\"></div>","","")
   );?>
 	
 <html>

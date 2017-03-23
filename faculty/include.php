@@ -11,6 +11,7 @@
 
 
 <style>
+
 .alig{
   vertical-align:-21%;font-size:20px;
 }
