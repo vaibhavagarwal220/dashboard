@@ -5,10 +5,13 @@
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head> 
-<body>
-<?php
+</head>
+                    <!--===========================FreiChat=======START=========================-->
+<!--  For uninstalling ME , first remove/comment all FreiChat related code i.e below code
+   Then remove FreiChat tables frei_session & frei_chat if necessary
+         The best/recommended way is using the module for installation                         -->
 
+<?php
 
   require 'connect.php' ;
   require 'core.php' ;
@@ -17,6 +20,54 @@
   {
     header('Location:studentlogin.php');
   }
+
+
+
+
+if(loggedin())
+{ 
+    $ses = $_SESSION['uname']; //tell freichat the userid of the current user
+
+    setcookie("freichat_user", "LOGGED_IN", time()+3600, "/"); // *do not change -> freichat code
+}
+else {
+    $ses = null; //tell freichat that the current user is a guest
+
+    setcookie("freichat_user", null, time()+3600, "/"); // *do not change -> freichat code
+} 
+
+
+
+if(!function_exists("freichatx_get_hash")){
+function freichatx_get_hash($ses){
+
+       if(is_file("C:/xamp/htdocs/projects/dash/students/freichat/hardcode.php")){
+
+               require "C:/xamp/htdocs/projects/dash/students/freichat/hardcode.php";
+
+               $temp_id =  $ses . $uid;
+
+               return md5($temp_id);
+
+       }
+       else
+       {
+               echo "<script>alert('module freichatx says: hardcode.php file not
+found!');</script>";
+       }
+
+       return 0;
+}
+}
+?>
+<script type="text/javascript" language="javascipt" src="http://localhost/projects/dash/students/freichat/client/main.php?id=<?php echo $ses;?>&xhash=<?php echo freichatx_get_hash($ses); ?>"></script>
+  <link rel="stylesheet" href="http://localhost/projects/dash/students/freichat/client/jquery/freichat_themes/freichatcss.php" type="text/css">
+
+
+<body>
+<?php
+
+
   $title="Home";
   include 'include.inc.php';
 
