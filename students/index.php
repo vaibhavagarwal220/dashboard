@@ -216,7 +216,7 @@ foreach($rows as $row)
 
     </div>
     </div>
-
+<br><br><br><br>
     <div id="disqus_thread"></div>
 <script>
 

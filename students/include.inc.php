@@ -69,7 +69,7 @@ a:hover{text-decoration:none;color:default;}
 
 .acnt{font-size:26px;}
 
-body{font-family:'Open Sans';color:black;background:#EFF3F6;}
+body{font-family:'Open Sans';color:black;background:#EFF3F6;line-height:1.7em;}
 /*body{background-image:url('assets/img/back1.jpg');background-repeat:round;}*/
 
 #logo{margin:10px;}

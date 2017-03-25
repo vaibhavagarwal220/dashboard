@@ -7,7 +7,12 @@
 <style>
 
 
-
+@media only screen and (max-width: 500px) {
+          .feedimg{width:245px !important;height:275px !important;}
+          .cont{display:none !important;}
+          .feedgr{padding:20px;display:inline-block;width:250px;margin:5px;}
+          #feedspost{width:375px;}
+}
 
 
 h1,h2,h3,h4,h5,h6{font-family:'Cabin';}

@@ -20,6 +20,7 @@
   $title="Add/Drop Courses";
 include 'include.inc.php';?>
 <style type="text/css">
+table a{color:brown;}
 .adrp{font-size:15px;color:black !important;background-color:white !important; }  
 </style>
 
