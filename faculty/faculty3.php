@@ -106,6 +106,7 @@ if( isset($_POST['q1']) && isset($_POST['q2']) && isset($_POST['q3']))
 
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
   <title>Student Details</title>
 
 

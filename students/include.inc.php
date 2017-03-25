@@ -81,6 +81,7 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 .page-content{width:90%;margin: auto;color:black;font-size:16px;}
 
 .feed{padding:20px;display:inline-block;}
+.feedgr{padding:20px;display:inline-block;width:600px;}
 
 #feedspost{width:650px;}
 
@@ -180,7 +181,7 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 
     </span>
     <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20" id=menuw>
-    <a class="mdl-navigation__link dashb" href="index.php"><i class=" material-icons">dashboard</i> Dashboard </a>
+    <a class="mdl-navigation__link dashb" href="index.php"><i class=" material-icons">dashboard</i> Home </a>
     <a class="mdl-navigation__link crss" href="#" id=viewc> <i class=" material-icons">class</i> Courses</a>
      <div id=showc> 
   <?php

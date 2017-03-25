@@ -54,7 +54,7 @@ body{background:#eff3f6;font-family:'Open Sans';color:black;}
 echo $_SESSION['unameadm'];
   ?></span>
     <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20">
-      <a class="mdl-navigation__link" href="index.php"><i class="material-icons">dashboard</i> Dashboard</a>
+      <a class="mdl-navigation__link" href="index.php"><i class="material-icons">dashboard</i> Home </a>
       <a class="mdl-navigation__link" href="listst.php"><i class="material-icons">recent_actors</i> Student List</a>
       <a class="mdl-navigation__link" href="listfc.php"><i class="material-icons">recent_actors</i> Faculty List</a>
       <a href=listgrp.php class="mdl-navigation__link"><i class="material-icons">group</i> Groups List</a>

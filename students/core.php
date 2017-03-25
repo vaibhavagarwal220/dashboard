@@ -217,6 +217,40 @@ foreach($rows as $row)
 }
 
 
+function getpass($roll)
+{
+ 
+$db = new MYSQLI('localhost','root','','Project') ; //or die('Error connecting to MySQL server.');
+
+if($db->connect_errno)
+{
+  echo $db->connect_error;
+  die ('Unable to connect to the database ');
+}
+
+$cour=$db->query("SELECT PASSWORD FROM students where ROLLNO=$roll");
+
+if (!$cour->num_rows)
+{   
+echo 'Invalid Roll No.';
+  //echo 'Permission granted Enjoy due '  //print_r($per);}
+}
+
+
+$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+
+
+foreach($rows as $row)
+{
+  $nm=$row['PASSWORD'] ;
+  return $nm; 
+}
+
+}
+
+
+
+
 function getposter($roll)
 {
  

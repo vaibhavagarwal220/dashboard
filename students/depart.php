@@ -49,9 +49,9 @@ foreach($rows as $row)
     if(tmppf($doj)==0&&$ft) {echo "<h4>Today</h4><br>";$ft=0;}
     if(tmppf($doj)==-1&&$fp) {echo "<h4>Past</h4><br>";$fp=0;}
 
-    if(tmppf($doj)==1) {$doj=date('F jS Y',strtotime($doj));echo "<div class=\"opts fut\">".$rep." going from <b>Mandi</b> to <b>$dst</b> on $doj </div> <br>";}
-    else if(tmppf($doj)==0){$doj=date('F jS Y',strtotime($doj));echo "<div class=\"opts tod\">".$rep." going from <b>Mandi</b> to <b>$dst</b> on $doj </div> <br>";}
-    else {$doj=date('F jS Y',strtotime($doj));echo "<div class=\"opts past\">".$rep." went to <b>$dst</b> on $doj </div> <br>";}
+    if(tmppf($doj)==1) {$doj=date('F jS Y',strtotime($doj));echo "<div class=\"opts fut\">".$rep." going from <b>Mandi</b> to <b>$dst</b> on $doj </div>";}
+    else if(tmppf($doj)==0){$doj=date('F jS Y',strtotime($doj));echo "<div class=\"opts tod\">".$rep." going from <b>Mandi</b> to <b>$dst</b> on $doj </div>";}
+    else {$doj=date('F jS Y',strtotime($doj));echo "<div class=\"opts past\">".$rep." went to <b>$dst</b> on $doj </div>";}
 }
   ?>
 

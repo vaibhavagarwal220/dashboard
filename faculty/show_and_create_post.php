@@ -17,6 +17,7 @@ require 'core.php';
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
   <title>Show/Create Posts</title>
     </head>
   <body>

@@ -128,7 +128,7 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
 
 
     <nav class="mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-white-20" id=menuw>
-    <a class="mdl-navigation__link" href="index.php"><i class="material-icons">dashboard</i> Dashboard </a>
+    <a class="mdl-navigation__link" href="index.php"><i class="material-icons">dashboard</i> Home </a>
     <a class="mdl-navigation__link" href="#" id=viewc> <i class="material-icons">class</i> Courses</a>
      <div id=showc> 
   <?php

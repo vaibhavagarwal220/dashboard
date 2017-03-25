@@ -28,7 +28,7 @@ $ftime = array
 	
 <html>
   <head>
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
   <title>Timetable</title>       
   </head>
   <body>

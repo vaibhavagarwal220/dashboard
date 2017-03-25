@@ -14,7 +14,8 @@
 require 'connect.php' ;
 require 'core.php' ;
 
-if(!loggedin()) header("Location:studentlogin.php");
+if(!loggedin()) 
+  header("Location:studentlogin.php");
 $title="";
 
   if(@iscrs($_GET['q'])) $title=@getcrscde($_GET['q']);
@@ -26,13 +27,10 @@ $title="";
 
 $cour=$db->query("SELECT ATTENDANCE,TOTAL_CLASSES,QUIZ1,QUIZ2,QUIZ3,avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE STID=".$_SESSION["uname"]." && CID=".$cid." ");
 $cour1=$db->query("SELECT avg(QUIZ1) as q1,avg(QUIZ2) as q2,avg(QUIZ3) as q3,max(QUIZ1) as m1,max(QUIZ2) as m2,max(QUIZ3) as m3 FROM CourseData WHERE CID=".$cid." ");
-            //echo $cid;
-if (!$cour->num_rows)
-{   
-echo '<div class=opts>Not enrolled in this course</div>';
-}         
-          //$att=$db->result($cour,0,'ATTENDANCE');
-
+      if (!$cour->num_rows)
+      {   
+      echo '<div class=opts>Not enrolled in this course</div>';
+      }         
     else{
       $rows=$cour->fetch_all(MYSQLI_ASSOC);
           $rows1=$cour1->fetch_all(MYSQLI_ASSOC);
@@ -64,30 +62,17 @@ echo '<div class=opts>Not enrolled in this course</div>';
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
 
-          // Load the Visualization API and the piechart package.
           google.load('visualization', '1.0', {'packages':['corechart']});
-
-          // Set a callback to run when the Google Visualization API is loaded.
           google.setOnLoadCallback(drawChart);
-
-          // Callback that creates and populates a data table,
-          // instantiates the pie chart, passes in the data and
-          // draws it.
           function drawChart() {
-
-            // Create the data table.
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Status');    
             data.addColumn('number', 'Number');
-            
-
            data.addRows([ 
                 ['Attended', <?php echo $att; ?>],
                 ['Not Attended',<?php echo $atttotal-$att;?>]
                 ]);
 
-                        // Create the data table.
-          
             var data3 = new google.visualization.DataTable();
             data3.addColumn('string', 'Quiz');
             data3.addColumn('number', 'Highest');
@@ -99,24 +84,15 @@ echo '<div class=opts>Not enrolled in this course</div>';
               ['Quiz 2', <?php echo $m2; ?>,<?php echo $a2; ?>,<?php echo $q2; ?>],
               ['Quiz 3', <?php echo $m3; ?>,<?php echo $a3; ?>,<?php echo $q3; ?>],
             ]);
-
-            
-
-            // Set chart options
             var options = {'title':'Attendance Record',
                            'width':600,
                            'height':400};
-            // Set chart options
-           
-            // Set chart options
             var options3 = {'title':'Marks Sheet',
                            'width':600,
                            'height':400};
 
-            // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
             chart.draw(data, options);
-            
             var chart3 =  new google.visualization.ColumnChart(document.getElementById('chart_div3'));
             chart3.draw(data3, options3);
 
@@ -125,14 +101,14 @@ echo '<div class=opts>Not enrolled in this course</div>';
         <style type="text/css">
           #chart_div{width:100%;height:45%;zoom:0.9;}
           #chart_div3{width:100%;height:45%;zoom:0.9;}
-          .lects{margin:auto;overflow:auto;max-height:200px;}
-           .lect{margin:auto;overflow:auto;max-height:205px;}
+          .lects{margin:auto;overflow:auto;height:200px;}
+           .lect{margin:auto;overflow:auto;height:220px;line-height:1.7em;}
         </style>
 
 <div class=mdl-grid>
 <div class="mdl-cell mdl-cell--7-col">
 <br>
-<div id="chart_div"></div>
+<div id="chart_div" ></div>
 <br><br>
 <div id="chart_div3"></div>        
         </div>
@@ -144,13 +120,13 @@ $cour=$db->query("SELECT * FROM CourseData WHERE STID=".$_SESSION["uname"]." && 
 
 if (!$cour->num_rows)
 {   
-echo '<div class=opts>Not enrolled in this course</div>';
+die('</div></div><center class=opts>Not enrolled in this course</center>');
 }
 
 else{
   $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
   
-echo "<center class=\"opts\"><h4>Announcements</h4>";
+echo "<center class=\"opts mdl-shadow--6dp\"><h4>Announcements</h4>";
 
     foreach($rows as $row)
     
@@ -183,7 +159,7 @@ if ($handle = opendir("../Lectures/".$cid."/"))
     closedir($handle);
   }
 ?>
-<center class="opts">
+<center class="opts mdl-shadow--6dp">
 <h4>List of files</h4>
 <div class=lects>
 <ul id=nost><?php echo $thelist; ?></ul></div>
@@ -195,12 +171,7 @@ if ($handle = opendir("../Lectures/".$cid."/"))
  
 }
 else {
-  ?>
- 
-
-<br><br>
-
-<?php  die('<center class=opts>No such course in our records</center>'); }?>
+  die('<center class=opts>No such course in our records</center>'); }?>
 
 </div>
   </main>

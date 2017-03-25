@@ -14,6 +14,7 @@
 <html>
 <head>
   <title>Add Student</title>
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
     </head>
   <body>
   <?php 

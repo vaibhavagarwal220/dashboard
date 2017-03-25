@@ -24,40 +24,27 @@
   }
 
 
-
-
 if(loggedin())
 { 
     $ses = $_SESSION['uname']; //tell freichat the userid of the current user
-
     setcookie("freichat_user", "LOGGED_IN", time()+3600, "/"); // *do not change -> freichat code
 }
 else {
     $ses = null; //tell freichat that the current user is a guest
-
     setcookie("freichat_user", null, time()+3600, "/"); // *do not change -> freichat code
 } 
-
-
-
 if(!function_exists("freichatx_get_hash")){
 function freichatx_get_hash($ses){
-
        if(is_file("C:/xamp/htdocs/projects/dash/students/freichat/hardcode.php")){
-
                require "C:/xamp/htdocs/projects/dash/students/freichat/hardcode.php";
-
                $temp_id =  $ses . $uid;
-
                return md5($temp_id);
-
        }
        else
        {
                echo "<script>alert('module freichatx says: hardcode.php file not
 found!');</script>";
        }
-
        return 0;
 }
 }
@@ -67,6 +54,19 @@ found!');</script>";
 
 
 <body>
+<script src="assets/js/jquery.min.js"></script>
+<style type="text/css">
+  #loading{
+    position: absolute; width: 100%; height: 100%; background: url('../assets/img/loading.gif') no-repeat center center;}
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#loading').hide();
+});
+</script>
+<div id="loading"></div>
+
+
 <?php
 
 
@@ -74,6 +74,7 @@ found!');</script>";
   include 'include.inc.php';
 
 ?>
+
 <style type="text/css">
   .dashb{font-size:15px;color:black !important;background-color:white !important; }
   
@@ -169,14 +170,14 @@ foreach($rows as $row)
    $gid=$row['gid'] ;
    $id=$row['post_id'] ;
 
-    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts feed mdl-shadow--6dp\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
+    if(ismember($_SESSION['uname'],$gid)){$topr="<div class=\"opts feedgr mdl-shadow--6dp\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
     
 $pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
    $topr = $topr.preg_replace($pattern, '<a href="http$2://$3" target=_blank>$0</a>', $bdy)."<br>";
 
     echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
     echo "<br><br>
-  </div><br><br>";}
+  </div>";}
 
 }
 ?>

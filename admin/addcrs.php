@@ -14,6 +14,7 @@ if(!loggedinadm())
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
   <title>Add Course</title>
     </head>
   <body>

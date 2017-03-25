@@ -13,6 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
   <title>Remove Student</title>     
     </head>
   <body>

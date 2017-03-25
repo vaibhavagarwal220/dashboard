@@ -16,12 +16,14 @@ if(!loggedin())
   }
   $title="Edit Details";
   include 'include.inc.php';?>
-
+<style type="text/css">
+	.opts{width:350px;margin:auto;}
+</style>
     </head>
 
   <body>
 <br>
-<center class=opts id=frm>
+<center class=opts >
 <br>    
      <?php
 
@@ -29,14 +31,15 @@ if(!loggedin())
 //echo "$_POST['uname']";
 
 
-if(isset($_POST['psw']) && isset($_POST['name']) &&isset($_POST['address']) &&isset($_POST['cno']) )
+if(isset($_POST['psw']) && isset($_POST['name']) &&isset($_POST['address']) &&isset($_POST['cno'])&& isset($_POST['npsw']) )
 {
 
-    if(!empty($_POST['psw']) && !empty($_POST['name'])&& !empty($_POST['address']) && !empty($_POST['cno']))
+    if(!empty($_POST['psw']) && !empty($_POST['name'])&& !empty($_POST['address']) && !empty($_POST['cno'])&& !empty($_POST['npsw']))
   {
 
-    
-    $q ="UPDATE Students SET NAME='".$_POST['name']."' , PASSWORD= '".$_POST['psw']."', CONTACT=".$_POST['cno'].", ADDRESS='".$_POST['address']."' WHERE ROLLNO=".$_SESSION['uname']." ";
+    if(getpass($_SESSION['uname'])==$_POST['psw'])
+    {
+    $q ="UPDATE Students SET NAME='".$_POST['name']."' , PASSWORD= '".$_POST['npsw']."', CONTACT=".$_POST['cno'].", ADDRESS='".$_POST['address']."' WHERE ROLLNO=".$_SESSION['uname']." ";
 
     //echo $q;
 
@@ -48,11 +51,14 @@ if(isset($_POST['psw']) && isset($_POST['name']) &&isset($_POST['address']) &&is
 
     else 
       echo "Update Failed / Info provided was same<br><br>" ;
-  
-
+  		}
+	else 
+	{
+		 echo "Current Password is Incorrect<br><br>" ;
+	}
   }
-
 }
+
 
   
   $prof=$db->query("SELECT * fROM Students WHERE ROLLNO=".$_SESSION['uname']." ");
@@ -87,7 +93,13 @@ foreach($rows as $row)
   <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
  
     <input class=\"mdl-textfield__input\" type=\"password\" id=\"sample5\" name=\"psw\" required>
-    <label class=\"mdl-textfield__label\" for=\"sample5\">Password</label>
+    <label class=\"mdl-textfield__label\" for=\"sample5\">Current Password</label>
+</div>
+<br>
+<div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">
+ 
+    <input class=\"mdl-textfield__input\" type=\"password\" id=\"sample10\" name=\"npsw\" required>
+    <label class=\"mdl-textfield__label\" for=\"sample10\">New Password</label>
 </div>
 <br>
   <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">

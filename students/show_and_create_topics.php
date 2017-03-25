@@ -18,7 +18,6 @@ require 'core.php';
     <?php 
   $title="Topics";
   include 'include.inc.php';?>
-
      <?php
         echo "<br><br><center class=\"opts posme\"><form method='POST' action='c_topic.php?cid=".$cr_id."'>
         

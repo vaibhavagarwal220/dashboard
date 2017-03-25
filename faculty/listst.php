@@ -14,6 +14,7 @@ if(!loggedinfac())
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
   <title>Students List</title>
     </head>
   <body>

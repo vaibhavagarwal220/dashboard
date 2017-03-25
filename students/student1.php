@@ -1,12 +1,11 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <title>Dashboard</title>
-
    <link rel="stylesheet" href="assets/css/material.min.css" /> 
+   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script defer src="assets/js/material.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -22,8 +21,8 @@
   padding: 24px;
   flex: none;
 }
-#bg{background-image: url('assets/img/back1.jpg') ;background-repeat: round;}
 .bbg{background:#5BC0DE;color: white; padding:20px;border-radius:10px;}
+#bg{background-image: url('assets/img/back1.jpg') ;background-repeat: round;}
     </style>
 </head>
 <body >
@@ -34,8 +33,7 @@
 
 
 <div id=bg class="mdl-layout mdl-js-layout mdl-color--grey-100">
-
-<?php
+                <?php
 
 
 if(isset($_POST['uname'])&&isset($_POST['psw']))
@@ -61,7 +59,6 @@ header('Location:index.php');
   }
 }
 ?>
-
   <main class="mdl-layout__content">
     <div class="mdl-card mdl-shadow--6dp">
       <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
@@ -71,7 +68,7 @@ header('Location:index.php');
         <form action="studentlogin.php" method=POST>
           <div class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="username"  name="uname" required>
-            <label class="mdl-textfield__label" for="username">Roll No</label>
+            <label class="mdl-textfield__label" for="username">Username</label>
           </div>
           <br>
           <div class="mdl-textfield mdl-js-textfield">
@@ -85,12 +82,9 @@ header('Location:index.php');
         <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Log in</button>
       </div>
         </form>
-        <a href=forgotpass.php>Forgot Password</a>
+
 
                   </div>
-
-
-
       
     </div>
   </main>

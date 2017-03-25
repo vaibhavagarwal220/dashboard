@@ -74,7 +74,7 @@ h4{display: inline;}
 if($cd==-1){
 echo "<br><br><center class=opts>
 <br><br>
- <h4> My Courses </h4><br><br><br>";
+ <h4>Courses </h4><br><br><br>";
 
 $cour=$db->query("SELECT * FROM sem_courses");
 
