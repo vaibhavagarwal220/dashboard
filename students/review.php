@@ -46,6 +46,7 @@ $title="Course Reviews";
   
 </style>
   <style type="text/css">
+
        #content {width:100%;margin:auto;}
        .mdl-chip{margin:10px;}
     .opt{background-color: white;display: inline-block;padding:10px;margin:4px;}
@@ -73,8 +74,8 @@ h4{display: inline;}
 
 if($cd==-1){
 echo "<br><br><center class=opts>
-<br><br>
- <h4>Courses </h4><br><br><br>";
+<br>
+ <h4>Courses </h4><br>";
 
 $cour=$db->query("SELECT * FROM sem_courses");
 
@@ -82,8 +83,13 @@ if (!$cour->num_rows)
 {   
 //echo "No Course to show ";
 }
+?>
+ <div class="mdl-textfield mdl-js-textfield">
+    <input type=text class="mdl-textfield__input" id="sample9">
+    <label class="mdl-textfield__label" for="sample9">Search</label>
+  </div><br>
 
-
+<?php
 $rows=$cour->fetch_all(MYSQLI_ASSOC) ;
 
 
@@ -96,7 +102,7 @@ foreach($rows as $row)
   echo "<a href=review.php?q=$cid class=\"mdl-chip\"><span class=\"mdl-chip__text\">$cname</span>
 </a> ";
 }
-echo "</center>";}
+echo "</center><br><br><br>";}
 
 else {
 echo  "<br><br>";
@@ -223,6 +229,17 @@ foreach($rows as $row)
 <div id=content>
 </div>
   </div></main></div>
-
+<script type="text/javascript">
+$('#sample9').keyup(function(){
+var txt = $('#sample9').val();
+$('.mdl-chip').hide();
+//$('.mdl-chip:contains("'+txt+'")').show();
+//});
+$('.mdl-chip').each(function(){
+   if($(this).text().toUpperCase().indexOf(txt.toUpperCase()) != -1){
+       $(this).show();
+   }
+});});
+</script>
 </body>
 </html>

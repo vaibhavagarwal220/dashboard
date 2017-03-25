@@ -151,7 +151,7 @@ if ($handle = opendir("../Lectures/".$cid."/"))
 { 
     while (false !== ($file = readdir($handle))) {
       if ($file != "." && $file != "..") {
-  $thelist .= "<a class=\"mdl-chip\" href=../Lectures/$cid/$file>
+  $thelist .= "<a class=\"mdl-chip\" href=../Lectures/$cid/$file  target=_blank>
     <span class=\"mdl-chip__text\">$file</span>
     <button type=\"button\" class=\"mdl-chip__action\"><i class=\"material-icons\">get_app</i></button></a><br><br>";
       }
@@ -171,7 +171,7 @@ if ($handle = opendir("../Lectures/".$cid."/"))
  
 }
 else {
-  die('<center class=opts>No such course in our records</center>'); }?>
+  die('<br><br><center class=opts>No such course in our records</center>'); }?>
 
 </div>
   </main>

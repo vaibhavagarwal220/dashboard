@@ -33,8 +33,19 @@ if(!isset($_GET['grp'])||empty($_GET['grp']))
    
     }
   else die('<br><br><center class=opts>No such group in our database</center>');
-  if(ispending($_SESSION['uname'],$val)) echo("<br><br><center class=opts>Request Pending</center>");
-  else if(!ismember($_SESSION['uname'],$val)) echo("<br><br><div id=sndiv><center class=opts>You are not a member of this group.<br><br><button class=\"subscr mdl-chip\" id=".$val."><span class=\"mdl-chip__text\"> <i class=\"material-icons alig\">group_add</i> Subscribe</span></button></center></div>");
+ 
+$cour=$db->query("SELECT * FROM groups where id=$val");
+$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
+foreach($rows as $row)
+{
+  $bdy=$row['descr'] ;
+
+    echo "<br><center class=\"opts mdl-shadow--6dp\"><h6>Group Description</h6><br>$bdy</center>";
+
+}
+
+  if(ispending($_SESSION['uname'],$val)) echo("<br><br><center class=\"opts mdl-shadow--6dp\">Request Pending</center>");
+  else if(!ismember($_SESSION['uname'],$val)) echo("<br><br><div id=sndiv><center class=\"opts mdl-shadow--6dp\">You are not a member of this group.<br><br><button class=\"subscr mdl-chip\" id=".$val."><span class=\"mdl-chip__text\"> <i class=\"material-icons alig\">group_add</i> Subscribe</span></button></center></div>");
  
 else{
 ?><br>
@@ -43,22 +54,6 @@ else{
   .grps,.grps:hover{font-size:15px;color:black !important;background-color:white !important; }
 
 </style>
-   <?php
-$cour=$db->query("SELECT * FROM groups where id=$val");
-$rows=$cour->fetch_all(MYSQLI_ASSOC) ;
-foreach($rows as $row)
-{
-  $bdy=$row['descr'] ;
-
-    echo " <center class=\"opts\"><h6>Group Description</h6><br>$bdy</center><br>";
-
-}
-
-
-
-
-
-?> 
 
  <center>
   <button type="button" class="mdl-chip" id=leavegrp>
@@ -124,7 +119,7 @@ foreach($rows as $row)
   $bdy=$row['post_body'] ;
    $gid=$row['gid'] ;
 
-    $topr="<div class=\"opts feed\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
+    $topr="<div class=\"opts feed mdl-shadow--6dp\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
 
 $pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
    $topr=$topr.preg_replace($pattern, '<a href="http$2://$3" target=_blank>$0</a>', $bdy)."<br>";
@@ -156,7 +151,7 @@ echo "</div>";
     $('.subscr').click(function(){
       
         $.post("joingrp.php", {gid:$(this).attr('id')}, function(result){
-        $("#sndiv").html("<center class=opts>"+result+"</center>");
+        $("#sndiv").html("<center class=\"opts mdl-shadow--6dp\">"+result+"</center>");
     });
 
        
