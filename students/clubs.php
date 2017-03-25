@@ -60,7 +60,6 @@ else{
     <span class="mdl-chip__text"> <i class="material-icons alig">launch</i> Leave Group </span>
 </button>
 <br><br>
-
  <button id="show-dialog" type="button"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">POST <i class="material-icons alig">create</i></button>
   <dialog class="mdl-dialog">
     <h4 class="mdl-dialog__title">New Post</h4>
@@ -80,10 +79,21 @@ else{
       </p>
     </div>
     <div class="mdl-dialog__actions">
-      <button type="button" class="mdl-button" id=npost>POST</button>
+      <button type="button" class="mdl-button" id=npost onclick="clear()">POST</button>
       <button type="button" class="mdl-button close" id=cancelb>CANCEL</button>
     </div>
   </dialog>
+<script type="text/javascript">
+  
+  function ClearFields() {
+
+     document.getElementById("sample5").value = "";
+     document.getElementById("sample6").value = "";
+}
+
+</script>
+
+
   <script>
     var dialog = document.querySelector('dialog');
     var showDialogButton = document.querySelector('#show-dialog');
@@ -119,12 +129,12 @@ foreach($rows as $row)
   $bdy=$row['post_body'] ;
    $gid=$row['gid'] ;
 
-    $topr="<div class=\"opts feed mdl-shadow--6dp\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
+    $topr="<div class=\"opts feedgr mdl-shadow--6dp\">".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a> <div class=ts>".date("F jS Y H:i:s", strtotime($row['time']))."</div><br>";
 
 $pattern = '@(http(s)?://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
    $topr=$topr.preg_replace($pattern, '<a href="http$2://$3" target=_blank>$0</a>', $bdy)."<br>";
 
-    echo $topr;if($ttl!="") echo "<a href=\"$ttl\" data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
+    echo $topr;if($ttl!="") echo "<a href=\"$ttl\" class=feedimg data-lightbox=\"image-$id\" data-title=\"".getposte($ath)." posted in <a href=clubs.php?grp=".$gid.">".getgnameid($gid)."</a><br><br>$bdy<br><br>\"><img src=$ttl class=feedimg></a>";
     echo "</div><br>";
 
 }

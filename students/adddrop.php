@@ -115,7 +115,7 @@ foreach($rows as $row)
 //  echo $cid;
  if(hascrs($cid)) echo "
 <tr>
-      <td class=\"mdl-data-table__cell--non-numeric\">$cname</td>
+      <td class=\"mdl-data-table__cell--non-numeric\"><a title=\"Click to view review\" href=review.php?q=$cid>$cname</a></td>
       <td class=\"mdl-data-table__cell--non-numeric ccde\">$cde</td>
       <td class=\"mdl-data-table__cell--non-numeric cslt\">$slt</td>
       <td class=\"mdl-data-table__cell--non-numeric\">
@@ -129,7 +129,7 @@ foreach($rows as $row)
 else
 echo "
 <tr>
-      <td class=\"mdl-data-table__cell--non-numeric\">$cname</td>
+     <td class=\"mdl-data-table__cell--non-numeric\"> <a title=\"Click to view review\" href=review.php?q=$cid>$cname</a></td>
       <td class=\"mdl-data-table__cell--non-numeric ccde\">$cde</td>
       <td class=\"mdl-data-table__cell--non-numeric cslt\">$slt</td>
       <td class=\"mdl-data-table__cell--non-numeric\">

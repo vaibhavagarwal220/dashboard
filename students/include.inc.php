@@ -101,6 +101,8 @@ body{font-family:'Open Sans';color:black;background:#EFF3F6;}
           .cont{display:none !important;}
           .cal{width:300px !important;height:275px !important;margin:auto !important;}
           #demo-menu-lower-right{color:#3E2723;position:absolute;left:255px;top:0px;cursor:hand;cursor:pointer;}
+          .feedgr{padding:20px;display:inline-block;width:250px;}
+          #feedspost{width:275px;}
 }
 
 
