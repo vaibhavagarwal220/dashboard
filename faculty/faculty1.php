@@ -29,6 +29,7 @@ body{background:#eff3f6;font-family:'Open Sans';color:black;}
   padding: 24px;
   flex: none;
 }
+.bbg{background:#5BC0DE;color: white; padding:20px;border-radius:10px;}
 #bg{background-image: url('assets/img/back1.jpg') ;background-repeat: round;}
     </style>
 
@@ -43,12 +44,12 @@ if(isset($_POST['uname'])&&isset($_POST['psw']))
 {
   if(!empty($_POST['uname'])&&!empty($_POST['psw']))
   { 
-    echo $_POST['psw'];
+
     $per=$db->query("SELECT * FROM PROF WHERE TEACHER_ID=".mysql_real_escape_string($_POST['uname'])." && PASSWORD='".mysql_real_escape_string($_POST['psw'])."' ") ;
 
 if (!$per->num_rows)
 { 
-echo 'Username and Password is incorrect ';
+echo '<div class=bbg>Username and Password is incorrect </div>';
 }
  
 else
